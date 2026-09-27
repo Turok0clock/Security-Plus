@@ -1,0 +1,45 @@
+{
+  "primary": {
+    "bank": {
+      "objectives": 28,
+      "questions": 840,
+      "sets": true,
+      "unique": 840
+    },
+    "exam": {
+      "length": 90,
+      "pbq": 5
+    },
+    "tests": [
+      "quiz scoring",
+      "persistence",
+      "terminal gating",
+      "PBQ exam feedback",
+      "PBQ draft persistence",
+      "offline navigation",
+      "iPad landscape",
+      "mobile overflow"
+    ],
+    "pageErrors": []
+  },
+  "additional": {
+    "tests": [
+      "backup export",
+      "invalid import rejection",
+      "valid import roundtrip",
+      "all three exams have 90 items",
+      "timer expiry submits saved answers",
+      "unsafe SSH sequence fails"
+    ],
+    "pageErrors": []
+  },
+  "environment": "Headless Chromium 153; 820x1180, 1180x820, 390x844 viewports; device-specific iPadOS Safari testing not performed.",
+  "guided_and_ipad_upgrade": {
+    "guided": "progress, grading, explanations and resume passed",
+    "videos": "exact links, watched persistence and next objective passed",
+    "pbq": "all 13 labs and every task page in three iPad viewports",
+    "overflow": [],
+    "offline": "guided lessons passed",
+    "errors": []
+  }
+}

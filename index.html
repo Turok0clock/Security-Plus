@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0b0d10" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Sec+ Lab" />
+  <link rel="apple-touch-icon" href="icons/icon-180.png" />
+  <link rel="manifest" href="manifest.json" />
+  <title>Security+ SY0-701 Study Lab</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar" aria-label="Primary navigation">
+      <div class="brand">
+        <div class="brand-mark">S+</div>
+        <div>
+          <div class="brand-title">Security+ Lab</div>
+          <div class="brand-sub">SY0-701 · iPad-first</div>
+        </div>
+      </div>
+      <nav id="nav" class="nav"></nav>
+      <div class="sidebar-foot">
+        <div class="tiny">Progress saves locally on this device.</div>
+        <button class="btn secondary full" id="installBtn" hidden>Install App</button>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="icon-btn mobile-only" id="menuBtn" aria-label="Open menu">☰</button>
+        <div class="title-wrap">
+          <div class="eyebrow">SECURITY+ TRAINING CONSOLE</div>
+          <h1 id="pageTitle">Dashboard</h1>
+          <p id="pageSubtitle">Visual learning, realistic PBQs, and exam practice</p>
+        </div>
+        <div class="top-actions">
+          <div class="status-chip" id="studyPulse">0% complete</div>
+        </div>
+      </header>
+      <section id="content" class="content"></section>
+    </main>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <div class="modal-backdrop" id="modalBackdrop" hidden>
+    <div class="modal" id="modal" role="dialog" aria-modal="true"></div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/pbqs.js"></script>
+  <script src="js/curriculum.js"></script>
+  <script src="js/labs.js"></script>
+  <script src="js/videos.js"></script>
+  <script src="js/guided-data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
