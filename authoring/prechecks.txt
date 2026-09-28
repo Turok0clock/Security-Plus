@@ -1,0 +1,309 @@
+# Ten new prerequisite prompts per objective, in its concept order. These are diagnostic foundations, not full-exam simulations.
+#1.1
+A mail gateway automatically rejects executable attachments. When classifying HOW the safeguard is implemented, which category fits?
+A security steering group establishes the organization's risk-review requirements. Which implementation category describes that oversight?
+Reception staff perform a daily visitor-list reconciliation. Which implementation category best describes the staff-performed process?
+A steel enclosure prevents direct contact with exposed communications equipment. Which implementation category fits the enclosure?
+A service refuses an invalid request before it can change a record. Which control function is its primary purpose?
+A database monitor reports an unexpected privilege change after it occurs. Which control function is emphasized?
+After malicious settings are removed, an administrator restores the approved configuration. Which control function describes this restoration?
+A facility prominently announces that unauthorized access results in investigation and disciplinary action. Which function is intended to discourage the attempt?
+A required security feature cannot run on a specialized medical appliance. An approved substitute provides comparable risk reduction until replacement. Which control function describes the substitute?
+A written instruction tells all employees to report suspected data exposure immediately. Which control function specifies the required behavior?
+#1.2
+A planning document must be unreadable to anyone outside a small project team. Which security property is the primary goal?
+An accounting system must prevent someone from silently changing a finalized invoice amount. Which security property is the primary goal?
+A registration service must remain usable during its busiest enrollment period. Which security property is the primary goal?
+A service challenges a claimed user to prove control of an enrolled credential before establishing a session. Which access function is this?
+A signed-in researcher requests the ability to publish a dataset, and the service checks the researcher's assigned rights. Which function makes that permission decision?
+A platform needs an attributable history of who created, exported, and removed research datasets. Which access-related function supplies this record?
+A publisher needs durable evidence linking an approved manuscript to its signer when authorship of the approval is disputed. Which property goes beyond detecting document changes?
+A design explicitly rejects the assumption that a trusted network address makes every request trustworthy. Which security approach does this describe?
+A gateway receives an access decision from a separate decision service and then blocks the requested connection. Which component role does the gateway perform?
+A defender deploys one fake file-transfer service with no legitimate users to observe intrusion attempts. Which defensive resource is this?
+#1.3
+Before changing authentication requirements, a team estimates effects on contractors, customer support, and emergency operations. Which change activity evaluates those consequences?
+A change has passed testing, but production work requires a decision from the designated change authority. Which activity is still required?
+An upgrade checklist specifies the old package, database restore point, and exact steps to reverse a failed deployment. What does that part of the checklist constitute?
+Engineers must perform disruptive maintenance within an agreed Saturday interval. What is that approved interval called?
+A team must identify the exact configuration revision used by each deployment and compare its differences from the prior release. Which practice provides that history?
+New operators need a repeatable approved sequence for carrying out routine certificate renewal. Which resource should guide them?
+A storage platform will be replaced. Engineers first identify every workload that relies on its mounts and interfaces. Which activity is being performed?
+A team rehearses a new access rule against representative permitted and prohibited transactions before deploying it. Which change activity is this?
+A project lead informs affected departments about a cutover's schedule, symptoms, and support contacts. Which change activity is this?
+After a migration is verified, the team aligns operating instructions and asset diagrams with the implemented design. Which activity completes that record alignment?
+#1.4
+Two authorized services already share a protected secret and need efficient encryption of a very large data stream. Which cryptographic approach fits?
+A cryptographic design uses a related public key and private key rather than one shared secret. Which approach is being described?
+A repository needs a fixed-length digest for comparing file contents, without a requirement to recover the contents from that digest. Which operation fits?
+A release publisher needs verifiable origin evidence and detection of changes to a software package. Which mechanism combines those requirements?
+A password database should avoid producing matching stored results merely because two users chose the same password. Which per-password addition addresses this?
+A password-verification design deliberately increases the computational work required for each password guess. Which technique is this?
+A server has generated a protected key pair and needs to send its public key and identifying details for certificate issuance. What should it submit?
+A certificate's private key is exposed before its expiration date. Which certificate lifecycle action tells relying parties it should no longer be trusted?
+A central signing service needs dedicated hardware that protects signing keys and performs cryptographic operations. Which device is the best fit?
+A computer needs a device-bound hardware root of trust for boot measurements and protected secrets. Which component is the best fit?
+#2.1
+An investigation finds a well-funded campaign directed by a foreign government toward long-term strategic access. Which actor category is supported by this evidence?
+A coordinated criminal enterprise operates extortion infrastructure and processes ransom payments as a business. Which actor category best fits?
+An intrusion campaign publicly claims an ideological cause and uses disruption to draw attention to that cause. Which actor category best fits?
+A trusted staff member deliberately uses existing authorized access to take data for an unauthorized purpose. Which threat category describes this relationship?
+An attacker has little technical expertise and relies on a downloaded attack kit without understanding its operation. Which actor category best fits?
+A department starts using an unapproved file-sharing platform without IT oversight. No malicious intent has been established. Which organizational issue is this?
+An attacker offers to stop an ongoing attack only after receiving payment. Which motivation is most directly evidenced?
+An intruder quietly gathers confidential negotiating plans over several months instead of demanding money. Which motivation is most directly evidenced?
+An attacker states that the objective is to make a public service unusable, without seeking data or payment. Which motivation is most directly evidenced?
+An investigator can establish only that the attacker has no trusted affiliation or authorized organizational access. Which broad actor classification is supported?
+#2.2
+A large untargeted email campaign imitates a parcel service and asks recipients to enter account credentials. Which delivery-based social engineering technique fits?
+A fraudulent account warning arrives by text message on a mobile phone and directs the recipient to a credential form. Which technique fits the channel?
+A caller impersonates a support agent and verbally asks a user to disclose a one-time login code. Which technique fits the channel?
+A forged message uses one employee's current project, manager, and responsibilities to make a credential request convincing. Which targeted technique fits?
+An attacker controls an executive's actual email account and uses it to instruct finance staff to redirect a payment. Which attack category best describes the business process abuse?
+Attackers compromise a specialist news site frequently visited by their intended victim organization. Which attack approach uses that shared destination?
+A fraudulent site uses a domain differing by one commonly mistyped character from a legitimate service. Which technique is this?
+An intruder leaves a malicious USB storage device where staff are likely to connect it to a work computer. Which entry vector is being used?
+A trusted software supplier's distribution process is altered so customers receive a malicious update. Which entry vector is being used?
+A person invents a detailed story about an urgent audit to persuade an employee to disclose information. Which social engineering element is the fabricated story?
+#2.3
+A program copies more user-supplied bytes into a memory area than the area can hold. Which vulnerability mechanism fits?
+A program checks that an object is safe, but an attacker changes its state before the program uses it. Which vulnerability mechanism fits?
+An application concatenates untrusted input into a database statement, allowing the input to change query behavior. Which vulnerability mechanism fits?
+A web application allows attacker-supplied script to execute in another user's browser. Which vulnerability mechanism fits?
+A vendor has already released a fix for a known flaw, but the affected installed version has not received it. Which condition is present?
+A manufacturer no longer provides security fixes for a device that remains in production. Which lifecycle condition increases its risk?
+An internet-reachable appliance still accepts the manufacturer's original administrator username and password. Which weakness is present?
+A storage service unintentionally allows public access because its permissions were set incorrectly. Which weakness is present?
+Code running inside a guest virtual machine reaches resources on the underlying host outside the intended boundary. Which vulnerability outcome is this?
+An attacker exploits a newly discovered flaw before the vendor has made a fix available. Which vulnerability category best fits that timing?
+#2.4
+Malicious software encrypts business files and demands money for their restoration. Which malware category best fits?
+Malicious software independently copies itself from host to host by exploiting reachable services. Which malware category best fits?
+A program presented as a useful utility performs hidden malicious actions when the user runs it. Which malware category best fits?
+Malware modifies low-level system behavior to conceal its files and processes from normal inspection. Which malware category best fits?
+Malicious code remains dormant until a specified date or business condition occurs. Which malware category best fits?
+An attacker tries the same small list of common passwords against many different accounts. Which credential attack fits?
+An attacker automates login attempts using username/password pairs stolen from another service. Which credential attack fits?
+An attacker places a system between two communicating parties to intercept and potentially modify their traffic. Which attack position is this?
+An attacker obtains an existing session token and uses it to act as the logged-in user. Which attack fits?
+A large collection of separate systems overwhelms a service with coordinated traffic. Which availability attack best fits?
+#2.5
+A business separates workstation networks from industrial equipment so compromise of one does not provide unrestricted access to the other. Which mitigation is emphasized?
+A service account is reduced from administrator rights to only the permissions its scheduled task needs. Which mitigation principle is applied?
+A workstation may execute only programs on an explicitly approved list. Which mitigation is applied?
+A supported product's known vulnerability is repaired by installing the vendor's corrective update. Which mitigation is applied?
+A suspected compromised host is removed from normal communication while responders investigate it. Which immediate mitigation is applied?
+A management platform repeatedly checks endpoint settings and returns unauthorized changes to the approved values. Which mitigation maintains the desired state?
+An obsolete appliance is permanently removed from service and its access is terminated. Which mitigation is this?
+A company transforms backup contents so they are unreadable without the appropriate key. Which mitigation protects their confidentiality?
+A router uses ordered permit and deny entries based on traffic attributes to restrict communication. Which configuration object enforces those entries?
+A server has no business need for an installed remote-management daemon, so the administrator turns that daemon off. Which hardening action is this?
+#3.1
+A cloud customer receives virtual machines and networks but remains responsible for installing and securing the guest operating systems. Which service model fits?
+A development team deploys application code to a provider-managed runtime without administering the underlying operating system. Which service model fits?
+A business subscribes to a complete hosted expense-management application and configures its users and data settings. Which service model fits?
+A cloud planning document assigns some security duties to the provider and others to the customer. Which model explains that division?
+A team declares required cloud resources in versioned configuration files and deploys them through tooling. Which architecture practice is this?
+An application is divided into small independently deployable services that communicate through defined interfaces. Which architecture approach fits?
+A workload is packaged with its dependencies while sharing the host operating system kernel with other isolated workloads. Which deployment approach fits?
+A developer supplies event-triggered functions while the cloud provider manages the execution infrastructure and scaling. Which architecture approach fits?
+A sensitive system has no physical or logical network connection to other networks. Which isolation approach is this?
+A computing environment directly monitors and controls manufacturing equipment. Which system category best fits?
+#3.2
+A public application's defense must inspect web request parameters for application-layer attack patterns. Which specialized device fits?
+A sensor is placed inline and actively rejects traffic matching exploit signatures. Which security device role fits?
+A sensor observes mirrored traffic and generates security alerts without blocking the original packets. Which security device role fits?
+A network admission process checks an endpoint's identity and security posture before granting normal connectivity. Which capability fits?
+Administrators must first enter a hardened intermediary host before managing sensitive servers. Which architecture component is this?
+Public-facing services are placed on a network segment separated from the internal network by security controls. Which architecture zone fits?
+Employees' outbound web requests pass through a service that acts on behalf of those clients. Which proxy role is this?
+External requests reach a service that fronts internal application servers and forwards requests to them. Which proxy role is this?
+A failed security gateway must stop traffic rather than allow uninspected access. Which failure behavior is required?
+A failed inline device is configured to let traffic continue to preserve service, accepting loss of that device's inspection. Which failure behavior is this?
+#3.3
+A confidential report is stored on an idle disk. Which data state describes it at that moment?
+A confidential report crosses a network from a client to a server. Which data state describes it during transfer?
+A running process is manipulating confidential report contents in memory. Which data state describes that processing?
+A payment system replaces stored card numbers with substitute values linked to originals in a protected vault. Which technique fits?
+A support screen displays only the final characters of an account number while hiding the rest. Which technique fits?
+A control identifies sensitive records in an outbound upload and blocks unauthorized disclosure. Which capability fits?
+A form stops collecting a birth date because no business function requires it. Which data-handling principle is applied?
+A company labels information according to its sensitivity so handling requirements can be assigned. Which process is this?
+A company must account for the laws of the jurisdiction where its information resides. Which data-location concept is involved?
+A policy permits access to a dataset only from approved geographic locations. Which access restriction is this?
+#3.4
+A business requires a service to return within forty-five minutes after disruption. Which recovery target expresses that requirement?
+A business accepts losing no more than five minutes of recent transactions after an outage. Which recovery target expresses that requirement?
+An alternate facility has operating equipment and current replicated data ready for a rapid takeover. Which recovery site category fits?
+An alternate facility has equipment and connectivity but requires additional preparation and data restoration before service begins. Which recovery site category fits?
+An alternate location provides space and utilities but still requires computing equipment to be installed. Which recovery site category fits?
+A backup copy cannot be changed or deleted during its enforced retention interval. Which backup property is being used?
+Incident participants discuss their decisions against a fictional outage without switching production systems. Which exercise is this?
+A team deliberately switches service to its standby environment to verify that it actually works. Which exercise is this?
+Requests are distributed across multiple operating servers so no single server must handle the entire demand. Which resilience technique fits?
+A facility designs its power paths to avoid dependence on the same upstream supply. Which resilience consideration is emphasized?
+#4.1
+A company defines approved operating system settings that every new endpoint must match. Which hardening reference is this?
+A lost laptop's entire storage volume should remain unreadable without the authorized unlock material. Which protection best fits that storage scope?
+A company centrally enforces device-wide passcode, encryption, and remote-wipe settings on its tablets. Which management capability fits?
+A company restricts copying and selectively removes data inside managed business apps without wiping the personal device. Which management capability fits?
+Employees use phones they personally own for work activities. Which ownership model is this?
+The employer owns the phones but allows approved personal use. Which ownership model is this?
+A wireless deployment is upgrading to the newer Wi-Fi security generation that supports SAE for personal authentication. Which named generation fits?
+A wired switch requires a supplicant to authenticate through an authenticator before normal port access is permitted. Which standard provides this model?
+A service rejects an entered quantity outside the allowed numeric range before processing it. Which application protection is applied?
+A host agent records suspicious process activity and can isolate the endpoint during investigation. Which endpoint capability fits?
+#4.2
+A team needs a maintained record of deployed hardware, software versions, and assigned locations. Which asset-management resource supplies it?
+A person is accountable for deciding an asset's business use and required protection. Which asset role fits?
+A team performs routine maintenance and applies the protection decisions made by the asset owner. Which role does it perform?
+A laptop receives a unique physical identifier linked to its inventory record. Which asset practice is this?
+A team evaluates a product's security and support requirements before approving its purchase. Which acquisition activity is this?
+A business tracks purchased software entitlements against installed copies. Which asset-management activity is this?
+A record schedule defines how long business documents must be kept before approved disposition. Which lifecycle concern is this?
+A storage device must have sensitive information removed using an approved method suitable for its medium. Which general disposal process is required?
+A device's data is encrypted with a properly managed key, and an approved process securely destroys the necessary key material to make the data inaccessible. Which sanitization method is this?
+A disposal provider issues a record confirming that specified assets were physically destroyed. What evidence document is this?
+#4.3
+A scanner is given valid system credentials so it can inspect internal settings and installed patches. Which scanning approach is this?
+A scanner evaluates a host only from what is exposed over the network, without logging into it. Which scanning approach is this?
+A scanner reports a vulnerability, but validation establishes that the vulnerable condition is not present. What kind of detection error occurred?
+A vulnerable condition exists, but the scanner fails to report it. What kind of detection error occurred?
+An analyst needs a standardized measure of a vulnerability's technical severity, rather than a complete business-risk decision. Which measure fits?
+A team orders remediation using exploitation evidence, external exposure, service importance, and severity together. Which prioritization approach is this?
+A vendor fix cannot be deployed immediately, so the team uses a documented alternative restriction to reduce exploitation risk. Which treatment is this?
+A team runs the relevant vulnerability checks again after remediation to verify the finding is resolved. Which validation activity is this?
+A testing tool inspects application source code for weaknesses without running the application. Which testing approach fits?
+A testing tool sends crafted input to an executing application and observes its responses. Which testing approach fits?
+#4.4
+A security platform combines records from identity, network, and host systems to correlate suspicious events. Which capability fits?
+A platform coordinates a response playbook across ticketing, endpoint isolation, and network blocking tools. Which capability fits?
+A team forwards records from many systems into one collection point without yet describing correlation or response. Which data-handling activity is this?
+A detection rule repeatedly flags a legitimate scheduled task, so analysts refine its conditions while preserving detection of malicious behavior. Which activity is this?
+A tool compares protected configuration files with trusted versions and alerts when their contents change. Which monitoring capability fits?
+An analyst needs conversation summaries containing source, destination, ports, and traffic volume, rather than packet contents. Which telemetry type fits?
+An analyst needs recorded network packets for detailed inspection, subject to encryption and capture limits. Which evidence collection fits?
+A team documents normal login times and traffic patterns before deciding what counts as unusual. What reference is it establishing?
+A team incorporates external information about attacker techniques and known malicious infrastructure into detections. Which information category is this?
+Investigators cannot correlate events because source devices disagree about the current time. Which foundational monitoring requirement needs correction?
+#4.5
+A security service refuses to resolve names associated with known malicious destinations. Which capability is being used?
+A domain owner publishes how receivers should handle messages that fail aligned SPF or DKIM checks. Which named email-authentication policy mechanism fits?
+A system detects sensitive identifiers in a document leaving the company and applies a handling policy. Which capability fits?
+A network verifies a connecting device's identity and posture before placing it on an authorized network segment. Which admission capability fits?
+A gateway enforces browsing restrictions based on website categories and requested web content. Which capability fits?
+A security team investigates a suspicious process tree and isolates the affected workstation through its agent. Which capability fits?
+A platform flags account activity because it differs significantly from that user's established behavior. Which analytic capability fits?
+A network device evaluates an ordered list of source, destination, service, and permit-or-deny conditions. Which control configuration is this?
+A team replaces cleartext administration with a correctly configured encrypted management service. Which improvement is being made?
+A flat network is divided so user devices cannot directly reach sensitive backend services without an approved path. Which architecture control is this?
+#4.6
+Permissions are assigned to the job role of warehouse supervisor rather than separately granting each user individual rights. Which access model fits?
+An access decision evaluates department, device compliance, data classification, and time of day together. Which access model fits?
+A login requires a memorized secret and proof of possession of a registered hardware key. Which authentication approach is used?
+A user authenticates once and can then access several approved applications without repeated sign-in prompts. Which user-facing capability is this?
+An application trusts an authentication assertion from an identity provider in another organization. Which identity relationship is this?
+A service secures administrative credentials and monitors elevated sessions. Which access-management capability fits?
+An engineer receives elevated permissions only for an approved two-hour maintenance task, after which they expire. Which privilege approach fits?
+After an employee leaves, the organization disables the identity and removes associated access. Which lifecycle action is this?
+Managers periodically confirm that existing users still need their assigned rights. Which access-governance activity is this?
+A user signs in with an approved cryptographic authenticator instead of supplying an account password. Which authentication approach is this?
+#4.7
+An approved HR event causes a workflow to create an employee identity and assign initial access. Which automated task is this?
+An approved deployment request causes a workflow to create virtual machines, storage, and networks. Which automated task is this?
+A workflow updates cloud traffic-permission groups according to an approved application template. Which automated task is this?
+An automation platform refuses deployments that would expose restricted storage publicly. Which safety mechanism constrains the workflow?
+A deployment identity can modify only the resources needed for its specific job, rather than holding global administrator rights. Which design principle is applied?
+Running the same desired-state operation twice produces the same intended state without creating duplicate resources. Which property is this?
+A workflow detects a failed step, records the problem, and follows an explicit recovery path instead of silently continuing. Which design concern is addressed?
+An automated response opens and updates a service-management record so humans can track ownership and resolution. Which integration is this?
+A build pipeline checks code and dependencies for security problems before allowing the next deployment stage. Which automation practice is this?
+A team watches scheduled workflows for failed runs, unusual actions, and unexpected resource changes. Which ongoing control is this?
+#4.8
+Before any incident occurs, a team assigns response roles, prepares contact lists, and tests required tools. Which response phase is this?
+A monitoring system first identifies activity that may represent a compromise. Which response phase does this initial recognition support?
+Responders determine the incident's scope, likely cause, and affected assets from available evidence. Which response activity is this?
+A response team limits an affected account's access to stop further harm while investigation continues. Which response objective is this?
+Responders remove malicious persistence and close the exploited access path. Which response objective is this?
+After the cause is addressed, a team restores service and validates that normal operation is safe. Which response phase is this?
+After an incident, the team reviews what worked and changes procedures to address identified shortcomings. Which phase is this?
+Investigators document each person who handled an evidence drive and every transfer of that drive. Which evidence practice is this?
+An examiner prioritizes data that will disappear fastest before collecting more persistent evidence. Which collection principle is being applied?
+Relevant records must be preserved despite a scheduled deletion because they may be needed in a legal proceeding. Which preservation requirement is this?
+#4.9
+An investigator needs to determine when an account successfully signed in and which source address it used. Which source is the best starting point?
+An investigator needs to confirm which network rule denied a connection. Which source is the best starting point?
+An investigator needs the business application's recorded error and transaction identifier for a failed order. Which source is the best starting point?
+An investigator needs evidence of process execution and local host activity on a workstation. Which source is the best starting point?
+An investigator needs to identify which host requested resolution of a suspicious domain name. Which source is the best starting point?
+An investigator needs detailed recorded network traffic beyond a summary of connection volumes. Which source best fits that requirement?
+An investigator needs an efficient summary of conversations and bytes transferred between hosts, without payload detail. Which source best fits?
+An investigator needs findings about known weaknesses detected on an asset during its last vulnerability assessment. Which source best fits?
+A manager needs a consolidated visual summary of current security measurements, with drill-down to underlying evidence. Which presentation source fits?
+An examiner needs a file's recorded creation time and author field rather than its document text. Which information category is this?
+#5.1
+A leadership document states that access to sensitive information must be controlled and accountable. Which governance document sets that broad requirement?
+A mandatory document specifies the exact minimum settings approved for endpoint encryption. Which governance document defines those required specifics?
+A document gives technicians the ordered steps for enrolling an endpoint in encryption management. Which governance document is this?
+A document recommends optional practices for making security documentation easier to read. Which governance document is this?
+A business representative decides a dataset's classification and approves its handling requirements. Which data role fits?
+A technical team implements backup, access, and maintenance arrangements according to the data owner's decisions. Which data role fits?
+An organization determines why and how personal information will be processed. Which privacy role fits that responsibility?
+A service provider processes personal information on another organization's instructions. Which privacy role fits that responsibility?
+A board reviews security accountability, strategic objectives, and whether management is meeting its obligations. Which governance function is this?
+A team seeks a documented, authorized, time-limited deviation from a security requirement with stated risk and alternative controls. Which governance process is required?
+#5.2
+A team needs a maintained record of identified risks, owners, responses, and status. Which management artifact fits?
+Leadership states the broad amount and type of risk the organization is willing to pursue in achieving its goals. Which concept is this?
+A team sets acceptable variation around a specific risk-related operating threshold. Which concept describes this limit?
+An authorized owner knowingly retains a documented risk without adding a treatment at this time. Which response is this?
+An organization cancels an activity so the risk arising from that activity is no longer incurred. Which response is this?
+A company buys insurance to shift defined financial consequences of an incident to another party. Which risk response is this?
+A company introduces a control to reduce the likelihood or impact of a risk event. Which response is this?
+An analyst estimates the monetary loss from one occurrence of a specified incident. Which quantitative measure is being calculated?
+An analyst estimates that a specified event occurs twice in ten years and expresses its frequency as 0.2 per year. Which measure is this?
+An analyst multiplies the estimated loss per event by expected yearly frequency to estimate annual exposure. Which measure results?
+#5.3
+Before selecting a supplier, a company investigates its security practices, financial stability, and ability to meet requirements. Which activity is this?
+A customer needs contractual permission to inspect a supplier's relevant controls and evidence. Which clause should provide that permission?
+A contract defines response times, availability targets, and remedies for missed service commitments. Which agreement fits?
+A supplier must agree not to disclose confidential project information it receives. Which agreement most directly fits?
+Two organizations record their shared understanding of a planned collaboration without detailing a specific service delivery package. Which document most closely fits that purpose?
+Two organizations document their agreed responsibilities and actions for a joint initiative. Which agreement most closely fits that purpose?
+A customer and supplier establish overarching terms intended to govern multiple future engagements. Which agreement fits?
+A specific engagement needs documented deliverables, scope, milestones, and acceptance criteria. Which document fits?
+A buyer evaluates the security implications of a product's component suppliers and upstream dependencies. Which assessment is this?
+After onboarding a provider, a company regularly reviews its performance, security changes, and emerging risks. Which ongoing activity is this?
+#5.4
+A business must satisfy a security requirement imposed by an applicable government rule. Which obligation category is this?
+A provider must satisfy a security requirement because it agreed to that term with its customer. Which obligation category is this?
+A team regularly checks control evidence against applicable requirements rather than waiting for the annual review. Which ongoing activity is this?
+An accountable party formally asserts that specified requirements have been met within a stated scope. What type of compliance evidence is this assertion?
+A company explains to individuals what personal information it collects and how that information is used. Which privacy document serves this purpose?
+A system records an individual's valid agreement to a specified optional processing activity where such agreement is required. Which privacy mechanism is this?
+A business establishes a process for eligible individuals to request access to or correction of their personal information. Which privacy concern is addressed?
+A team prepares a formal submission showing control status and supporting evidence to the relevant oversight audience. Which compliance activity is this?
+A regulator imposes a monetary penalty after finding a violation. Which consequence category is this?
+Customers lose confidence in a company following public disclosure of serious noncompliance. Which consequence category is this?
+#5.5
+Assessors employed by the organization evaluate its own processes and controls. Which audit category is this?
+Independent assessors outside the organization evaluate its controls. Which audit category is this?
+A department evaluates its own practices against an assessment checklist before a formal independent review. Which assessment approach is this?
+Authorized testers attempt to exploit weaknesses to demonstrate their impact within an agreed scope. Which assessment approach is this?
+Testers receive extensive internal design information and credentials before beginning an authorized assessment. Which environment-knowledge model is this?
+Testers begin an authorized assessment without internal architecture details or credentials. Which environment-knowledge model is this?
+Testers receive limited internal information, such as one normal user account, but not full design details. Which environment-knowledge model is this?
+A testing agreement specifies permitted targets, prohibited actions, testing times, and emergency contacts. Which assessment document is this?
+A researcher follows an agreed notification process that gives the affected organization an opportunity to address a discovered flaw. Which practice is this?
+An authorized adversary-style exercise pursues defined objectives to test detection and response across multiple defenses. Which exercise fits?
+#5.6
+A training team sends controlled deceptive messages to measure how staff recognize and report them. Which exercise is this?
+An employee notices suspicious activity and uses the designated security notification channel promptly. Which desired behavior is this?
+Finance staff receive payment-fraud training while administrators receive privileged-access training. Which training approach is this?
+A lesson teaches employees to recognize manipulation through urgency, authority, and fabricated stories. Which awareness topic is this?
+A lesson teaches employees to use unique credentials, approved password managers, and appropriate authentication protection. Which awareness topic is this?
+A lesson teaches employees not to admit unknown visitors through controlled entrances and to secure unattended workspaces. Which awareness topic is this?
+A lesson covers safe work on home networks, protection from household viewing, and handling business data away from the office. Which awareness topic is this?
+Managers encourage staff to disclose mistakes quickly without disproportionate blame so security can respond sooner. Which organizational condition are they building?
+A program measures reporting speed and repeat mistakes to judge whether training changes behavior. Which program component uses these measurements?
+A lesson explains which activities and resources employees are permitted to use on company systems. Which awareness topic is this?

@@ -4,6 +4,9 @@ An offline-capable study app for GitHub Pages and iPad Safari. No build system, 
 
 ## Included
 
+- A learning dashboard and Professor Desk timeline with domain/objective video durations, watched and remaining time, playback-speed estimates, lesson/domain completion, post-learning accuracy, and a review-priority matrix.
+- 28 prerequisite introductions with a prior-knowledge bridge, teaching model, worked example, vocabulary, and watch-for questions. Each has its own independent 10-question foundation diagnostic (280 new questions), separate from the 840 post-video questions.
+- Class stages: Introduction → Videos → Post-checks → Review & notes. Pre-check review links directly to assigned videos. Low post-check scores and recent missed concepts produce focused review lessons and a next-unused-set recommendation.
 - 28 objective chapters with concept comparisons, worked situations, flow diagrams, notes, and a study tracker.
 - Three separate 10-question reinforcement sets for every objective: 84 sets / 840 original scenario prompts.
 - Three 90-item, 90-minute mixed exams: 85 multiple-choice questions and five interactive PBQs in each.
@@ -38,9 +41,24 @@ Read `docs/SOURCE_REVIEW.md` for corrections and ambiguities in the supplied PBQ
 
 Progress stays in this browser's localStorage under `security-plus-school-v4`. Export a backup before clearing browser data, changing devices, or switching between browser and home-screen installations. This app does not import Network+ progress. Existing prototype completion flags are not treated as verified results.
 
-A timed exam's deadline continues while the app is closed. When reopened after expiry, it submits the saved answers. Starting another attempt prompts before replacing the unfinished one. Submitted history retains the most recent 100 attempts.
+A timed exam's deadline continues while the app is closed. When reopened after expiry, it submits the saved answers. Starting another attempt prompts before replacing the unfinished one. Submitted history is retained across attempts. Local saving deduplicates identical question snapshots to reduce storage use while preserving the original wording. Export backups regularly; browser storage is finite.
 
-This release uses cache v5 and preserves existing v4 progress, adding guided-course and video state. After replacing the repository files, open online, close every app tab and Home Screen instance, and reopen so the waiting update can activate. Do not clear website data.
+This release uses cache v6 and preserves existing v4 progress, adding the school dashboard and introductory-lesson state. After replacing the repository files, open online, close every app tab and Home Screen instance, and reopen so the waiting update can activate. Do not clear website data.
+
+### Your existing results
+
+The same installation keeps its existing scores, notes, video checkmarks, and completed sections. Older completed-section flags migrate to lesson-completion state; missing video flags for those sections are inferred watched, while explicit unwatched flags are respected.
+
+For another device or a clean installation, use Backup & Install → Import mode **Merge** and select your personal backup. Merge preserves existing device values and adds missing attempts and fields. It does not replace newer work; duplicate attempt IDs are not added again. **Replace** remains available for an exact restore. Personal backup files are deliberately separate from this public-site ZIP. Do not upload personal backup JSON to GitHub Pages.
+
+### How the matrix works
+
+- Lesson completion is separate from assessment proficiency. Choosing **Lessons complete** marks the listed videos watched; individual checkmarks can be adjusted afterward. Flagging a completed lesson for review does not erase completed learning.
+- Video totals sum the 120 objective videos at normal playback speed: 15h 0m 54s. The separate 0.1 exam-introduction video is excluded. Time remaining excludes reading, quizzes, review, and breaks; it is not a prediction of exam readiness or actual study time.
+- Each A/B/C cell shows the latest attempt on that set. Below 70% requests a focused lesson; 70–84% requests reinforcement; 85%+ is strong evidence on that check. Two distinct sets at 85%+, lessons complete, and the latest post-check at 85%+ produce the **Retain & revisit** signal. These are app teaching rules, not CompTIA cut scores.
+- Pre-checks are diagnostic. They are excluded from post-learning accuracy and weak-area selection. The earliest retained pre-check is the baseline. Pre/post and recent post/post differences are displayed as percentage-point changes on different question sets, not controlled learning measurements.
+- Recent missed concepts appear in focused lessons, even when an overall score is high. The most recent result for a concept determines whether it remains in that list. A repeated correct answer can reflect recall, so use distinct sets and delayed practice.
+- Assessment history is retained rather than dropping the oldest attempts after 100 submissions. Identical question snapshots are deduplicated in local storage. Export periodically; browser storage remains finite. Scores are not validated predictions of real-exam performance.
 
 For future releases, change the cache name in `sw.js` and the matching cache check in `js/app.js`. Closing all app tabs lets an installed update activate.
 
@@ -67,3 +85,7 @@ Open `http://localhost:8080`. Serve through HTTPS for remote installation.
 Browser checks covered scoring, saved answer and PBQ recovery, terminal command gating, hidden exam feedback, offline navigation, 90-item exam construction, backup import/export, timer expiry, and viewport overflow. See `docs/TEST_RESULTS.json`. Portrait 820×1180, landscape 1180×820, and mobile 390×844 layouts were inspected in headless Chromium. All 13 PBQs and every task page also passed bounds checks at 1024×768, 768×1024, and 1180×820. Guided grading/resume, watched-video persistence, direct URL mapping, and offline guided lessons were checked. Actual iPadOS Safari and its software keyboard still require device testing.
 
 Guided lesson content is authored in `authoring/guided.py`; run it to regenerate `js/guided-data.js`. Video metadata in `js/videos.js` follows the official SY0-701 course index retrieved 2026-09-27. This independent study app is not affiliated with Professor Messer or CompTIA.
+
+Prerequisite content is in `authoring/introductions.txt` and `authoring/prechecks.txt`; run `python3 authoring/generate-prelearning.py` to regenerate `js/prelearning.js`. The prerequisite bank is a foundation diagnostic, not a simulated full exam. Tracking calculations are isolated in `js/tracking.js`, and class/dashboard presentation is in `js/school-ui.js`.
+
+The school-dashboard update was tested for exact video-second totals, backup migration and idempotent merge, prerequisite scoring, pre/post separation, threshold changes, watched-state changes, completion/review independence, offline introductions and diagnostics, and iPad/phone layout bounds. Browser testing uses Chromium viewport emulation; actual iPadOS Safari and software-keyboard validation remain device-specific.

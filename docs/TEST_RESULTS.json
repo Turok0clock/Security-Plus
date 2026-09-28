@@ -41,5 +41,27 @@
     "overflow": [],
     "offline": "guided lessons passed",
     "errors": []
+  },
+  "school_dashboard_update": {
+    "tests": [
+      "28 introductions and 280 unique independent pre-check questions",
+      "score and readiness thresholds",
+      "two distinct sets required for retention signal",
+      "weak latest attempt overrides prior success",
+      "pre-check excluded from post-learning average",
+      "backup migration preserves scores and notes",
+      "idempotent non-destructive merge",
+      "video seconds and playback estimates",
+      "completion and review flags independent",
+      "explicit unwatched video remains counted",
+      "pre-check scoring and reload",
+      "intro read persistence",
+      "PBQ regression smoke",
+      "portrait landscape and phone bounds",
+      "offline intro and diagnostic",
+      "134-attempt history round trip with deduplicated question snapshots",
+      "pre-check feedback continues directly to assigned videos"
+    ],
+    "pageErrors": []
   }
 }
