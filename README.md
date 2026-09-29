@@ -89,3 +89,10 @@ Guided lesson content is authored in `authoring/guided.py`; run it to regenerate
 Prerequisite content is in `authoring/introductions.txt` and `authoring/prechecks.txt`; run `python3 authoring/generate-prelearning.py` to regenerate `js/prelearning.js`. The prerequisite bank is a foundation diagnostic, not a simulated full exam. Tracking calculations are isolated in `js/tracking.js`, and class/dashboard presentation is in `js/school-ui.js`.
 
 The school-dashboard update was tested for exact video-second totals, backup migration and idempotent merge, prerequisite scoring, pre/post separation, threshold changes, watched-state changes, completion/review independence, offline introductions and diagnostics, and iPad/phone layout bounds. Browser testing uses Chromium viewport emulation; actual iPadOS Safari and software-keyboard validation remain device-specific.
+# Current learning update
+
+The pre-video lessons now add a worked decision and a distinction section for every objective before the existing topic cards, acronym expansions, memory hooks, and ten-question diagnostic. Revised question IDs cover Sets A/B/C for Domains 3–5 and Sets B/C for Domains 1–2. The original Domain 1–2 Set A IDs and answer data remain available for saved attempts. Practice questions are based on the authored curriculum scenarios; they are original practice, not Professor Messer exam items or a calibrated prediction of the CompTIA exam.
+
+The default theme is dark with violet and cyan accents. A Light theme button saves its setting on the device. Progress uses a separate storage key and remains intact when the theme changes. The version 9 service worker includes the new lessons and theme files for offline study; external videos still require internet.
+
+To regenerate lesson content, run `python authoring/build-deep-lessons.py`. To regenerate the question bank, run `python authoring/generate.py`.

@@ -1,0 +1,35 @@
+:root,[data-theme="dark"]{color-scheme:dark;--bg:#0c1020;--bg2:#101629;--panel:#192139;--panel2:#202a46;--panel3:#283455;--text:#f2f5ff;--muted:#b8c4dd;--line:#394667;--accent:#af91ff;--accent2:#66dded;--info:#72d8f2;--good:#72dfb1;--bad:#ff8799;--shadow:0 14px 42px #02051055}
+[data-theme="dark"] .sidebar{background:linear-gradient(180deg,#151931,#0c1020)}
+[data-theme="dark"] .sidebar .brand-mark,[data-theme="dark"] .btn.primary,[data-theme="dark"] .lesson-steps .current{color:#101322}
+[data-theme="dark"] .topbar,[data-theme="dark"] .modal-head{background:#101629f2}
+[data-theme="dark"] .next-class{background:linear-gradient(130deg,#29244a,var(--panel))}
+[data-theme="dark"] .memory-hook{background:#292949;border-left-color:var(--accent2)}
+[data-theme="dark"] .answer-option.selected{background:#30274e;border-color:var(--accent)}
+[data-theme="dark"] .readiness.r0,[data-theme="dark"] .signal-0{background:#462435;color:#ffc6ce}
+[data-theme="dark"] .readiness.r1,[data-theme="dark"] .signal-1{background:#3d3540;color:#e2c5fa}
+[data-theme="dark"] .readiness.r2,[data-theme="dark"] .signal-2{background:#203d54;color:#9feaff}
+[data-theme="dark"] .readiness.r3,[data-theme="dark"] .signal-3{background:#19443c;color:#aff5d2}
+[data-theme="dark"] .lab-modal{--bg2:#101629;--panel:#192139;--panel2:#202a46;--text:#f2f5ff;--muted:#b8c4dd;--line:#394667;--accent:#af91ff;--accent2:#66dded;background:var(--bg2);color:var(--text)}
+[data-theme="dark"] .lab-modal .modal-head{background:var(--bg2)}
+[data-theme="dark"] .lab-modal .card{background:var(--panel)}
+[data-theme="dark"] .lab-modal .select{background:var(--panel2);color:var(--text)}
+[data-theme="dark"] .lab-modal .example{background:var(--panel2);color:var(--text)}
+[data-theme="light"]{color-scheme:light;--bg:#f4f6fb;--bg2:#eef1fa;--panel:#fff;--panel2:#f2f5fd;--panel3:#e9edfb;--text:#17233d;--muted:#51617c;--line:#d9e1ef;--accent:#6748cb;--accent2:#087b95;--info:#087b95;--good:#16775d;--bad:#ba3b55;--shadow:0 14px 40px #26305217}
+[data-theme="light"] body,[data-theme="light"] .main{background:var(--bg);color:var(--text)}
+[data-theme="light"] .sidebar{background:#e9e8f6;color:var(--text);--text:#17233d}
+[data-theme="light"] .sidebar .brand-mark,[data-theme="light"] .btn.primary,[data-theme="light"] .lesson-steps .current{color:#fff}
+[data-theme="light"] .topbar,[data-theme="light"] .modal-head{background:#fffffff2}
+[data-theme="light"] .next-class{background:linear-gradient(130deg,#efebff,var(--panel))}
+[data-theme="light"] .memory-hook{background:#f2efff;border-left-color:var(--accent)}
+[data-theme="light"] .answer-option.selected{background:#f1edff;border-color:var(--accent)}
+[data-theme="light"] .lab-modal{color-scheme:light;--bg2:#f4f6fb;--panel:#fff;--panel2:#eef1fa;--text:#17233d;--muted:#51617c;--line:#d9e1ef;--accent:#6748cb;--accent2:#087b95;background:var(--bg2);color:var(--text)}
+[data-theme="light"] .lab-modal .modal-head,[data-theme="light"] .lab-modal .card{background:var(--panel)}
+[data-theme="light"] .lab-modal .select{background:var(--panel);color:var(--text)}
+[data-theme="light"] .lab-modal .example{background:var(--panel2);color:var(--text)}
+[data-theme="light"] .lab-modal small{color:var(--muted)}
+[data-theme="light"] .readiness.r0,[data-theme="light"] .signal-0{background:#fff0f1;color:#a82842}
+[data-theme="light"] .readiness.r1,[data-theme="light"] .signal-1{background:#fff4dc;color:#825a0b}
+[data-theme="light"] .readiness.r2,[data-theme="light"] .signal-2{background:#e7f5ff;color:#135c82}
+[data-theme="light"] .readiness.r3,[data-theme="light"] .signal-3{background:#e4f8ef;color:#165d45}
+.deeper-lesson{border-left:4px solid var(--accent2)}.deeper-lesson p{line-height:1.75;color:var(--text)}.deeper-lesson h3{margin-top:20px}.deeper-lesson li{margin:8px 0;line-height:1.6}
+@media(max-width:650px){#themeToggle{font-size:.72rem;padding:7px;min-height:44px}}

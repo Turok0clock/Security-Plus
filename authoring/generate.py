@@ -23,3 +23,5 @@ for o in objectives:
    questions.append({'id':f"{o['id']}-{s+1}-{i+1}",'objective':o['id'],'set':s+1,'concept':c['label'],'prompt':case+' Which '+axis+' BEST matches this scenario?','options':[x['label'] for x in opts],'correct':opts.index(c),'explanations':[('Correct. ' if x is c else 'Not the best match. ')+x['definition']+(' The scenario describes this property or behavior.' if x is c else ' The scenario instead points to '+c['label']+'.') for x in opts]})
 (ROOT/'js/curriculum.js').write_text('window.CURRICULUM='+json.dumps({'objectives':objectives,'questions':questions},ensure_ascii=False)+';')
 print(len(objectives),len(questions))
+import subprocess,sys
+subprocess.run([sys.executable,str(ROOT/'authoring/revise-questions.py')],check=True)
