@@ -1,0 +1,186 @@
+@4.1
+P|Hardening starts with a known approved baseline, removes unnecessary exposure, and verifies the result. A device is not secure merely because one product is installed. Control local services, updates, accounts, storage, application execution, and network interfaces. For mobile devices, distinguish who owns the device from what management can control. BYOD policies must account for personal data and supported management boundaries.
+P|Enterprise wireless separates link protection from identity-based admission. WPA3 improves wireless security, while 802.1X supplies the per-user authentication framework used by enterprise deployments. A pre-shared key identifies possession of a shared secret, not an individual employee. For applications, validate input and use safe interfaces; transport encryption does not prevent the application from interpreting malicious input. Endpoint detection examines behavior after or during execution and complements preventive hardening.
+F|Inventory the device|Apply approved baseline|Remove unnecessary access|Protect storage and applications|Verify posture and monitor
+T|Secure baseline|An approved reference configuration defines required settings and enables drift detection. Tailor it to the system's role and test changes before broad deployment.
+T|Full-disk encryption|Protects stored disk contents against unauthorized offline reading. It does not stop a logged-in process from reading data that the user is authorized to access.
+T|MDM|Mobile Device Management configures and manages device-level settings, compliance, enrollment, and supported remote actions. Scope depends on ownership, platform, and enrollment mode.
+T|MAM|Mobile Application Management controls managed applications and their data, often separating business data from personal content. It is narrower than full device administration.
+T|BYOD|Bring Your Own Device permits personal devices for work under an agreed policy. Ownership creates privacy, support, and separation requirements beyond technical access alone.
+T|COPE|Corporate-Owned, Personally Enabled devices belong to the organization while allowing defined personal use. Ownership and management rights differ from BYOD.
+T|WPA3|Wi-Fi Protected Access 3 provides modern wireless security capabilities. Personal and enterprise modes differ; WPA3 alone does not specify centralized corporate-account authentication.
+T|802.1X|A port-based authentication framework involving a supplicant, authenticator, and authentication server. Enterprise wireless commonly uses it for individual credentials rather than one shared wireless password.
+T|Input validation|Checks inputs for expected type, range, structure, and context before processing. Combine it with parameterized database interfaces and safe output handling rather than relying on a single blacklist.
+T|EDR|Endpoint Detection and Response collects endpoint behavior and supports investigation or containment. Process ancestry and file activity can reveal threats missed by simple signatures.
+T|Sideloading|Installs applications outside the usual approved distribution channel. It may bypass review controls and is not the name for mandatory patch remediation during network admission.
+T|Sandboxing|Runs code in a constrained environment to observe behavior or limit effects. Isolation and escape risks must be considered; a quiet sandbox result does not prove safety.
+E|A contractor owns a phone used for company mail. MAM can control the mail application's business data while limiting personal-data impact. If policy requires device-wide configuration, an appropriate MDM enrollment may be necessary. Full-disk encryption protects offline storage, but it does not stop an authorized app from leaking data. Choose the control at the needed scope.
+Q|0,2,9,1|A team defines approved services, account settings, and logging parameters for every new server. What artifact is created?|A secure baseline specifies the approved reference state.
+Q|1,0,9,8|A powered-off laptop is stolen. Which control most directly protects its stored files from offline reading?|Full-disk encryption protects stored content without the key.
+Q|2,3,4,5|An administrator needs to enforce device-wide passcode and enrollment settings on managed phones. Which platform fits?|MDM operates at device-management scope.
+Q|3,2,4,5|Only corporate application data should be managed on personal phones, minimizing control over personal content. Which approach fits?|MAM focuses on applications and their business data.
+Q|4,5,2,3|Employees use personally purchased phones for approved work functions. Which ownership model applies?|Personal ownership with permitted work use is BYOD.
+Q|5,4,2,3|The company purchases phones but permits limited personal use under policy. Which model fits?|Corporate ownership plus personal use is COPE.
+Q|7,6,2,0|Each wireless user must authenticate with a unique corporate account through a central server. Which framework is required?|802.1X supports individual enterprise network authentication.
+Q|6,7,1,0|A team upgrades wireless link security from WPA2 to the newer Wi-Fi protection standard. Which technology is selected?|WPA3 is the wireless security standard in this comparison.
+Q|8,9,11,0|An application rejects quantities outside its valid numeric range before processing orders. Which control is applied?|Input validation checks allowable values before use.
+Q|9,0,11,8|A tool records process trees and isolates an endpoint after suspicious execution. Which capability fits?|EDR combines endpoint behavioral visibility with response.
+Q|10,2,3,11|A user installs an application directly from an unapproved package rather than the managed store. Which action is this?|Installation outside the approved distribution path is sideloading.
+Q|11,9,8,0|A suspicious attachment is executed in a constrained disposable environment for observation. Which technique fits?|Sandboxing isolates execution for analysis.
+Q|0,2,9,8|A server's settings are compared with an approved reference to identify drift. What is the reference?|A secure baseline defines the intended configuration.
+Q|3,2,4,5|The company wants to wipe work email without erasing a user's personal photos. Which management scope is best aligned?|Application-level management can target business data.
+Q|2,3,0,9|A fleet of corporate tablets needs remote configuration and compliance reporting. Which technology fits?|MDM coordinates supported device-wide controls.
+Q|1,0,9,11|A drive removed from a laptop must remain unreadable in another computer. Which protection fits?|Disk encryption protects against offline access to removed media.
+Q|7,6,2,0|A switch blocks ordinary traffic until a connected endpoint authenticates through an EAP exchange. Which framework is used?|Port-based authenticated admission is 802.1X.
+Q|8,11,9,0|A service accepts only a defined date format and rejects unexpected characters before parsing. Which practice is shown?|Input validation constrains data to the expected structure.
+Q|9,11,0,8|An investigator needs the parent process that launched an unusual executable on a laptop. Which capability supplies this evidence?|EDR commonly records process lineage and endpoint events.
+Q|5,4,2,3|Staff can use company-owned laptops personally within limits. Which ownership policy describes this?|Corporate ownership with permitted personal use is COPE.
+Q|4,5,3,2|Security policy must address employee-owned hardware, personal privacy, and work-data separation. Which model causes these considerations?|BYOD combines personal ownership with business access.
+Q|6,7,1,0|A requirement specifically calls for modern Wi-Fi authentication and encryption protections at the wireless link. Which standard fits?|WPA3 concerns wireless protection rather than device management.
+Q|11,9,8,10|Developers observe an untrusted program in an isolated test environment before approval. Which technique is used?|Constrained execution for observation is sandboxing.
+Q|10,3,2,11|An employee bypasses the approved app store to install a downloaded mobile package. Which policy issue is present?|The application is sideloaded outside normal distribution.
+Q|0,9,2,1|New systems must start with only necessary services enabled and approved audit settings. Which reference should guide deployment?|The secure baseline defines required hardening settings.
+Q|7,6,3,2|One shared Wi-Fi password must be replaced by individual identities with central access decisions. Which framework fits?|802.1X enables per-user enterprise authentication.
+Q|3,2,4,5|An organization controls copy-and-paste between work apps while leaving personal apps unmanaged. Which management approach fits?|MAM applies policy at the application-data boundary.
+Q|8,11,9,0|A web service rejects an oversized upload before allocating processing resources. Which control is operating?|Input validation enforces acceptable size before processing.
+Q|9,11,0,1|A security platform correlates file writes, network activity, and child processes on a host to support containment. Which tool fits?|EDR focuses on endpoint behavior and response.
+Q|1,0,2,9|A laptop meets configuration policy but lacks protection against offline disk extraction. Which additional control addresses the gap?|Full-disk encryption protects stored content when the system is not unlocked.
+@4.2
+P|Asset management follows acquisition, assignment, operation, movement, and retirement. You cannot reliably patch or remove what you cannot identify. An inventory records hardware, software, owners, locations, versions, and status. Enumeration discovers or lists individual components; an asset tag connects a physical item to a record. Neither proves that its data has been erased.
+P|Retirement separates inventory, sanitization, destruction, and evidence. Sanitization renders data infeasible to recover according to the required method. Destruction physically prevents reuse. A certificate documents what was done; it is evidence, not the action itself. Cryptographic erase depends on effective encryption and destruction of all relevant key copies. Retention and legal requirements must be checked before deleting data, even when the hardware is obsolete.
+F|Discover and record|Assign responsibility|Track changes and licenses|Check retention|Sanitize or destroy|Keep evidence and close access
+T|Asset inventory|A maintained record of assets, versions, owners, locations, and lifecycle status. It supports vulnerability management, accountability, and retirement; unknown systems undermine those processes.
+T|Asset owner|The accountable party approves business use, requirements, and risk decisions for an asset. Ownership does not necessarily mean performing daily technical administration.
+T|Asset custodian|Performs day-to-day handling, maintenance, and protection according to policy and owner decisions. The custodian implements rather than independently inventing business access requirements.
+T|Asset tagging|Attaches or associates a unique identifier with an asset so physical tracking and inventory records refer to the same item. A label alone does not describe every installed component.
+T|Procurement review|Evaluates security, support, licensing, and lifecycle implications before acquisition. It prevents buying an unsupported or unmanageable product rather than discovering constraints after deployment.
+T|License management|Tracks software entitlements and installed use to avoid unauthorized or unsupported deployment. A working installation does not itself prove the organization has a license.
+T|Retention policy|Defines how long information must be kept and when disposal is allowed, considering business and applicable obligations. Legal holds can suspend normal deletion.
+T|Sanitization|Applies a verified process to make stored data recovery infeasible for the required assurance level. Choose methods suitable for the media, sensitivity, and reuse plan.
+T|Cryptographic erase|Renders encrypted data inaccessible by destroying its encryption keys. It depends on prior encryption and control of all usable key copies, including backups.
+T|Certificate of destruction|Documents destruction of identified assets or media, including relevant custody and processing details. It is evidence of the action, not the erasure mechanism.
+T|Enumeration|Identifies and lists individual assets, components, or attributes. Recording drive sizes, memory, and adapters is enumeration rather than sanitization or certification.
+T|Physical destruction|Physically damages media so reuse and data recovery are prevented to the required standard. Verification and chain-of-custody records remain important.
+E|Before retiring a server, a technician lists its drives and adapters: enumeration. The inventory links those components to an owner and asset identifier. Retention is checked, the chosen sanitization or destruction method is performed, evidence is retained, and accounts are revoked. These distinct steps should not be collapsed into the word 'disposal.'
+Q|10,7,9,11|A technician records every drive's type and size plus installed memory and adapters before disposal. Which activity is this?|Listing components is enumeration, not data removal.
+Q|0,10,3,5|A security team needs a maintained record of systems, software versions, and accountable owners. Which resource fits?|The asset inventory consolidates lifecycle and identity records.
+Q|1,2,4,3|A department head approves whether a business system may accept a documented risk. Which asset role fits?|The accountable owner makes business risk decisions.
+Q|2,1,4,3|A technician applies approved settings and maintains equipment for the accountable business unit. Which role is this?|The custodian performs operational maintenance.
+Q|3,0,10,5|A barcode is attached to a laptop and linked to its inventory record. Which process is shown?|Asset tagging associates a unique physical identifier with the record.
+Q|4,5,0,1|Before buying controllers, a team checks vendor support lifetime and patch availability. Which process fits?|Security and lifecycle assessment before purchase is procurement review.
+Q|5,4,0,6|Installed software copies are compared against purchased entitlements. Which activity is this?|License management reconciles usage with authorization.
+Q|6,7,8,9|Records must remain available for seven years before disposal is allowed. Which policy governs this?|The rule sets a retention period.
+Q|7,11,9,10|A drive will be reused after a verified process makes prior data infeasible to recover. Which broad process is required?|Sanitization removes recoverable data while potentially allowing reuse.
+Q|8,7,11,9|Encrypted media becomes unreadable after all usable encryption keys are securely destroyed. Which method is used?|Destroying decryption capability is cryptographic erase.
+Q|9,11,7,10|An auditor requests documented proof identifying which drives a disposal vendor destroyed. Which artifact fits?|A certificate of destruction supplies process evidence for identified media.
+Q|11,7,8,9|Media is shredded so it can no longer function as storage. Which method is performed?|Physical destruction makes the media unusable.
+Q|0,3,10,5|A patch program misses servers because no record links them to current owners or versions. Which management resource needs repair?|An accurate inventory supports discovery and assignment of remediation.
+Q|10,0,3,9|An engineer scans and lists the hardware components present in a retired workstation. What is this specific activity?|Discovering and listing components is enumeration.
+Q|2,1,4,5|A storage administrator implements access approved by the business owner. Which role does the administrator fulfill?|The custodian implements approved handling controls.
+Q|1,2,3,0|A manager decides the required protection level for a department's system. Which role is responsible?|The asset owner defines business requirements and accountability.
+Q|4,5,0,6|A product is rejected before purchase because the supplier cannot provide security updates. Which process prevented the exposure?|Procurement review evaluates security support before acquisition.
+Q|3,0,10,5|A missing device is matched to an assignment record using its attached identifier. Which mechanism enabled the match?|Asset tagging connects the physical item to its record.
+Q|7,8,11,9|A reusable drive must have old data removed with verified effectiveness. Which overall disposal control applies?|Sanitization is the broader process appropriate to recovery prevention.
+Q|6,7,9,11|A legal hold stops scheduled destruction of records on retired hardware. Which normal policy is being overridden?|A hold suspends ordinary retention-based disposal.
+Q|5,4,0,6|A merger leaves more installed application instances than the acquired licenses allow. Which discipline addresses the mismatch?|Software license management tracks entitlements against use.
+Q|8,7,11,9|A company destroys every copy of a protected volume's key, including escrow copies, to retire encrypted data. Which method fits?|Eliminating all decryption keys implements cryptographic erase.
+Q|11,9,7,10|A policy requires media to be physically unusable rather than prepared for reuse. Which method best fits?|Physical destruction satisfies the no-reuse requirement.
+Q|9,11,7,0|A disposal vendor supplies a signed record of media serial numbers and destruction dates. What is this evidence called?|The document is a certificate of destruction.
+Q|0,10,3,4|A discovered server is added with owner, location, software, and lifecycle status. Which maintained resource is updated?|Those fields belong in the asset inventory.
+Q|10,7,9,11|A worksheet lists storage, memory, and network cards but says nothing about data erasure. Which activity can be concluded?|The evidence supports enumeration only.
+Q|2,1,4,0|An operations team carries out the owner's approved backup and handling rules. Which role fits?|Custodians execute day-to-day protection requirements.
+Q|4,5,6,0|A proposed device cannot integrate with required authentication and monitoring tools. Which pre-acquisition process should flag this?|Procurement review checks security compatibility before purchase.
+Q|6,7,11,9|A team asks whether customer records may be deleted before sanitizing an old server. Which policy should it consult first?|Retention requirements determine whether disposal is permitted.
+Q|7,9,10,0|A drive was merely formatted, and assurance is needed that prior data cannot be recovered. Which process must be properly verified?|Verified sanitization is required beyond an assumed formatting result.
+@4.3
+P|Vulnerability management discovers weaknesses, validates findings, prioritizes risk, treats exposure, and verifies results. A scanner report is evidence to investigate. Credentialed scans see authenticated configuration details; noncredentialed scans approximate what is visible without that access. Neither is complete by itself. A missing finding may reflect coverage, credentials, signatures, reachability, or configuration, not absence of the weakness.
+P|False positive means the tool reports a condition that is not actually present. False negative means the tool misses a condition that is present. A known unpatched server with a clean scan is a false negative if the vulnerability's applicability has been established. CVSS scores technical severity; business priority also depends on exposure, exploitation, asset value, and compensating safeguards. Remediation is not complete until verification shows the relevant condition has changed.
+F|Discover|Validate applicability|Prioritize actual risk|Remediate or mitigate|Rescan and document
+T|Credentialed scan|Uses authorized credentials to inspect configuration, software, and patch state not visible externally. Protect the scan account and verify authentication actually succeeds.
+T|Noncredentialed scan|Assesses exposed services without logging into the target. It helps characterize external visibility but may miss internal configuration and installed-package details.
+T|False positive|A finding asserts a vulnerability or event that is not actually present. Validate evidence before closing it; disagreement alone does not prove the tool is wrong.
+T|False negative|A real applicable vulnerability or event is missed. Investigate scan coverage, credentials, signatures, and reachability rather than treating silence as proof of safety.
+T|CVSS|Common Vulnerability Scoring System describes technical severity. Use it with environmental and business context; the largest score is not automatically the first business priority.
+T|Risk-based prioritization|Ranks remediation using likelihood, impact, exposure, exploitation evidence, criticality, and existing controls. It converts technical findings into defensible operational priorities.
+T|Compensating mitigation|Applies alternative exposure reduction when immediate remediation is impractical. Restricting access to an unpatchable service can reduce risk without claiming the flaw is fixed.
+T|Rescanning|Repeats appropriate assessment after treatment to verify that the vulnerability is no longer present or exposed as intended. Installation logs alone may not establish this.
+T|SAST|Static Application Security Testing examines code or artifacts without running the application to find potential weaknesses. Findings require context and validation.
+T|DAST|Dynamic Application Security Testing exercises a running application from the outside to observe behavior. It can detect runtime issues without source access but has coverage limits.
+T|Penetration testing|Authorized attempts to demonstrate exploitability and impact within agreed scope. It goes beyond listing potential vulnerabilities and must respect rules of engagement.
+E|A scan reports an old library, but vendor evidence confirms the installed build includes a backported fix: investigate a possible false positive. A different server is verified vulnerable, yet the scan missed it because its credentials failed: false negative. Patch the exposed critical service, then rescan with working access to confirm the result. Keep severity and operational priority separate.
+Q|3,2,4,0|A verified vulnerable unpatched server produces a clean scan result. Which result classification fits?|The scanner missed a real applicable vulnerability.
+Q|2,3,4,7|A scanner flags a flaw, but validated vendor evidence shows the installed build is not affected. Which classification fits?|The finding reports a vulnerability that is absent.
+Q|0,1,8,9|A scan needs local package versions and protected configuration settings. Which assessment mode is most useful?|Authenticated access supports deeper local inspection.
+Q|1,0,8,10|A team wants to assess only services visible to an unauthenticated external client. Which scan type fits?|A noncredentialed scan assesses exposed unauthenticated visibility.
+Q|4,5,2,3|An analyst needs a standardized measure of a vulnerability's technical severity. Which system fits?|CVSS describes technical severity rather than complete business priority.
+Q|5,4,6,7|An actively exploited internet-facing flaw is prioritized over a higher-scored isolated lab flaw. Which approach explains the decision?|Actual exposure and exploitation shape risk-based priority.
+Q|6,7,0,10|A critical appliance cannot be patched this week, so access is narrowly restricted and monitored. Which treatment fits?|Alternative controls reduce exposure while the underlying flaw remains.
+Q|7,0,1,5|A team has installed a fix and now needs evidence the affected condition is gone. Which next verification activity fits?|Rescanning checks the result rather than assuming installation succeeded.
+Q|8,9,10,0|Developers analyze source code for unsafe data flows without executing it. Which testing method fits?|Static testing examines code without running the application.
+Q|9,8,10,1|A running application is tested through its exposed interfaces without source access. Which method fits?|Dynamic testing observes application behavior during execution.
+Q|10,1,9,8|An authorized tester demonstrates that a weakness permits access to restricted data under defined scope. Which activity fits?|Demonstrating exploitability and impact is penetration testing.
+Q|3,2,4,7|The scanner never reached a subnet containing confirmed affected servers, but reports no findings. Which limitation caused missed results?|Real vulnerabilities were omitted, producing false negatives.
+Q|0,1,8,9|A report claims authenticated inspection, but the service account failed to log in. Which scan capability did not actually occur?|Credentialed scanning requires successful authenticated access.
+Q|2,3,4,6|A reported port exposure is disproved by verified configuration and packet evidence for the target. What may the finding represent?|Evidence contradicts the asserted vulnerability, supporting a false positive.
+Q|5,4,6,7|A team combines asset importance, internet exposure, and exploit activity when scheduling fixes. Which method fits?|These factors support risk-based prioritization.
+Q|6,7,10,0|An unavailable vendor patch leads to disabling the vulnerable feature temporarily. What type of treatment is this?|The alternative reduces exposure without installing the permanent code fix.
+Q|8,9,10,1|A build pipeline flags an unsafe function call before any deployment. Which test type fits?|Code analysis before execution is SAST.
+Q|9,8,0,1|A test observes how a live web service handles unexpected requests. Which application testing method fits?|Testing runtime responses is DAST.
+Q|7,5,4,0|A patch process reports success but the vulnerable service may still be running old code. What verifies remediation?|Rescanning or equivalent validation checks the actual active state.
+Q|1,0,9,8|A scan uses no target credentials and records only publicly reachable service behavior. Which mode is this?|The assessment is noncredentialed.
+Q|4,5,2,3|Two analysts need a common technical severity scale before adding local business context. Which measure fits?|CVSS supplies the common technical severity basis.
+Q|10,9,8,1|A tester chains two weaknesses to demonstrate unauthorized access within an approved engagement. Which activity fits?|An exploit chain proving impact is penetration testing.
+Q|3,2,6,4|A scanner's outdated checks omit a confirmed known flaw. Which result problem exists?|The applicable flaw exists but is not detected.
+Q|2,3,7,4|A version-only check flags a package even though its documented security fix was backported. Which result should be investigated?|The version heuristic may produce a false positive.
+Q|5,4,6,7|A medium-severity flaw affects a critical exposed service while a severe flaw affects an unused isolated test host. What guides remediation order?|Contextual risk, not severity alone, determines priority.
+Q|0,1,8,9|The team needs to inspect password-policy settings unavailable to an external network probe. Which assessment access helps?|Credentials allow inspection of protected configuration.
+Q|6,7,10,5|A legacy server remains vulnerable but is placed behind a restricted gateway until retirement. Which treatment fits?|The gateway is compensating mitigation rather than proof of a fix.
+Q|7,5,0,1|After a configuration correction, the same finding is checked under valid scan conditions. Which step is performed?|Follow-up assessment verifies remediation through rescanning.
+Q|8,9,10,1|A tool inspects compiled artifacts without launching the program. Which application security testing category fits?|Static analysis can inspect artifacts without execution.
+Q|9,8,0,10|A tester evaluates an application's authentication responses while it runs. Which testing category is closest?|DAST evaluates live application behavior.
+@4.4
+P|Monitoring turns events into useful evidence. Sources generate records; aggregation collects them; normalization aligns formats; correlation relates events; detection applies logic; response acts. A SIEM can correlate authentication and endpoint events. SOAR coordinates response tasks such as enrichment and ticket creation. Installing a collector does not automatically provide meaningful detection coverage.
+P|Logs need reliable timestamps, identity, source, action, and result. Baselines identify expected activity but should not normalize an ongoing compromise. Tune false alerts through evidence while retaining coverage. SCAP is the Security Content Automation Protocol, a suite of specifications for exchanging and processing configuration and vulnerability information. It supports automated assessment and workflows; it is not itself a magic patch installer. NetFlow describes conversations; packet capture can include contents, subject to encryption and collection scope.
+F|Generate useful events|Collect and normalize|Correlate context|Validate alerts|Respond and measure coverage
+T|SIEM|Security Information and Event Management centralizes and correlates security records for detection and investigation. Good results depend on source coverage, parsing, timestamps, and detection logic.
+T|SOAR|Security Orchestration, Automation, and Response coordinates tools and workflows, such as enrichment, containment approval, and ticket updates. Automation needs safeguards and error handling.
+T|Log aggregation|Collects logs into a common location. Collection alone does not imply correlation, successful parsing, retention integrity, or useful alert rules.
+T|Alert tuning|Adjusts detection thresholds or logic using validated outcomes to reduce noise without suppressing real threats. Blindly disabling noisy rules may hide the underlying problem.
+T|File integrity monitoring|Compares important files with trusted baseline information and reports changes. Legitimate updates also change files, so investigate context before labeling a change malicious.
+T|NetFlow|Summarizes network conversations with addresses, ports, timing, and volume rather than full payload. It helps identify communication patterns at scale.
+T|Packet capture|Records packets at a collection point, potentially including payload. Visibility depends on placement and encryption; a capture is not automatically decrypted application content.
+T|Behavior baseline|A reference of expected activity used to detect deviations. Include appropriate operating cycles and validate the reference period so abnormal activity is not accepted as normal.
+T|Threat intelligence|Context about threats, indicators, techniques, and adversary activity informs prioritization and detection. Sources, age, applicability, and false matches must be evaluated.
+T|Time synchronization|Aligns clocks so events can be correlated across systems. Preserve timezone and timestamp interpretation; clock skew can create misleading incident sequences.
+T|SCAP|Security Content Automation Protocol standardizes machine-readable configuration and vulnerability information using interoperable specifications. It supports repeatable assessment and security automation ecosystems.
+E|A firewall logs an outbound session, an endpoint records its process, and an identity service records the account. SIEM correlation can connect them if host identifiers and clocks align. SOAR may then enrich the destination and create an investigation ticket. Neither tool changes the fact that one connection alone may be benign; validate the combined evidence.
+Q|0,1,2,8|An analyst correlates sign-ins, firewall events, and endpoint records across systems. Which platform best supports this?|SIEM provides centralized cross-source security correlation.
+Q|1,0,2,3|A verified alert triggers enrichment, an approval request, and an automated ticket update across tools. Which capability fits?|SOAR coordinates multi-tool response workflows.
+Q|2,0,1,9|Systems forward raw logs to one storage service, but no correlation rules exist. Which capability is definitely present?|The evidence establishes log aggregation only.
+Q|3,7,8,0|Analysts adjust a rule after confirming a recurring business task causes false alerts. Which activity is this?|Evidence-based detection adjustment is alert tuning.
+Q|4,7,0,2|A trusted checksum baseline reveals an unexpected change to a system binary. Which control detected it?|File integrity monitoring identifies deviations in protected files.
+Q|5,6,2,0|An investigator needs source, destination, ports, and transferred byte counts, not payload. Which source fits?|NetFlow supplies conversation metadata without full content.
+Q|6,5,2,0|A team needs to inspect captured protocol headers and available packet contents. Which source fits?|Packet capture retains packet-level evidence.
+Q|7,3,8,4|An alert flags a server sending far more data than its established weekday pattern. Which reference supports the comparison?|A behavior baseline defines expected activity.
+Q|8,0,3,7|A trusted feed supplies recent malicious domains and associated attack techniques. Which resource is this?|The feed provides threat intelligence context.
+Q|9,2,0,3|A login appears to occur after its related download because two servers' clocks differ. Which control needs attention?|Time synchronization is required for reliable event order.
+Q|10,0,1,4|A team exchanges standardized machine-readable configuration checks between security tools. Which framework fits?|SCAP standardizes security configuration and vulnerability information.
+Q|0,2,1,8|A rule links repeated sign-in failures with later privileged activity on another host. Which platform function fits?|Cross-source event correlation is a SIEM use case.
+Q|1,0,3,2|After analyst approval, a workflow instructs endpoint tooling to isolate a host and records the action. Which capability fits?|SOAR orchestrates approved response actions across tools.
+Q|5,6,0,2|Long-term traffic analysis needs connection volume with lower storage cost than full packet contents. Which source fits?|Flow metadata is suitable for high-level traffic-pattern analysis.
+Q|6,5,2,7|An incident requires examining exact visible request bytes at a network collection point. Which evidence is needed?|Packet capture provides packet content when available.
+Q|3,7,8,0|A detection threshold is changed after labeled investigations show excessive harmless matches. What process is occurring?|Tuning uses known outcomes to improve signal quality.
+Q|4,0,7,2|A configuration file changes outside an approved maintenance window. Which monitoring control directly detects content changes?|File integrity monitoring compares protected files against a reference.
+Q|9,2,0,1|Investigators cannot correlate events because appliances use inconsistent time sources. Which improvement is most direct?|Synchronized clocks support accurate cross-system timelines.
+Q|8,7,3,0|A team evaluates whether a reported attacker technique applies to its own environment. Which input is being contextualized?|Threat intelligence must be assessed for local relevance.
+Q|7,3,4,5|A server's normal nightly backup traffic is documented before anomaly thresholds are set. What is being established?|The team is defining a valid behavior baseline.
+Q|10,1,0,2|A compliance assessment consumes standardized configuration checklists and vulnerability identifiers. Which framework supports interoperability?|SCAP enables standardized machine-readable security assessment information.
+Q|2,0,1,3|Log files arrive centrally but remain in unrelated formats without analytic rules. Which function has been achieved?|Central collection establishes aggregation, not full analytic correlation.
+Q|0,1,2,8|A security team wants one search over normalized endpoint, identity, and network events. Which tool best fits?|SIEM centralizes normalized security evidence for investigation.
+Q|1,0,3,8|A playbook gathers reputation data and opens a case automatically after a validated alert. Which capability fits?|SOAR automates and coordinates response steps.
+Q|5,6,2,7|Investigators know how many bytes crossed a connection but cannot inspect its application data from the record. Which source likely produced it?|Flow records summarize conversations without payload.
+Q|6,5,0,4|A troubleshooting team needs packet retransmission and protocol-header evidence. Which source supplies that detail?|Packet captures expose packet-level protocol behavior.
+Q|4,7,3,0|An approved release changes binaries and generates file-change alerts. Which control is working as designed even if the change is benign?|Integrity monitoring detects changes; context determines whether they are authorized.
+Q|3,7,8,2|A noisy alert is refined to exclude a verified management workflow while keeping suspicious patterns. Which activity fits?|Careful tuning improves precision without discarding all coverage.
+Q|9,0,2,7|Systems use different timezones in logs, creating an apparently impossible event sequence. Which foundational issue must be resolved?|Consistent timestamp interpretation and synchronization are necessary.
+Q|8,0,7,3|An old indicator appears in a feed but may now belong to a legitimate service. Which resource requires freshness validation?|Threat intelligence indicators must be checked for age and current relevance.

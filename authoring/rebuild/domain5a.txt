@@ -1,0 +1,138 @@
+@5.1
+P|Governance assigns authority, accountability, and requirements. A policy states what the organization requires and why; a standard supplies mandatory measurable details; a procedure gives steps; a guideline offers recommended practice. The same subject can appear in all four documents at different levels. Do not classify a document by how important its topic sounds; classify its function and whether it is mandatory.
+P|Data roles separate decisions from implementation. Owners approve classification and access requirements; custodians implement handling and access controls. Controllers determine purposes and means of personal-data processing; processors act on the controller's behalf under the applicable arrangement. A data subject is the person the information concerns. Governance also covers policy lifecycle, exceptions, independent oversight, and secure development processes. An acceptable-use policy governs user behavior, not the software development lifecycle.
+F|Define requirement|Assign accountable owner|Specify standards and procedures|Implement and review|Manage exceptions and updates
+T|Policy|A high-level mandatory statement of organizational requirements and direction. It establishes what is required; detailed values and task sequences typically appear elsewhere.
+T|Standard|A mandatory specific requirement, such as minimum key length or required logging fields. It translates policy into consistent measurable implementation criteria.
+T|Procedure|A step-by-step sequence for carrying out a task. It explains how operators should implement the requirement in a repeatable way.
+T|Guideline|A recommended approach that allows discretion when appropriate. It differs from a compulsory policy or standard, though local governance should define the hierarchy.
+T|Data owner|Accountable for business classification, access requirements, and handling decisions. The owner approves who should have access rather than necessarily editing every technical permission.
+T|Data custodian|Implements and maintains approved data controls, including storage, backups, and access configuration. The role administers the owner's decisions rather than independently setting business purpose.
+T|Data controller|Determines purposes and means of personal-data processing in the applicable privacy framework. Controller responsibilities are distinct from merely hosting or operating systems.
+T|Data processor|Processes personal data on behalf of a controller according to the arrangement. Its authority is bounded by the controller's instructions and applicable obligations.
+T|Governance oversight|Provides accountable direction and independent review of security performance, risk, and policy compliance. It does not replace day-to-day operational administration.
+T|Exception process|Documents departures from requirements with rationale, risk approval, compensating controls, an owner, and an expiry or review. Exceptions should not silently become permanent defaults.
+T|Development lifecycle policy|Governs secure design, implementation, testing, release, maintenance, and retirement of software. It differs from an acceptable-use policy directed at users' permitted behavior.
+T|Acceptable use policy|Defines permitted and prohibited use of organizational resources by users. It can address personal use, prohibited applications, and responsibilities, but is not the application development process.
+E|The owner approves read access for the finance team; the custodian configures the access list and maintains backups. A policy requires protected information to be encrypted; a standard specifies approved algorithms; a procedure describes key setup; a guideline suggests convenient practices. Identify the decision level instead of treating all security documents as interchangeable.
+Q|5,4,6,7|A database administrator implements access permissions approved by a business manager. Which role does the administrator perform?|The custodian implements approved access controls.
+Q|4,5,6,7|A business leader approves classification and who should access a dataset. Which role fits?|The data owner makes business handling and access decisions.
+Q|0,1,2,3|A document states that all confidential information must be protected according to organizational requirements. Which document level fits?|A high-level mandatory requirement is policy.
+Q|1,0,2,3|A document mandates exact minimum cryptographic parameters for every system. Which type fits?|Specific mandatory implementation criteria form a standard.
+Q|2,0,1,3|Technicians follow numbered instructions to rotate a service credential. Which document type is this?|A step-by-step task sequence is a procedure.
+Q|3,0,1,2|A document recommends useful practices while permitting justified alternatives. Which type fits?|Recommendations allowing discretion are guidelines.
+Q|6,7,4,5|An organization determines why customer personal data is processed and how that purpose is pursued. Which role fits?|Determining processing purposes and means identifies the controller.
+Q|7,6,5,4|A service handles personal data only on another organization's documented instructions. Which privacy role fits?|Processing on the controller's behalf identifies a processor.
+Q|8,9,0,2|A board reviews security performance and holds executives accountable for risk decisions. Which function is this?|Accountable direction and review are governance oversight.
+Q|9,0,1,2|A temporary departure from encryption policy receives a risk owner, alternative controls, and expiry. Which process fits?|A documented controlled deviation follows the exception process.
+Q|10,11,0,2|A company formalizes how programmers design, test, release, and maintain applications. Which policy is most relevant?|The software development lifecycle governs those stages.
+Q|11,10,0,3|Employees must know which personal activities are permitted on corporate computers. Which policy fits?|Acceptable use defines allowed user behavior on resources.
+Q|1,0,2,3|A requirement specifies that every audit event must contain a timestamp, actor, and outcome. Which document type fits?|Mandatory measurable detail belongs in a standard.
+Q|2,1,0,3|A runbook explains exactly how to disable a departed employee's accounts. Which type fits?|Operational instructions form a procedure.
+Q|5,4,7,6|An administrator maintains storage and backups under approved handling rules. Which data role fits?|The custodian carries out day-to-day data protection.
+Q|4,5,6,7|A department approves whether its records may be shared with another team. Which role is accountable?|The owner decides appropriate business access.
+Q|9,8,0,1|An unsupported system needs a time-limited approved deviation with residual risk documented. Which process applies?|A managed exception records approval, conditions, and review timing.
+Q|3,0,1,2|A security document suggests naming conventions but does not require one exact format. Which type fits?|Optional recommended practice is a guideline.
+Q|6,7,4,5|A company decides the objectives of a customer analytics program and its processing means. Which privacy role applies?|Those decisions identify the controller.
+Q|7,6,5,4|An outsourced payroll provider processes employee records on its client's behalf under instructions. Which role is most directly described?|The described service acts as a data processor.
+Q|10,11,2,1|Security reviews must occur during application design and before deployment. Which lifecycle policy should establish these gates?|Development lifecycle policy governs software creation and release.
+Q|11,10,0,3|A policy prohibits installing personal file-sharing software on work devices. Which policy category fits?|Acceptable use governs permitted use of corporate resources.
+Q|0,1,2,3|Leadership mandates that access must be limited to approved business purposes. Which document expresses this high-level requirement?|The statement establishes policy direction.
+Q|8,9,0,2|An independent committee reviews whether security responsibilities and risk reporting are effective. Which function fits?|This is oversight of the governance system.
+Q|5,4,6,7|An owner approves new readers and another role edits the database permissions accordingly. Which role performs the technical edit?|The custodian administers approved access.
+Q|4,5,6,7|A business representative determines the sensitivity and required retention of its data, subject to obligations. Which role fits?|The owner establishes business handling requirements.
+Q|1,0,2,3|All servers must use a defined secure time protocol and approved source list. Which document type best carries the mandatory detail?|A standard specifies consistent implementation requirements.
+Q|2,1,0,3|Operators need a repeatable sequence for restoring a database and validating it. Which document fits?|A procedure defines the execution steps.
+Q|9,8,0,3|A policy deviation is periodically reviewed and expires unless renewed by an authorized risk owner. Which process is functioning?|The exception process prevents unmanaged permanent deviations.
+Q|10,11,1,3|A team needs governance for application retirement as well as design and testing. Which policy spans those stages?|The development lifecycle includes maintenance and retirement.
+@5.2
+P|Risk combines uncertainty and consequences. Identify the asset, threat, weakness, likelihood, impact, existing controls, and owner. A risk register records the risk and treatment over time. Appetite expresses broad willingness to take risk; tolerance defines acceptable variation or thresholds in a particular context. Acceptance should be an authorized informed decision, not simply failure to act.
+P|Treatment changes the exposure in different ways: avoid stops the activity, mitigate reduces likelihood or impact, transfer shifts some financial consequences or responsibilities, and accept retains the remaining risk. Insurance does not make an attack impossible. Quantitative analysis separates one-event loss from yearly frequency. Single Loss Expectancy equals asset value times exposure factor in the simple model; Annualized Loss Expectancy equals SLE times Annualized Rate of Occurrence. ARO can be less than one.
+F|Identify and own|Estimate likelihood and impact|Choose treatment|Approve residual risk|Monitor and revise
+T|Risk register|A maintained record of risks, owners, likelihood, impact, treatment, and status. It supports decisions and follow-up rather than only listing vulnerabilities.
+T|Risk appetite|The organization's broad willingness to take risk in pursuit of objectives. It guides decisions across activities rather than serving as one specific service threshold.
+T|Risk tolerance|Acceptable variation or boundaries for a specific risk or objective. It translates broad appetite into operational limits that can be monitored.
+T|Accept|An authorized party knowingly retains the risk, often because treatment cost or feasibility does not justify further action. Record rationale and review conditions.
+T|Avoid|Stops or does not undertake the risk-generating activity. It can remove that exposure while sacrificing the associated business opportunity.
+T|Transfer|Shifts some financial consequences or responsibilities through insurance or contracts. Residual operational, reputational, and legal exposure may remain.
+T|Mitigate|Reduces likelihood or impact using safeguards such as filtering, training, segmentation, or backups. It does not necessarily eliminate all risk.
+T|SLE|Single Loss Expectancy: estimated monetary loss from one occurrence. In the basic asset model, SLE equals asset value multiplied by the exposure factor.
+T|ARO|Annualized Rate of Occurrence: expected frequency per year. One event every four years corresponds to 0.25, not four events annually.
+T|ALE|Annualized Loss Expectancy: estimated yearly loss, calculated as SLE multiplied by ARO in the simple quantitative model.
+T|Residual risk|Risk remaining after controls or treatment. Evaluate and assign ownership rather than assuming that installing a safeguard reduces risk to zero.
+E|An outage would cost $40,000 and is expected once every four years. SLE is $40,000, ARO is 0.25, and ALE is $10,000 per year. A control that reduces frequency changes ARO; one that limits loss per event changes SLE. Buying insurance transfers some financial exposure, while eliminating the service avoids that activity's risk.
+Q|7,8,9,10|A model estimates the financial loss from one warehouse outage. Which metric describes that amount?|One-event monetary loss is SLE.
+Q|8,7,9,10|Analysts estimate an event will occur once every five years. Which metric is 0.2?|Expected annual frequency is ARO.
+Q|9,7,8,10|A $30,000 one-event loss is expected twice per year. Which metric equals $60,000?|Annualized expected loss is SLE multiplied by ARO.
+Q|6,5,3,4|A company installs filtering to reduce the likelihood of successful malicious traffic. Which treatment fits?|The safeguard reduces risk, which is mitigation.
+Q|5,6,3,4|A company purchases coverage for specified financial losses from incidents. Which treatment is emphasized?|Insurance transfers defined financial consequences.
+Q|4,6,5,3|A risky optional service is permanently discontinued rather than protected further. Which treatment fits?|Stopping the activity avoids its associated risk.
+Q|3,4,5,6|An authorized owner documents a small exposure and decides to retain it with periodic review. Which treatment fits?|Informed retention of risk is acceptance.
+Q|0,10,1,2|A team records each risk's owner, likelihood, impact, treatment, and review date. Which artifact fits?|Those fields belong in a risk register.
+Q|1,2,3,10|Leadership states its broad willingness to pursue innovation despite uncertainty. Which concept fits?|Broad organizational willingness is risk appetite.
+Q|2,1,3,10|A service permits no more than a defined amount of monthly downtime before escalation. Which risk boundary is specified?|A specific acceptable limit is risk tolerance.
+Q|10,3,6,0|A control reduces exposure, but some likelihood and impact remain. What is that remaining exposure called?|Risk remaining after treatment is residual risk.
+Q|7,9,8,10|An asset worth $200,000 would lose 20 percent of its value per event. Which metric equals $40,000?|Asset value times exposure factor gives SLE.
+Q|8,9,7,10|An expected three events per year is entered into a quantitative model. Which input is three?|The yearly occurrence rate is ARO.
+Q|9,7,8,10|A $50,000 event has an annual occurrence rate of 0.1. Which metric equals $5,000?|SLE times ARO yields annualized loss expectancy.
+Q|6,5,4,3|Backups reduce the impact of data loss while the service continues operating. Which treatment fits?|Reducing impact through controls is mitigation.
+Q|5,3,6,4|A contract assigns specified recovery costs to a service provider. Which treatment is most directly used?|Contractual allocation transfers defined consequences or responsibilities.
+Q|4,3,6,5|A company abandons expansion into a market because the exposure exceeds its limits. Which treatment fits?|Not undertaking the activity is avoidance.
+Q|3,5,4,6|A business owner formally retains a documented low-impact risk because further treatment costs more. Which response fits?|Authorized informed retention is acceptance.
+Q|0,10,2,1|An organization needs one tracked record of treatment owners and unresolved risk decisions. Which artifact fits?|The risk register maintains ownership and status.
+Q|10,3,6,5|After encryption is deployed, account misuse and key theft still create exposure. Which risk remains?|Controls leave residual risk requiring evaluation.
+Q|1,2,3,10|Executives describe how much uncertainty the business generally accepts to meet strategic goals. Which concept fits?|Strategic willingness to take risk is appetite.
+Q|2,1,10,3|A business unit defines a maximum acceptable exception count before requiring action. Which concept fits?|A specific operational boundary is tolerance.
+Q|7,8,9,10|The question asks for dollars lost per incident, not incidents per year or yearly average. Which metric fits?|The unit is monetary loss for one occurrence, meaning SLE.
+Q|8,7,9,10|A flood is expected once every ten years. Which risk input equals 0.1 per year?|The annual frequency is ARO.
+Q|9,7,8,10|A control reduces SLE to $8,000 while ARO remains 0.5. Which metric becomes $4,000?|Expected annual loss is $8,000 multiplied by 0.5.
+Q|6,5,3,4|Training lowers the frequency of successful phishing without ending email use. Which treatment applies?|Reducing likelihood while continuing the activity is mitigation.
+Q|5,6,4,3|Insurance covers some incident costs, but the company still suffers downtime. Which treatment explains this limited effect?|Transfer can shift financial loss without removing operational exposure.
+Q|4,6,3,5|A company removes an unnecessary public service entirely to eliminate that service's exposure. Which treatment fits?|Eliminating the risky activity is avoidance.
+Q|3,10,6,4|A risk owner signs off on remaining exposure after evaluating controls and alternatives. Which decision is made?|The owner knowingly accepts the remaining risk.
+Q|0,1,2,10|A risk's treatment deadline passes and the assigned owner must update its status. Which management artifact should reflect this?|The risk register tracks treatment progress and accountability.
+@5.3
+P|Third-party risk starts before purchase and continues through changes and termination. Due diligence evaluates capabilities, evidence, access, data use, support, and dependencies. A questionnaire is useful but does not prove every answer. Match assurance to risk through independent reports, testing rights, technical validation, and ongoing monitoring. A supplier's subcontractors can extend the trust chain.
+P|Agreement names describe different functions. A Service-Level Agreement sets measurable service commitments. A Statement of Work defines specific deliverables and scope. A Master Service Agreement establishes overarching relationship terms. A Non-Disclosure Agreement restricts disclosure. A Memorandum of Understanding records common intent; a Memorandum of Agreement records agreed actions or responsibilities. Actual obligations depend on the document's wording, so do not treat a title as a universal legal rule.
+F|Assess before selection|Define scope and responsibilities|Set measurable commitments|Verify throughout service|Revoke and close at exit
+T|Due diligence|Evaluates a prospective partner's security, capabilities, support, and risks before relying on it. Evidence quality and scope matter more than a completed checklist alone.
+T|Right-to-audit clause|Provides contractual rights to examine or obtain assurance about relevant controls under agreed conditions. It does not itself perform the audit.
+T|SLA|Service-Level Agreement specifies measurable commitments such as uptime, response, restoration, and remedies. It differs from the work deliverables themselves.
+T|NDA|Non-Disclosure Agreement governs disclosure of protected information. It does not by itself define service performance or authorize technical access.
+T|MOU|Memorandum of Understanding records shared intentions or understanding between parties. Its effect depends on the text and applicable context, not the acronym alone.
+T|MOA|Memorandum of Agreement documents agreed responsibilities or actions between organizations. Read the actual provisions rather than assuming all such documents have identical force.
+T|MSA|Master Service Agreement sets general terms governing an ongoing service relationship. Individual projects may be defined through separate statements of work.
+T|SOW|Statement of Work specifies project scope, tasks, deliverables, schedules, and acceptance criteria. It defines what work is to be done.
+T|Supply chain assessment|Examines risks arising from suppliers, components, distribution, and dependencies, including downstream or subcontractor exposure. It is broader than one vendor's claimed controls.
+T|Vendor monitoring|Reassesses supplier performance and security over time, including changes, incidents, access, and support status. Initial approval is not perpetual assurance.
+E|For a camera installation, the SOW defines locations, installation tasks, and acceptance tests. The SLA may define support response times. The MSA establishes general commercial terms, and the NDA limits disclosure of sensitive drawings. A right-to-audit clause may permit control verification. Read the requested outcome to choose the appropriate agreement.
+Q|2,7,6,3|A contract must specify 99.9 percent uptime and maximum support response times. Which agreement fits?|Measurable service performance commitments belong in an SLA.
+Q|7,2,6,5|A project document lists installation deliverables, milestones, and acceptance tests. Which document fits?|Scope and deliverables are defined by a SOW.
+Q|3,2,7,6|A vendor must agree not to disclose confidential facility drawings. Which agreement fits?|An NDA governs protected information disclosure.
+Q|6,7,2,5|A long-term relationship needs general terms that apply to multiple later projects. Which agreement fits?|An MSA sets overarching service relationship terms.
+Q|5,4,6,7|Two organizations document agreed responsibilities for a joint operational activity. Which memorandum best fits?|An MOA records agreed actions and responsibilities.
+Q|4,5,6,7|Partners record their shared intentions before defining detailed project obligations. Which memorandum fits best?|An MOU expresses common understanding or intent.
+Q|0,9,8,1|Before selecting a provider, a team validates security capabilities and support commitments. Which process is this?|Preselection evaluation is due diligence.
+Q|1,0,9,8|A company wants contractual permission to verify a provider's relevant controls later. Which provision fits?|A right-to-audit clause grants agreed verification rights.
+Q|8,0,9,1|A review traces component manufacturers and subcontractors whose compromise could affect the product. Which assessment fits?|Supply chain assessment examines linked dependencies.
+Q|9,0,8,1|An approved provider's incidents, access, and support status are reviewed quarterly. Which activity is this?|Ongoing oversight is vendor monitoring.
+Q|7,2,6,3|A disagreement concerns whether 20 additional readers are inside the agreed project scope. Which document is most relevant?|The SOW defines the specific work and deliverables.
+Q|2,7,6,5|A provider repeatedly misses its contracted restoration time. Which agreement defines the performance target?|Restoration commitments belong in the SLA.
+Q|6,7,2,3|Several projects share the same liability and payment framework but have different deliverables. Which agreement supplies the framework?|The MSA governs general relationship terms across projects.
+Q|3,2,7,5|A contractor receives sensitive design information only after accepting confidentiality obligations. Which agreement fits?|An NDA controls disclosure of the information.
+Q|0,9,8,1|A procurement team checks a vendor's independent assurance evidence before awarding work. Which process fits?|The evaluation supports due diligence before reliance.
+Q|9,0,8,1|A supplier's new subcontractor triggers reassessment after service has already begun. Which ongoing activity applies?|Vendor monitoring responds to changing service risk.
+Q|1,0,9,8|A buyer reserves the ability to inspect security evidence under defined notice and scope conditions. Which clause fits?|The provision establishes a right to audit.
+Q|8,0,9,1|A firmware vendor depends on a vulnerable upstream component provider. Which assessment follows this dependency risk?|Supply chain assessment examines upstream exposure.
+Q|5,4,7,6|Partners formalize who will provide staff, equipment, and reporting for a shared activity. Which memorandum fits best?|An MOA describes agreed responsibilities and actions.
+Q|4,5,6,7|Organizations document a common vision for cooperation before detailed commitments are specified. Which document fits?|An MOU records mutual understanding and intent.
+Q|2,7,6,3|A company needs a measurable maximum response time for critical support requests. Which agreement fits?|An SLA defines service response performance.
+Q|7,6,2,5|A project needs exact tasks, exclusions, and deliverable acceptance criteria. Which document fits?|The SOW establishes project-specific scope.
+Q|3,6,2,5|The concern is disclosure of customer information during negotiations, not service uptime. Which agreement addresses it?|An NDA targets confidentiality obligations.
+Q|6,7,2,4|A provider and customer set umbrella terms for future work orders. Which agreement fits?|An MSA governs the continuing relationship.
+Q|0,9,8,1|A prospective supplier's claim of secure development is checked against actual evidence before selection. Which process fits?|Due diligence validates suitability before contracting.
+Q|9,0,8,1|A team notices a previously approved vendor has stopped issuing security updates. Which activity should detect this change?|Ongoing vendor monitoring tracks support and security changes.
+Q|8,0,9,1|An assessment considers whether compromised distribution or counterfeit parts could reach deployed equipment. Which scope fits?|The risks occur along the supply chain.
+Q|1,0,9,8|A customer requires a contractual route to verify controls rather than relying solely on promises. Which clause helps?|A right-to-audit clause enables agreed assurance access.
+Q|5,4,6,7|A broad agreement records specific cooperative duties accepted by both organizations. Which memorandum is closest?|An MOA records agreed responsibilities rather than only shared intent.
+Q|4,5,7,2|A document expresses shared understanding without detailing a project's deliverables or service metrics. Which type is closest?|An MOU describes the common understanding at this level.

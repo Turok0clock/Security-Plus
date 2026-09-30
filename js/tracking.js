@@ -19,7 +19,7 @@ window.SCHOOL = (() => {
   function objective(s,id,videos){
     const history=[...s.history].sort((a,b)=>b.at-a.at),o=s.objectives[id]||{};
     const baseline=history.filter(h=>pre(h)&&h.results?.some(r=>r.objective===id)).at(-1);
-    const sets=history.filter(h=>!pre(h)&&new RegExp('^'+id.replace('.','\\.')+' · Set [ABC]$').test(h.label||''));
+    const sets=history.filter(h=>h.contentRevision==='reasoning-v11'&&!pre(h)&&new RegExp('^'+id.replace('.','\\.')+' · Set [ABC]$').test(h.label||''));
     const latest=sets[0]||null,bySet=Object.fromEntries(['A','B','C'].map(k=>[k,sets.find(h=>h.label.endsWith('Set '+k))||null]));
     const strongSets=Object.values(bySet).filter(h=>h&&h.percent>=85).length;
     const complete=o.learningComplete===true||o.status==='complete';
@@ -32,7 +32,8 @@ window.SCHOOL = (() => {
     }
     if(o.status==='review'){level='Review requested';priority=0;action='Revisit notes and missed concepts before another set';}
     const seen=new Set(),misses=[];let attempted=0,credit=0;
-    for(const h of history){if(pre(h))continue;for(const r of h.results||[]){if(r.objective!==id||r.lab||!r.question)continue;attempted++;credit+=r.credit;const key=r.question.concept||r.id;if(seen.has(key))continue;seen.add(key);if(r.credit<1)misses.push({concept:r.question.concept||r.question.prompt,question:r.question,answer:r.answer,at:h.at,attempt:h.id});}}
+    for(const h of history){if(pre(h))continue;for(const r of h.results||[]){if(r.objective!==id||r.lab||!r.question)continue;attempted++;credit+=r.credit;const key=r.question.concept||r.id;if(seen.has(key))continue;seen.add(key);if(r.credit<1||h.flags?.[r.id]||h.reflections?.[r.id]?.reasons?.length||['Unsure','Guessing'].includes(h.reflections?.[r.id]?.confidence))misses.push({concept:r.question.concept||r.question.prompt,question:r.question,answer:r.answer,at:h.at,attempt:h.id,uncertain:r.credit===1,reflection:h.reflections?.[r.id]});}}
+    if(misses.some(x=>x.uncertain)&&priority>=2){level='Confidence review needed';priority=1;action='Review correct but uncertain answers, then use another set';}
     const delta=baseline&&latest?latest.percent-baseline.percent:null;
     const trend=sets.length>=2?sets[0].percent-sets[1].percent:null;
     return {id,complete,baseline,latest,bySet,strongSets,level,priority,action,misses,delta,trend,attempted,average:attempted?Math.round(credit/attempted*100):null,...videoTime(s,videos[id]||[])};

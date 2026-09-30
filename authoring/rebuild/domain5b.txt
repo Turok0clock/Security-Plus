@@ -1,0 +1,137 @@
+@5.4
+P|Compliance evaluates whether an organization meets applicable requirements. Identify the source: law or regulation, contract, internal policy, or an adopted framework. A control may improve security without satisfying every applicable requirement; a passed audit does not guarantee freedom from attack. Determine scope, evidence, owner, reporting, and corrective action for each obligation.
+P|Privacy concerns the purposes and handling of personal information, not only secrecy. Notices explain processing; consent, where applicable, records meaningful permission; rights processes handle requests under the relevant rules. Do not invent a universal deadline or assume consent is always the required basis. Data minimization, retention, access, and deletion must align with applicable obligations and legal holds. Attestation is a formal statement supported by evidence, not automatic independent verification.
+F|Identify applicable obligation|Define scope and owner|Map controls to evidence|Monitor and report|Correct gaps and verify
+T|Regulatory compliance|Meets applicable legal or regulatory obligations. Determine actual applicability and jurisdiction; security best practice alone does not define every legal requirement.
+T|Contractual compliance|Meets obligations accepted in a contract, such as handling restrictions or service commitments. Contractual obligations can apply even when no identical statute is specified.
+T|Compliance monitoring|Continuously or periodically checks whether required controls remain effective and obligations are being met. One annual review may miss changes between assessments.
+T|Attestation|A formal assertion about a condition or compliance status by a responsible party. Evaluate supporting evidence, scope, and independence rather than assuming every assertion is an external audit.
+T|Privacy notice|Explains how personal information is collected, used, shared, and otherwise handled. It provides transparency but is not itself proof of consent or technical enforcement.
+T|Consent|Records an individual's applicable permission for defined processing where that basis is used. Requirements vary; permission for one purpose does not automatically cover all future uses.
+T|Data subject rights|Processes for handling applicable individual requests concerning personal information, such as access or correction. Verify identity, scope, exceptions, and relevant obligations.
+T|Compliance reporting|Communicates required status, evidence, findings, or incidents to the appropriate audience under defined obligations. Accurate scope and supporting records matter.
+T|Sanctions and fines|Potential formal consequences for noncompliance imposed under applicable authority. They differ from technical recovery costs and broader reputational consequences.
+T|Reputational impact|Loss of trust or confidence following perceived misconduct, failure, or exposure. It can affect relationships even when formal penalties are absent.
+E|A customer contract prohibits placing its records in unapproved regions: contractual compliance. A regulator imposes record-handling duties: regulatory compliance. The company monitors configurations, reports findings, and makes supported attestations. A privacy notice explains data use, while a consent record or rights-request workflow serves a different purpose. Start by identifying the source and requested action.
+Q|0,1,3,2|An organization must satisfy a named regulator's mandatory record-protection rule. Which obligation type applies?|The requirement comes from regulatory authority.
+Q|1,0,3,2|A customer's signed agreement restricts where its data may be processed. Which obligation type is directly described?|The restriction is a contractual obligation.
+Q|2,7,3,0|A team checks required settings monthly to detect compliance drift between audits. Which activity fits?|Ongoing checks constitute compliance monitoring.
+Q|3,7,2,0|An accountable executive signs a formal statement that specified requirements are met. Which artifact is this?|A formal assertion of status is an attestation.
+Q|4,5,6,7|A company explains to individuals why data is collected and with whom it is shared. Which document serves this purpose?|A privacy notice provides transparency about processing.
+Q|5,4,6,3|A service records an individual's permission for a clearly specified optional use of personal data. Which process fits?|The record captures consent for that defined purpose.
+Q|6,5,4,7|A verified individual requests correction of inaccurate personal records under applicable rules. Which process handles this?|The organization is fulfilling a data subject rights request.
+Q|7,2,3,0|A team submits required compliance findings and evidence to an oversight body. Which activity fits?|Submitting required status and evidence is compliance reporting.
+Q|8,9,0,1|A regulator imposes a monetary penalty for a proven violation. Which consequence is this?|A formal monetary penalty is a fine.
+Q|9,8,1,0|Customers leave after a disclosure undermines confidence, even without a formal penalty. Which impact fits?|Loss of customer trust is reputational impact.
+Q|1,0,2,3|A provider fails a data-handling promise in its service agreement. Which compliance category applies?|The unmet promise is contractual.
+Q|0,1,2,3|A law applicable to the company mandates a specific protection requirement. Which category governs it?|A legal mandate creates regulatory compliance duties.
+Q|3,7,2,0|A vendor self-declares that its controls meet a defined benchmark. What type of assurance statement is provided?|A self-asserted formal compliance statement is attestation.
+Q|2,7,3,1|An automated check repeatedly verifies that required audit logs remain enabled. Which activity fits?|The system monitors continuing compliance.
+Q|4,5,6,3|A user-facing explanation describes categories of data and intended processing purposes. Which artifact fits?|The document is a privacy notice.
+Q|5,4,6,7|A person agrees to an optional processing purpose through a recorded informed choice. Which concept fits?|That choice records consent for the specified use.
+Q|6,4,5,7|A privacy team validates identity before fulfilling a personal-data access request. Which function is this?|It implements an applicable data subject right.
+Q|7,2,3,0|A required report summarizes unresolved control gaps for the designated authority. Which activity fits?|The findings are communicated through compliance reporting.
+Q|8,9,1,0|An authority suspends an authorization because of noncompliance. Which consequence category fits?|A formal adverse action is a sanction.
+Q|9,8,0,1|A supplier loses renewals after clients lose confidence in its handling of records. Which impact fits?|Damaged trust produces reputational consequences.
+Q|0,1,2,3|A business maps controls to requirements of an applicable government regulation. Which compliance category is primary?|The obligations originate in regulation.
+Q|1,0,3,2|A confidentiality promise is enforceable through a signed customer agreement. Which compliance source is described?|The obligation arises from contract terms.
+Q|2,7,3,0|A new system is checked for required controls after every configuration change. Which practice supports continuing compliance?|Monitoring detects whether changes preserve required conditions.
+Q|3,2,7,0|Management formally asserts a defined control operated during a stated period. Which assurance form is this?|The assertion is an attestation with a defined scope and period.
+Q|4,5,6,7|A site explains its retention and sharing practices without asking for a permission decision. Which artifact fits?|Transparency information belongs in a privacy notice.
+Q|5,4,6,3|A user withdraws previously granted permission for optional processing, subject to applicable rules. Which concept is affected?|The change concerns consent for that processing purpose.
+Q|6,5,4,7|A verified individual asks for an applicable deletion request to be evaluated against retention exceptions. Which process fits?|The request belongs in the data subject rights workflow.
+Q|7,2,3,1|A compliance team must communicate required evidence by a specified reporting schedule. Which function is this?|It performs compliance reporting rather than just internal monitoring.
+Q|8,9,0,1|A financial penalty is imposed by the designated enforcement body. Which consequence fits?|An imposed financial penalty is a fine.
+Q|9,8,0,1|An incident causes partners to distrust an organization even before regulators act. Which impact is already occurring?|Reputational harm can precede formal sanctions.
+@5.5
+P|An assessment evaluates security; an audit compares evidence with defined criteria; a penetration test attempts authorized exploitation to demonstrate impact. Internal versus external describes who conducts the work. Known, partially known, and unknown environments describe how much information the tester receives. An outside consultant can be given full knowledge, so external does not automatically mean unknown environment.
+P|Reconnaissance gathers information. Passive reconnaissance uses existing outside information without probing the target systems; active reconnaissance sends queries or probes to learn about those systems. No internal access does not automatically imply passive: an internet-facing server can be actively scanned. Read the actual actions. Rules of engagement define written authorization, scope, timing, allowed techniques, limits, contacts, and stopping conditions before testing. Disclosure coordinates reporting of weaknesses through an appropriate authorized path.
+F|Define purpose and criteria|Authorize scope and limits|Gather evidence|Validate findings|Report and verify remediation
+T|Internal audit|An organization's own audit function evaluates evidence against criteria. Independence from the audited operation still matters even when the auditors are internal.
+T|External audit|An outside party examines evidence against defined criteria. External status does not by itself specify testing depth or how much technical information is supplied.
+T|Self-assessment|The responsible team evaluates its own controls against requirements. It can identify gaps but has different independence than a separate audit function.
+T|Penetration testing|Authorized exploitation attempts demonstrate security impact within scope. It is distinct from simply collecting possible weaknesses or scanning without exploitation.
+T|Known environment|Testers receive extensive information about the target environment. This supports focused depth and is sometimes called white-box testing.
+T|Unknown environment|Testers receive little or no prior internal information and must discover the environment within scope. It describes knowledge, not whether authorization exists.
+T|Partially known environment|Testers receive selected information or limited credentials. It lies between full disclosure and an unknown environment and can target specific trust relationships.
+T|Rules of engagement|Defines authorized test scope, methods, timing, restrictions, contacts, and stop conditions. Discovery of another reachable system does not automatically expand authorization.
+T|Coordinated disclosure|Reports a vulnerability through an appropriate channel and coordinates handling under applicable policy. Public release without considering authorization and remediation can create avoidable harm.
+T|Red team exercise|An authorized adversary simulation tests defensive capabilities and response toward defined objectives. It may combine techniques across people, processes, and technology within limits.
+T|Passive reconnaissance|Collects information from existing sources without directly probing the target systems. Public documents and independent information repositories can reveal architecture and personnel.
+T|Active reconnaissance|Directly queries or probes target systems to discover hosts, services, or characteristics. It can occur from outside the internal network and may leave detectable records.
+E|Reading a public job advertisement to learn which firewall a company uses is passive reconnaissance. Sending probes to its internet-facing firewall is active reconnaissance. Attempting an authorized exploit to demonstrate impact is penetration testing. The tester's location does not decide the classification; the action does. A scan finding still needs validation and a test still needs scope permission.
+Q|10,11,3,2|A consultant studies public job postings and third-party records without querying company systems. Which approach fits?|Existing external information is gathered without direct probing.
+Q|11,10,3,2|A tester sends port probes to a public server despite having no internal access. Which activity is this?|Direct target probing is active reconnaissance regardless of location.
+Q|3,11,10,0|An authorized tester demonstrates access to restricted data by exploiting a weakness. Which assessment activity fits?|Demonstrating exploitability and impact is penetration testing.
+Q|0,1,2,9|An independent audit function inside the company reviews control evidence. Which type of audit is this?|The audit function is internal to the organization.
+Q|1,0,2,9|An outside audit firm evaluates controls against agreed criteria. Which assessment fits?|The auditor is external to the organization.
+Q|2,0,1,3|The system's own operating team completes a checklist evaluating its controls. Which assessment type fits?|The team evaluates its own environment through self-assessment.
+Q|4,5,6,7|Testers receive complete architecture diagrams, code, and credentials before the engagement. Which knowledge model fits?|Extensive prior information defines a known environment.
+Q|5,4,6,7|Testers are authorized but given no internal diagrams or credentials. Which knowledge model fits?|Minimal supplied internal information defines an unknown environment.
+Q|6,4,5,7|Testers receive a standard user account and selected network details only. Which model fits?|Limited selected knowledge defines a partially known environment.
+Q|7,3,8,9|A document defines test targets, allowed methods, timing, and emergency stop contacts. What is it?|These authorization boundaries are rules of engagement.
+Q|8,7,3,9|A researcher reports a weakness through the vendor's approved channel and coordinates remediation communication. Which process fits?|Coordinated disclosure manages responsible vulnerability reporting.
+Q|9,3,0,1|An authorized exercise simulates an adversary pursuing objectives across people and technology while defenders respond. Which activity fits?|A red team exercise evaluates defenses through adversary simulation.
+Q|10,11,3,2|An analyst learns the company's technology from archived conference presentations rather than network queries. Which activity fits?|Existing public material supports passive reconnaissance.
+Q|11,10,3,2|A tester fingerprints operating systems by sending crafted network probes. Which activity fits?|Direct probing to identify systems is active reconnaissance.
+Q|4,6,5,7|An outside consultant receives full source code and architecture details. Which knowledge classification applies?|External employment does not prevent a known-environment test.
+Q|5,6,4,7|An internal authorized team starts with no target-specific information. Which knowledge model applies?|Knowledge supplied, not employer identity, determines unknown-environment status.
+Q|6,4,5,7|Only the customer portal's design and one test account are supplied, while other internals remain undisclosed. Which model fits?|Selective information creates a partially known environment.
+Q|7,8,3,9|A tester discovers a reachable system outside the written target list. Which document governs whether testing may proceed?|Rules of engagement define authorized scope.
+Q|0,1,2,9|The company's audit department reviews another department's access-control evidence. Which type of audit fits?|The auditor operates within the organization.
+Q|1,0,2,3|A separate independent organization examines compliance evidence under an engagement. Which type fits?|An outside examiner performs an external audit.
+Q|2,0,1,3|A service owner checks its own implementation against a benchmark before an independent review. Which activity fits?|The responsible team conducts a self-assessment.
+Q|3,11,10,9|A tester validates a suspected weakness by achieving an authorized proof of access. Which activity goes beyond reconnaissance?|Controlled exploitation to show impact is penetration testing.
+Q|10,11,3,2|Information is collected from published supplier case studies without contacting target devices. Which reconnaissance type fits?|The research uses existing external sources passively.
+Q|11,10,3,2|An assessor queries a target's live services to enumerate supported versions. Which type of reconnaissance occurs?|Live service queries directly interact with the target.
+Q|9,3,0,1|An exercise tests whether defenders detect a realistic multistage campaign toward a defined objective. Which approach fits?|Red teaming tests adversary objectives and defensive response.
+Q|8,7,3,9|A vendor and researcher agree on a remediation communication process after a report. Which practice fits?|Coordinated disclosure aligns reporting and remediation communication.
+Q|7,3,8,9|A production test must stop if agreed service-impact thresholds are exceeded. Where should this condition be defined?|Rules of engagement specify stop conditions and operational limits.
+Q|4,6,5,7|Testers are given complete configuration exports to maximize depth in limited time. Which environment type fits?|Full supplied knowledge defines a known environment.
+Q|6,4,5,7|An engagement models a normal employee by supplying limited credentials and selected information. Which environment type fits?|Partial knowledge and access support a partially known test.
+Q|5,4,6,7|Authorized testers discover the target architecture themselves because no internal details were supplied. Which model fits?|The engagement begins with an unknown environment.
+@5.6
+P|Awareness should help people perform safe actions in real situations, not merely recite policy. Teach recognition, an easy reporting path, independent verification, and what to do after a mistake. Use role-specific scenarios: finance handles payment changes, technicians handle vendor access and removable media, and administrators manage privileged requests. A reported mistake is useful early evidence; punitive reactions can discourage future reporting.
+P|Measure behavior and response, not attendance alone. Simulation click rate needs context such as delivery, difficulty, reporting rate, and time to report. A user who clicks then promptly reports can help containment. Training should explain why the suspicious request matters, demonstrate the safe alternative, and revisit weak distinctions. Do not intentionally create ambiguous cases with no defensible answer and then call the user careless.
+F|Recognize the situation|Pause the risky action|Verify independently|Report promptly|Learn without hiding mistakes
+T|Phishing simulation|An authorized training exercise using controlled deceptive messages to assess and improve recognition and reporting. Design safe scenarios and explain the learning afterward.
+T|Incident reporting|A clear process for promptly informing the right team about suspected events or mistakes. Users should know the channel and what evidence to preserve.
+T|Role-based training|Tailors learning to a person's responsibilities and exposure. A finance clerk and field technician need different realistic decisions even when both learn core principles.
+T|Social engineering awareness|Teaches recognition of manipulation such as urgency, authority, pretexts, and unusual requests. Independent verification should use a trusted channel rather than attacker-provided details.
+T|Password hygiene|Encourages unique strong credentials, appropriate managers, and safe handling. Avoid sharing secrets and follow secure recovery processes; convenience does not justify password reuse.
+T|Physical security awareness|Covers badges, visitors, tailgating, unattended devices, and secure handling of facilities and equipment. Staff should follow procedures without creating unsafe confrontations.
+T|Remote-work awareness|Addresses trusted connectivity, device protection, privacy, travel, and reporting outside the office. Working remotely does not eliminate normal identity and data requirements.
+T|Reporting culture|Encourages timely honest reporting without unnecessary blame so teams can limit damage. Accountability and coaching can coexist with a supportive reporting process.
+T|Awareness metrics|Measures outcomes such as reporting rate, time to report, repeat behavior, and scenario performance. Attendance alone does not demonstrate decision-making ability.
+T|Acceptable-use awareness|Teaches permitted uses, prohibited activities, and responsibilities for organizational resources. Users need practical examples and a path to ask about exceptions.
+E|A technician receives an urgent request to let an unknown vendor use a badge. The safe response is to pause, verify through established vendor contacts, and follow visitor policy. If the technician already complied, prompt reporting helps contain the exposure. Training should practice both the initial decision and the recovery action, then measure whether reporting becomes faster and more accurate.
+Q|2,3,9,8|Finance staff practice verifying bank-detail changes while technicians practice vendor-access requests. Which approach fits?|Training is tailored to job-specific exposure.
+Q|1,7,8,0|An employee clicked a suspicious link and needs a clear immediate channel to alert security. Which program element is required?|Incident reporting defines how to notify responders promptly.
+Q|0,3,8,2|A controlled authorized email exercise measures recognition and reporting, followed by feedback. Which activity is this?|A phishing simulation creates a safe training scenario.
+Q|3,1,9,4|Training teaches users to verify urgent authority claims through a known independent contact. Which awareness area fits?|It addresses social-engineering manipulation and verification.
+Q|4,3,9,6|Employees learn to use unique credentials and avoid reusing a work password on outside sites. Which topic fits?|Unique secret handling is password hygiene.
+Q|5,6,3,9|Staff practice responding to tailgating and checking visitor badges through approved procedures. Which topic fits?|The scenario concerns physical access awareness.
+Q|6,5,9,4|Traveling workers learn to protect screens and use approved connectivity away from the office. Which topic fits?|These are remote-work security practices.
+Q|7,1,8,0|Management thanks employees for quickly reporting mistakes rather than encouraging concealment. Which program quality improves?|A supportive reporting culture encourages early disclosure.
+Q|8,0,2,7|A team tracks median time to report and repeat risky behavior after training. Which evaluation tool is used?|These are behavior-focused awareness metrics.
+Q|9,3,4,6|Users receive practical examples of permitted personal use on corporate devices. Which topic fits?|Acceptable-use awareness explains allowed resource behavior.
+Q|1,7,3,0|A staff member notices a lost token and follows a published security-notification procedure. Which process is used?|The employee follows incident reporting.
+Q|2,3,0,9|Privileged administrators receive extra practice on suspicious elevation requests. Which training design fits?|Role-based training targets responsibilities with distinct risk.
+Q|3,1,4,9|A lesson explains why a caller's urgency does not prove identity or authority. Which topic fits?|It teaches resistance to social-engineering pressure.
+Q|0,8,3,2|A sanctioned test sends safe mock phishing messages and then explains the cues. Which activity fits?|Controlled phishing simulations support practice and feedback.
+Q|5,6,9,3|A workplace lesson covers securing unattended laptops and escorting visitors. Which awareness category fits?|These actions protect physical access and equipment.
+Q|4,3,9,6|A program teaches password-manager use and warns against sharing reusable secrets. Which topic fits?|The focus is safe credential management and password hygiene.
+Q|6,5,9,3|Home workers learn how to report a stolen company laptop while traveling. Which tailored context fits?|The scenario is part of remote-work awareness.
+Q|7,1,8,2|Employees hesitate to report errors because previous reports caused public blame. Which program issue needs improvement?|An unsupportive reporting culture suppresses useful early evidence.
+Q|8,0,2,7|A training program compares actual reporting behavior instead of relying only on completion certificates. Which method fits?|Outcome-focused awareness metrics evaluate applied behavior.
+Q|9,3,4,6|Staff learn when installing personal applications violates resource-use policy. Which awareness area fits?|Acceptable-use training translates permitted behavior into examples.
+Q|2,0,3,8|Developers practice secret handling while reception staff practice identity verification. Which strategy is used?|Role-specific responsibilities shape the training.
+Q|1,7,8,0|A user sends a suspicious message through the approved reporting button while preserving evidence. Which process is followed?|The action uses incident reporting to notify the right team.
+Q|0,3,8,2|An organization conducts a safe mock credential-request campaign under authorization. Which exercise fits?|It is a phishing simulation rather than a real credential theft attempt.
+Q|3,5,9,4|A staff member learns to challenge an invented emergency through a trusted callback path. Which topic fits?|The lesson addresses pretexting and social engineering.
+Q|4,9,3,6|Training explains how credential reuse allows one site's breach to affect another service. Which topic fits?|Password hygiene includes avoiding reuse across services.
+Q|5,6,3,9|Staff are shown how to report an unfamiliar visitor without unsafe confrontation. Which awareness category fits?|The behavior concerns physical security and visitor handling.
+Q|6,5,9,4|Employees learn to avoid exposing confidential screens in shared public spaces while working. Which context fits?|Remote-work awareness covers privacy outside controlled offices.
+Q|7,1,8,0|The organization encourages immediate reporting even when an employee already made a mistake. Which cultural goal is supported?|Prompt honest reporting is strengthened by a supportive culture.
+Q|8,0,2,7|A lower click rate is evaluated alongside message difficulty and reporting speed. Which discipline prevents misleading conclusions?|Awareness metrics need context to measure real improvement.
+Q|9,3,4,6|An employee asks whether a personal cloud service is permitted before uploading work files. Which training area should answer this?|Acceptable-use awareness covers approved resource use and exceptions.

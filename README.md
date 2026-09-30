@@ -2,6 +2,18 @@
 
 An offline-capable study app for GitHub Pages and iPad Safari. No build system, account, API key, or paid runtime is required.
 
+## Rebuilt learning and reasoning update
+
+- 28 expanded study guides: mechanism explanations, decision flows, worked applications, comparison references, and source links.
+- All 84 objective A/B/C sets replaced with 840 distinct scenario prompts, including applied decisions in every set. The separate foundation diagnostics remain introductory checks.
+- Per-question notes, multi-select flag reasons, confidence, and reversible answer elimination in objective quizzes, custom exams, original Messer exams, and guided checks.
+- Unanswered navigation prompts with explicit intentional skipping; PBQ section visibility and explicit blank acknowledgements. These checks use completeness only and never reveal correctness.
+- Submitted attempts retain reasoning in reviews and JSON exports. Correct but uncertain answers appear in review priorities.
+- Existing history retains its original question snapshots and scores; the A/B/C matrix distinguishes the new bank from earlier attempts. Original Messer PDF content and strict scoring are unchanged.
+- Offline cache revision 11. Browser and installed-app storage remain separate; use backup export/import to transfer progress.
+
+Rebuild authored content with `python authoring/rebuild/compile.py`. Runtime has no build dependency.
+
 ## Included
 
 - A learning dashboard and Professor Desk timeline with domain/objective video durations, watched and remaining time, playback-speed estimates, lesson/domain completion, post-learning accuracy, and a review-priority matrix.

@@ -1,0 +1,1022 @@
+[
+  [
+    "1.1",
+    9,
+    "A recorded camera already helps investigate entry events. Management now wants a control that stops entry before it occurs. Which addition best meets that different goal?",
+    [
+      "A door interlock that denies unauthorized entry",
+      "A longer recording retention period",
+      "A second retrospective log review",
+      "A warning that entry is recorded"
+    ],
+    "Blocking the entry supplies prevention; more evidence supplies detection and a warning primarily deters."
+  ],
+  [
+    "1.1",
+    19,
+    "A required safeguard cannot run on a legacy system. Which proposal best demonstrates a compensating control rather than simply accepting the gap?",
+    [
+      "An approved alternative that addresses the same risk until replacement",
+      "A note that the safeguard is unsupported with no additional protection",
+      "A report listing unrelated controls elsewhere",
+      "A promise to revisit the issue without an owner"
+    ],
+    "Compensation needs an alternative protective function, approval, and scope tied to the unavailable safeguard."
+  ],
+  [
+    "1.1",
+    29,
+    "A policy requires session locking, but the system never enforces it. Which change adds a technical preventive control?",
+    [
+      "Configure automatic locking after the approved idle interval",
+      "Rewrite the policy in larger text",
+      "Review unlocked-session incidents each month",
+      "Post a warning about disciplinary consequences"
+    ],
+    "Automatic enforcement stops unattended session use; policy, review, and warning perform different functions."
+  ],
+  [
+    "1.2",
+    9,
+    "A user authenticates successfully but can view another department's restricted records. Which control most directly needs correction?",
+    [
+      "Resource authorization rules",
+      "The availability failover policy",
+      "The login identity proof alone",
+      "The timestamp format in accounting logs"
+    ],
+    "The identity was accepted; the failure is excessive permission to a resource."
+  ],
+  [
+    "1.2",
+    19,
+    "A file matches a hash published by the same untrusted download site. What conclusion is most defensible?",
+    [
+      "The comparison alone does not establish publisher identity or safety",
+      "The file is guaranteed free of malware",
+      "The site's claimed publisher identity is authenticated",
+      "The file is encrypted against disclosure"
+    ],
+    "An untrusted reference can be replaced with the file; a hash comparison neither authenticates the publisher nor scans for malware."
+  ],
+  [
+    "1.2",
+    29,
+    "A signed document remains readable to anyone. Verification detects changed content. Which statement best separates its properties?",
+    [
+      "It supports integrity and signer verification but does not itself provide confidentiality",
+      "It provides confidentiality because a private key was used",
+      "It guarantees availability because verification succeeds",
+      "It authorizes every reader to modify the document"
+    ],
+    "Signing can support integrity and origin authentication without hiding content or granting permissions."
+  ],
+  [
+    "1.3",
+    9,
+    "A tested migration fails its agreed production validation threshold. The authorized plan contains a compatible recovery image and data snapshot. What should the team do next?",
+    [
+      "Execute the approved backout plan",
+      "Keep changing unrelated settings until errors stop",
+      "Declare success because testing passed earlier",
+      "Delete the previous configuration to avoid confusion"
+    ],
+    "The defined rollback trigger has occurred; the prepared authorized recovery path should guide action."
+  ],
+  [
+    "1.3",
+    19,
+    "A developer's change passes tests but lacks production authorization. The maintenance window begins now. What is the best next action?",
+    [
+      "Obtain the required approval before deployment",
+      "Deploy because a window substitutes for approval",
+      "Deploy because passing tests grants release authority",
+      "Update the diagram and treat that as approval"
+    ],
+    "Timing and testing do not authorize production release; the required approval remains outstanding."
+  ],
+  [
+    "1.3",
+    29,
+    "A database upgrade changes the schema. Which backout proposal best addresses recovery?",
+    [
+      "Restore a compatible application and data state using tested steps",
+      "Reinstall only the old binary without checking schema compatibility",
+      "Keep only a screenshot of the old interface",
+      "Assume version history guarantees a successful restore"
+    ],
+    "Application and data dependencies must remain compatible; version records alone do not create an executable recovery plan."
+  ],
+  [
+    "1.4",
+    9,
+    "A protected asymmetric key pair encrypts an employee's archive. Which material must an authorized escrow process preserve for recovery?",
+    [
+      "The private decryption key under controlled custody",
+      "Only the already-shareable public key",
+      "Only a hash of the encrypted archive",
+      "Only the certificate's issuer name"
+    ],
+    "Recovery requires decryption capability; the public key, digest, and issuer name cannot substitute for the private decryption key."
+  ],
+  [
+    "1.4",
+    19,
+    "A company wants sensitive salary fields encrypted while public directory fields remain readable. Which design decision directly meets that scope requirement?",
+    [
+      "Apply field-level encryption to selected values",
+      "Choose asymmetric cryptography solely because some fields stay public",
+      "Hash every database record and expect to decrypt it later",
+      "Obfuscate column names while retaining plaintext salaries"
+    ],
+    "Encryption granularity selects which values are protected; asymmetric describes key relationships, not selective scope."
+  ],
+  [
+    "1.4",
+    29,
+    "A browser reports CERT_DATE_INVALID. The system clock is wrong and the certificate is within its true validity period. What should be investigated first?",
+    [
+      "Correct the clock and revalidate the certificate",
+      "Conclude an on-path attacker is proven",
+      "Disable certificate validation permanently",
+      "Replace data encryption with hashing"
+    ],
+    "The supplied clock evidence explains a validity error; a certificate warning alone does not prove an attack."
+  ],
+  [
+    "2.1",
+    9,
+    "An attacker uses a foreign IP address and sophisticated tools. No sponsorship evidence exists. Which conclusion is justified?",
+    [
+      "The evidence is insufficient to prove a nation-state sponsor",
+      "A foreign address proves government sponsorship",
+      "Sophisticated tools rule out criminal actors",
+      "Tool reuse proves the attacker is unskilled"
+    ],
+    "Address location and sophistication are not enough to establish sponsorship or exclude other actor types."
+  ],
+  [
+    "2.1",
+    19,
+    "A trusted contractor accidentally exposes a shared folder. Which distinction is most accurate?",
+    [
+      "Insider risk can exist without malicious intent",
+      "Only payroll employees can create insider risk",
+      "Accidental disclosure cannot be a security incident",
+      "A trusted relationship makes oversight unnecessary"
+    ],
+    "Insider classification concerns entrusted access; the resulting risk may be intentional or accidental."
+  ],
+  [
+    "2.1",
+    29,
+    "A department installs an unapproved cloud tool to finish work faster. What is the best response to the identified risk?",
+    [
+      "Assess its data access and bring use under approved governance",
+      "Assume helpful intent eliminates exposure",
+      "Automatically attribute the tool to organized crime",
+      "Ignore it until a confirmed breach occurs"
+    ],
+    "Shadow IT creates unmanaged exposure regardless of helpful intent; assess and govern it proportionately."
+  ],
+  [
+    "2.2",
+    9,
+    "An urgent caller claims to be the support vendor and supplies a callback number to verify the request. What should the technician do?",
+    [
+      "Use a vendor contact independently obtained from approved records",
+      "Use only the supplied callback number as proof",
+      "Reveal the requested code because the caller knows the site name",
+      "Treat caller ID as conclusive authentication"
+    ],
+    "Independent verification avoids relying on information controlled by the caller; familiarity and caller ID are not sufficient proof."
+  ],
+  [
+    "2.2",
+    19,
+    "Sensitive files are copied to a USB drive while a laptop is offline. Which control most directly addresses the path?",
+    [
+      "Endpoint removable-media policy",
+      "An internet gateway rule alone",
+      "A DNS blocklist alone",
+      "A mail sender policy record"
+    ],
+    "Offline peripheral access occurs locally and may never traverse the network or email controls."
+  ],
+  [
+    "2.2",
+    29,
+    "A trusted supplier's genuine email requests changed bank details. Which action best handles the possibility of mailbox compromise?",
+    [
+      "Verify the payment change through an established independent contact",
+      "Trust the request solely because the mailbox is genuine",
+      "Reply only to the same thread to establish identity",
+      "Approve it because no attachment is present"
+    ],
+    "A real compromised mailbox can send fraudulent requests; verify sensitive changes through an independent established path."
+  ],
+  [
+    "2.3",
+    9,
+    "A web application constructs SQL statements by concatenating user input. Which change most directly addresses the injection mechanism?",
+    [
+      "Use parameterized queries that separate values from query structure",
+      "Enable HTTPS and leave query construction unchanged",
+      "Encrypt backups and leave query construction unchanged",
+      "Hide database error messages as the only fix"
+    ],
+    "Parameterized queries address interpretation of input as query syntax; transport, backups, and error hiding do not fix that construction."
+  ],
+  [
+    "2.3",
+    19,
+    "A comment field is inserted directly into HTML and executes user-supplied script in visitors' browsers. Which change targets the cause?",
+    [
+      "Use context-appropriate output encoding and safe rendering",
+      "Increase password length without changing rendering",
+      "Encrypt the database but render decrypted content identically",
+      "Move the same unsafe rendering to another server"
+    ],
+    "Safe context-aware rendering keeps untrusted data from becoming executable browser markup."
+  ],
+  [
+    "2.3",
+    29,
+    "A critical unsupported system has no vendor patches available. Which plan best treats its lifecycle risk?",
+    [
+      "Document the risk, restrict exposure, and plan supported replacement",
+      "Assume a clean scan restores vendor support",
+      "Keep default access because patches do not exist",
+      "Declare permanent remediation after one reboot"
+    ],
+    "Compensating controls can limit exposure, but supported replacement addresses the lack of future vendor fixes."
+  ],
+  [
+    "2.4",
+    9,
+    "Authentication records show one candidate password attempted against 150 usernames. Which interpretation best fits?",
+    [
+      "Password spraying across accounts",
+      "Many password candidates against one account",
+      "Reuse of known matching breached credential pairs",
+      "Proof that all 150 accounts were compromised"
+    ],
+    "The account/password distribution supports spraying; attempted logins do not prove success."
+  ],
+  [
+    "2.4",
+    19,
+    "A workstation sends short outbound connections at intervals. There is no process or payload evidence. What can be concluded?",
+    [
+      "The pattern warrants correlation but does not prove a keylogger",
+      "A keylogger is conclusively identified",
+      "A successful data theft is conclusively identified",
+      "The traffic is harmless because connections are short"
+    ],
+    "Periodic traffic has both benign and malicious explanations; additional endpoint and destination evidence is needed."
+  ],
+  [
+    "2.4",
+    29,
+    "A valid session cookie is stolen. Changing the password alone does not terminate existing sessions. What additional action directly addresses ongoing misuse?",
+    [
+      "Revoke the affected sessions and tokens",
+      "Change the account display name only",
+      "Increase the network bandwidth",
+      "Collect more failed-login counts without invalidating access"
+    ],
+    "The attacker holds a valid session, so token/session revocation addresses the active access path."
+  ],
+  [
+    "2.5",
+    9,
+    "A laptop fails posture checks and is moved to a network that allows updates only. What should happen before normal access returns?",
+    [
+      "Remediate and revalidate the required configuration",
+      "Grant full access after any reboot regardless of results",
+      "Rename the laptop as evidence of compliance",
+      "Install any app from outside the approved channel"
+    ],
+    "Restricted access supports configuration enforcement; normal access should follow verified remediation."
+  ],
+  [
+    "2.5",
+    19,
+    "An actively compromised workstation must be investigated while limiting spread. Which first action best fits an authorized containment plan?",
+    [
+      "Isolate its normal communications while preserving required evidence access",
+      "Immediately wipe every drive before any evidence collection",
+      "Grant it wider access to observe more behavior",
+      "Disable logging to improve its performance"
+    ],
+    "Isolation limits harm while allowing investigation; premature wiping destroys evidence and wider access increases exposure."
+  ],
+  [
+    "2.5",
+    29,
+    "A service account needs to write to one log directory. Which permission design best applies least privilege?",
+    [
+      "Permit only the required writes to that directory",
+      "Grant domain administration for troubleshooting convenience",
+      "Give read and write access to every file share",
+      "Reuse a human administrator's credentials"
+    ],
+    "Privileges should match the needed operation and resource, not an unnecessarily broad administrative identity."
+  ],
+  [
+    "3.1",
+    9,
+    "A customer runs an unpatched guest operating system on IaaS and blames the provider's physical security team. What should be checked?",
+    [
+      "The service's responsibility allocation for guest operating-system maintenance",
+      "Whether physical building ownership automatically transfers all software duties",
+      "Whether cloud hosting eliminates patching requirements",
+      "Whether encryption makes guest vulnerabilities irrelevant"
+    ],
+    "IaaS commonly leaves guest maintenance with the customer; the specific service responsibility boundary controls the answer."
+  ],
+  [
+    "3.1",
+    19,
+    "The same application runs in private and public clouds with different identity and network policies. What is the best security priority?",
+    [
+      "Reconcile access and protection requirements across both environments",
+      "Assume connection between clouds makes policies identical",
+      "Disable identity checks to avoid inconsistent results",
+      "Treat the public provider as owner of every private-cloud setting"
+    ],
+    "Hybrid environments require deliberate policy consistency and clear responsibility rather than assumed equivalence."
+  ],
+  [
+    "3.1",
+    29,
+    "A container fleet uses a vulnerable common host kernel. Which statement is most accurate?",
+    [
+      "Host security affects the containers sharing that kernel",
+      "Every container has an independent physical kernel",
+      "Rebuilding application code alone necessarily fixes the host",
+      "Container packaging removes the need for host patching"
+    ],
+    "Shared-kernel isolation leaves host security as a common dependency."
+  ],
+  [
+    "3.2",
+    9,
+    "Wireless users need individual corporate-account authentication. A technician proposes only a shared WPA3-Personal password. What is missing?",
+    [
+      "An enterprise authentication design such as 802.1X",
+      "A longer shared password as an equivalent to individual identities",
+      "A public DNS record for the wireless network",
+      "A reverse proxy in place of wireless authentication"
+    ],
+    "A shared secret does not provide per-user corporate identity; 802.1X supports enterprise network authentication."
+  ],
+  [
+    "3.2",
+    19,
+    "An organization requires inspection that can stop malicious packets before delivery. An out-of-band sensor only alerts. Which change fits?",
+    [
+      "Use an appropriately placed inline prevention capability",
+      "Keep the same passive placement and rename it preventive",
+      "Increase log retention as a substitute for blocking",
+      "Remove the sensor to avoid false alarms"
+    ],
+    "Blocking requires an enforcement point in the traffic path; alerting and retention alone cannot discard traffic."
+  ],
+  [
+    "3.2",
+    29,
+    "Remote technicians use cloud applications from changing locations. The requirement combines connectivity and cloud-delivered security. Which approach best matches the whole requirement?",
+    [
+      "A suitable SASE service architecture",
+      "An RTOS on each phone as the access service",
+      "A certificate revocation list as the network architecture",
+      "A local jump host alone for every application request"
+    ],
+    "SASE combines networking and security for distributed access; the alternatives address different narrower functions."
+  ],
+  [
+    "3.3",
+    9,
+    "An encrypted disk is unlocked and an application processes plaintext records in memory. What protection gap remains?",
+    [
+      "Data in use still requires endpoint and application protection",
+      "Disk encryption makes every process trustworthy",
+      "The data must still be classified as only at rest",
+      "Hashing the disk makes memory confidential"
+    ],
+    "At-rest encryption does not protect plaintext from authorized or compromised processes after decryption."
+  ],
+  [
+    "3.3",
+    19,
+    "A customer database replaces card numbers with references to a separate protected mapping vault. Which description fits?",
+    [
+      "Tokenization separates substitute values from originals",
+      "Hashing guarantees later decryption of the values",
+      "Masking alone removes the original values from every store",
+      "Transport encryption defines the database classification"
+    ],
+    "Tokenization uses substitutes resolved through a separate mapping, unlike display masking or one-way hashing."
+  ],
+  [
+    "3.3",
+    29,
+    "A team proposes collecting extra personal data 'in case it becomes useful.' What best follows minimization?",
+    [
+      "Collect only data needed for the defined purpose and obligations",
+      "Collect everything if storage is encrypted",
+      "Keep all fields indefinitely because deletion costs effort",
+      "Treat a privacy notice as permission for any future use"
+    ],
+    "Minimization limits unnecessary collection and retention; encryption and notices do not create a purpose."
+  ],
+  [
+    "3.4",
+    9,
+    "A database loses power midway through a write. Which mechanism directly helps reconcile incomplete transactions?",
+    [
+      "A transaction journal used in recovery",
+      "An off-site copy alone as proof the local write completed",
+      "A load balancer alone",
+      "A new confidentiality label"
+    ],
+    "Journaling supports consistency recovery; backup location and traffic distribution do not complete an interrupted write."
+  ],
+  [
+    "3.4",
+    19,
+    "A service must resume in one hour and lose at most 15 minutes of data. Which design test matches both targets?",
+    [
+      "Verify restoration within one hour using data no older than 15 minutes",
+      "Check only that a daily backup job reported success",
+      "Verify average hardware lifespan exceeds one year",
+      "Discuss the plan without measuring recovery or data age"
+    ],
+    "RTO concerns restoration time and RPO concerns data age; both need validation."
+  ],
+  [
+    "3.4",
+    29,
+    "A mistaken deletion instantly reaches the replica. Which additional protection best addresses this recovery gap?",
+    [
+      "A tested retained backup with appropriate protection against alteration",
+      "Faster replication of the same deletion",
+      "More replicas that accept the same immediate logical changes",
+      "A higher network throughput limit"
+    ],
+    "Replication can propagate mistakes; retained protected recovery copies provide another recovery point."
+  ],
+  [
+    "4.1",
+    9,
+    "A personally owned phone needs company-mail controls without erasing personal photos during offboarding. Which scope best fits?",
+    [
+      "Application-level business-data management where supported",
+      "Unconditionally wipe all personal content",
+      "Assume personal ownership removes all corporate data controls",
+      "Manage only the office firewall and ignore stored mail"
+    ],
+    "MAM can target managed business applications and data while respecting the personal-device boundary."
+  ],
+  [
+    "4.1",
+    19,
+    "A laptop's disk is encrypted, but malware runs in the unlocked user's session. Which statement is accurate?",
+    [
+      "Disk encryption does not stop that process from using accessible plaintext",
+      "Disk encryption makes malicious execution impossible",
+      "The malware can access only encrypted bytes in all circumstances",
+      "Encryption guarantees all application input is safe"
+    ],
+    "Encryption at rest protects offline data, not every use of plaintext after unlock."
+  ],
+  [
+    "4.1",
+    29,
+    "A new server has unnecessary services and factory accounts enabled. Which first deployment approach is best?",
+    [
+      "Apply and validate the role-appropriate secure baseline before release",
+      "Expose it first and wait for a scan to find problems",
+      "Rely on a complex hostname as the main control",
+      "Assume a current operating system makes hardening unnecessary"
+    ],
+    "Baseline hardening removes known unnecessary exposure before production access."
+  ],
+  [
+    "4.2",
+    9,
+    "A technician lists drive sizes and adapters before retirement. Has this established that data was erased?",
+    [
+      "No; enumeration documents components but sanitization needs separate evidence",
+      "Yes; listing a drive guarantees it was overwritten",
+      "Yes; retirement intent equals completed destruction",
+      "No further record is needed after the list exists"
+    ],
+    "Inventory enumeration and data sanitization are distinct actions and require distinct evidence."
+  ],
+  [
+    "4.2",
+    19,
+    "Encrypted storage is retired using cryptographic erase, but a usable recovery key remains in backup. What is the problem?",
+    [
+      "The remaining key may still enable decryption",
+      "A retained key strengthens erasure assurance",
+      "Publicly documenting deletion makes the key unusable",
+      "The media's asset tag automatically revokes every key"
+    ],
+    "Cryptographic erase depends on eliminating all relevant usable decryption keys."
+  ],
+  [
+    "4.2",
+    29,
+    "A retired server holds records covered by a legal hold. What should occur before routine disposal?",
+    [
+      "Preserve covered information and resolve handling under the hold",
+      "Delete it because the hardware is obsolete",
+      "Treat an asset inventory as permission to erase",
+      "Ask the disposal vendor to decide retention independently"
+    ],
+    "Retirement does not override preservation obligations; data handling must honor the hold."
+  ],
+  [
+    "4.3",
+    9,
+    "A verified affected server has no patch installed, but a scan shows no vulnerability. What best describes the result?",
+    [
+      "A false negative requiring investigation of coverage and detection",
+      "A zero-day solely because the scanner missed it",
+      "Proof the vulnerability cannot be exploited",
+      "A false positive because no finding appeared"
+    ],
+    "A confirmed real weakness was missed, which is a false negative; it does not imply a newly unknown flaw."
+  ],
+  [
+    "4.3",
+    19,
+    "An exposed flaw is actively exploited while a higher-CVSS issue affects an isolated unused lab. What should guide the queue?",
+    [
+      "Combine exploitation, exposure, and business impact with severity",
+      "Always select the highest numerical score without context",
+      "Ignore both until the next annual audit",
+      "Assume isolated and exposed systems have identical likelihood"
+    ],
+    "Risk prioritization uses local likelihood and impact in addition to technical severity."
+  ],
+  [
+    "4.3",
+    29,
+    "A patch installer reports success, but the old process remains active until restart. What best verifies remediation?",
+    [
+      "Complete required activation steps and validate the running state",
+      "Close the finding solely from the installer's success message",
+      "Change the asset's display name",
+      "Disable scan detection to remove the finding"
+    ],
+    "The active vulnerable condition must be resolved and checked; installation messages alone are insufficient."
+  ],
+  [
+    "4.4",
+    9,
+    "A SIEM receives logs but its parsers discard usernames and outcomes. What is the best next improvement?",
+    [
+      "Correct collection and parsing to preserve needed evidence",
+      "Add more dashboards without fixing source fields",
+      "Assume any central collection guarantees detection",
+      "Disable authentication logging because parsing is difficult"
+    ],
+    "Useful correlation depends on correctly captured and normalized evidence fields."
+  ],
+  [
+    "4.4",
+    19,
+    "A team describes SCAP as an autonomous patch installer. Which correction is most accurate?",
+    [
+      "SCAP standardizes security configuration and vulnerability information for interoperable assessment workflows",
+      "SCAP is an email-signature protocol",
+      "SCAP is a user phishing-training campaign",
+      "SCAP guarantees every application automatically patches itself"
+    ],
+    "SCAP supplies standardized assessment information; operational patching requires an implemented management workflow."
+  ],
+  [
+    "4.4",
+    29,
+    "An incident timeline shows a response before its related request because devices have clock skew. What is the best first correction?",
+    [
+      "Normalize timestamps and address clock synchronization before sequencing events",
+      "Assume the response proves time travel or forged evidence",
+      "Delete the earlier record",
+      "Increase alert sensitivity without fixing time"
+    ],
+    "Reliable correlation needs consistent timestamp interpretation and synchronized sources."
+  ],
+  [
+    "4.5",
+    9,
+    "An email passes SPF for vendor.test but fails DKIM; the visible From domain is company.test and neither identity aligns. What should be checked?",
+    [
+      "DMARC alignment and the published failure-handling policy",
+      "Whether SPF alone guarantees the visible From identity",
+      "Whether a TLS connection automatically makes DMARC pass",
+      "Whether DKIM encrypts the sender's address"
+    ],
+    "SPF pass for an unrelated domain does not establish alignment with the visible From domain."
+  ],
+  [
+    "4.5",
+    19,
+    "A message has a valid aligned DKIM signature but SPF fails after forwarding. Which DMARC conclusion is valid?",
+    [
+      "It can pass DMARC through the aligned DKIM result",
+      "It must fail because both mechanisms must always pass",
+      "It must be encrypted because DKIM passed",
+      "It is guaranteed harmless because DMARC can pass"
+    ],
+    "Either aligned SPF or aligned DKIM can satisfy DMARC; passing does not encrypt or certify harmless content."
+  ],
+  [
+    "4.5",
+    29,
+    "A domain wants receivers to reject messages failing aligned authentication and send reports. Which configuration fits?",
+    [
+      "DMARC policy and reporting records",
+      "SPF alone as the entire disposition and reporting mechanism",
+      "DKIM signatures as transport encryption",
+      "A host firewall rule as a replacement for email-domain policy"
+    ],
+    "DMARC addresses alignment, published disposition policy, and reports; SPF and DKIM supply distinct authentication inputs."
+  ],
+  [
+    "4.6",
+    9,
+    "A file owner gives one colleague read access directly. Which explanation best distinguishes the access model?",
+    [
+      "DAC because the owner chooses the grant, rather than role membership assigning it",
+      "RBAC solely because two people now have the same permission",
+      "MAC because every file has a name",
+      "ABAC solely because a user is involved"
+    ],
+    "Owner discretion identifies DAC; shared permissions do not prove a role-based assignment mechanism."
+  ],
+  [
+    "4.6",
+    19,
+    "A partner accepts identity assertions from another organization's provider. Which distinction best describes this arrangement?",
+    [
+      "Federation establishes cross-domain trust and may enable SSO",
+      "SSO necessarily means no cross-domain trust is needed",
+      "MFA alone defines which provider's assertions are trusted",
+      "A shared password is required for every federated service"
+    ],
+    "Federation describes trust between identity domains; SSO describes reduced repeated authentication."
+  ],
+  [
+    "4.6",
+    29,
+    "An employee changes jobs but retains old access in addition to the new role. What best addresses the excessive permissions?",
+    [
+      "Review and remove obsolete grants through access recertification",
+      "Keep all old permissions to avoid future requests",
+      "Add another authentication factor and leave permissions unchanged",
+      "Rename the account without changing its grants"
+    ],
+    "Authentication strength does not correct excessive authorization; review actual permission need."
+  ],
+  [
+    "4.7",
+    9,
+    "A workflow retries after losing a success response and accidentally creates duplicate accounts. Which design property is missing?",
+    [
+      "Idempotent handling of repeated requests",
+      "Longer dashboard retention",
+      "A more privileged service account",
+      "A less specific request identifier"
+    ],
+    "Idempotence makes retries converge on the intended state without duplicate effects."
+  ],
+  [
+    "4.7",
+    19,
+    "Automation proposes creating public storage contrary to policy. What control should stop it before creation?",
+    [
+      "A pre-execution policy guardrail",
+      "A monthly report as the sole prevention",
+      "A wider administrator credential",
+      "A ticket opened only after exposure is exploited"
+    ],
+    "Guardrails reject unsafe operations before they execute; later reporting does not prevent creation."
+  ],
+  [
+    "4.7",
+    29,
+    "An automated alert remains unresolved beyond its defined response time. Which next workflow action improves accountability?",
+    [
+      "Escalate the case to the designated responder with evidence",
+      "Increase the user's system privileges",
+      "Silently discard the alert",
+      "Create repeated duplicate cases without ownership"
+    ],
+    "Escalation routes work to responsible responders; it is not privilege elevation."
+  ],
+  [
+    "4.8",
+    9,
+    "A suspicious system may contain volatile evidence, but responders also need to limit active harm. What should guide the next action?",
+    [
+      "The authorized response plan balancing containment, safety, and evidence preservation",
+      "An unconditional rule to wipe every system immediately",
+      "An unconditional rule to leave every connection open",
+      "The assumption that an alert proves every reported detail"
+    ],
+    "Response actions depend on actual harm, authorization, safety, and evidence requirements, not a universal destructive reflex."
+  ],
+  [
+    "4.8",
+    19,
+    "Malicious traffic stops after isolation, but persistence remains on the host. Which statement is accurate?",
+    [
+      "Containment succeeded in limiting traffic; eradication is still needed",
+      "Isolation automatically removed all malware",
+      "Recovery is complete because the network is quiet",
+      "No further validation is needed"
+    ],
+    "Containment limits damage but does not necessarily remove persistence or the entry cause."
+  ],
+  [
+    "4.8",
+    29,
+    "An evidence file's hash matches, but nobody recorded its transfers. What remains deficient?",
+    [
+      "Chain-of-custody accountability",
+      "Every possible integrity check necessarily failed",
+      "The file must be encrypted again to recreate custody history",
+      "No issue remains because hashing records handlers"
+    ],
+    "Hash agreement supports content integrity but does not document who handled or transferred evidence."
+  ],
+  [
+    "4.9",
+    9,
+    "Log: src=198.51.100.7:80 -> dst=10.1.1.9:52004 action=blocked signature=trojan_download. Which conclusion is supported?",
+    [
+      "The sensor reports blocking detected traffic from the web-service port toward the client",
+      "The record proves the client executed the Trojan",
+      "The source address is necessarily the victim's internal host",
+      "All files on the destination are proven malware-free"
+    ],
+    "Direction and action show a reported local block; execution and whole-host safety require additional evidence."
+  ],
+  [
+    "4.9",
+    19,
+    "Logs: user=root result=failed count=650 distinct_passwords=650 distinct_users=1. Which pattern is most directly supported?",
+    [
+      "Many password guesses against one account",
+      "One common password across hundreds of accounts",
+      "Hundreds of confirmed successful compromises",
+      "A valid stolen session token being reused"
+    ],
+    "The explicit distribution supports concentrated brute-force guessing, not spraying or confirmed success."
+  ],
+  [
+    "4.9",
+    29,
+    "Log: method=POST input=<script>alert(1)</script> action=blocked. Which interpretation is best supported?",
+    [
+      "An attempted script-injection pattern was reported blocked at this control",
+      "A database query definitely executed successfully",
+      "The endpoint's entire operating system is proven clean",
+      "The client port number caused a password-spraying attack"
+    ],
+    "Script markup in web input supports an attempted XSS pattern; the local block does not prove broader outcomes."
+  ],
+  [
+    "5.1",
+    9,
+    "A manager approves who may read a database, and an administrator configures those grants. Which pairing fits?",
+    [
+      "Owner decides; custodian implements",
+      "Custodian defines all business purposes; owner only changes passwords",
+      "Processor and data subject are interchangeable",
+      "The database creator is automatically every role forever"
+    ],
+    "Owner accountability and custodian administration are distinct even when one person sometimes performs both."
+  ],
+  [
+    "5.1",
+    19,
+    "A company wants secure design reviews, testing gates, release criteria, and retirement procedures for software. Which policy scope fits?",
+    [
+      "The application development lifecycle",
+      "Only employees' personal browsing permissions",
+      "Only the annual office evacuation process",
+      "Only password length values"
+    ],
+    "The requested activities span development and operation of software, not general resource-use behavior."
+  ],
+  [
+    "5.1",
+    29,
+    "A team cannot meet a standard temporarily. What is the best governance response?",
+    [
+      "Document an approved time-limited exception with risk owner and alternative controls",
+      "Ignore the standard without recording the decision",
+      "Treat an informal chat as permanent authorization",
+      "Remove the requirement from every other system"
+    ],
+    "Managed exceptions retain accountability, treatment conditions, and review rather than silently discarding requirements."
+  ],
+  [
+    "5.2",
+    9,
+    "An event would lose $20,000 and is expected once every four years. What is the estimated ALE?",
+    [
+      "$5,000 per year",
+      "$80,000 per year",
+      "$20,000 per year",
+      "0.25 dollars per event"
+    ],
+    "ARO is 0.25; $20,000 multiplied by 0.25 yields $5,000 annualized expected loss."
+  ],
+  [
+    "5.2",
+    19,
+    "A $100,000 asset would lose 30 percent of value in one event. Which calculation produces SLE?",
+    [
+      "$100,000 × 0.30 = $30,000",
+      "$100,000 ÷ 0.30 = about $333,333",
+      "30 events multiplied by the annual budget",
+      "The repair duration divided by yearly event frequency"
+    ],
+    "SLE is asset value times exposure factor for one event; frequency is used later for ALE."
+  ],
+  [
+    "5.2",
+    29,
+    "A firewall lowers attack likelihood, and insurance covers specified incident costs. Which pairing is accurate?",
+    [
+      "Firewall mitigates; insurance transfers some financial exposure",
+      "Firewall avoids all risk; insurance removes all downtime",
+      "Both measures prove residual risk is zero",
+      "Insurance is the same as technical prevention"
+    ],
+    "Controls reduce likelihood or impact, while insurance shifts defined financial consequences; residual exposure can remain."
+  ],
+  [
+    "5.3",
+    9,
+    "A contract dispute concerns required installation locations and acceptance tests, not uptime. Which document should be examined first?",
+    [
+      "The project statement of work",
+      "Only the nondisclosure agreement",
+      "Only a broad expression of mutual intent",
+      "Only the support response-time metric"
+    ],
+    "The SOW defines specific deliverables and acceptance criteria; the other documents answer different questions."
+  ],
+  [
+    "5.3",
+    19,
+    "A supplier passed an initial assessment but changes its subcontractor and data location. What should the customer do?",
+    [
+      "Reassess the changed risk through ongoing vendor monitoring",
+      "Assume initial approval covers all future changes",
+      "Ignore subcontractors because only the direct vendor matters",
+      "Treat an NDA as proof the new controls work"
+    ],
+    "Supplier risk changes over time and through dependencies; monitoring must revisit material changes."
+  ],
+  [
+    "5.3",
+    29,
+    "A customer needs evidence of provider controls during service. Which contract provision best enables later verification?",
+    [
+      "Defined right-to-audit or assurance-access terms",
+      "Only a confidentiality promise",
+      "Only a list of project deliverables",
+      "Only a statement that the parties intend to cooperate"
+    ],
+    "Verification rights must be established; confidentiality and scope documents do not automatically grant audit access."
+  ],
+  [
+    "5.4",
+    9,
+    "A vendor presents a signed statement of compliance without supporting records. What is the best interpretation?",
+    [
+      "It is an attestation whose scope and evidence still need evaluation",
+      "It automatically proves an independent technical audit occurred",
+      "It guarantees the vendor cannot be breached",
+      "It replaces every contractual obligation"
+    ],
+    "A formal assertion is not the same as independently verified evidence or a security guarantee."
+  ],
+  [
+    "5.4",
+    19,
+    "A service publishes a privacy notice explaining its data use. Which statement is accurate?",
+    [
+      "Transparency alone does not establish permission for every processing purpose",
+      "A notice automatically authorizes every future use",
+      "A notice encrypts the stored data",
+      "A notice removes the need to handle applicable rights requests"
+    ],
+    "A privacy notice explains processing; consent, legal basis, technical controls, and rights are separate considerations."
+  ],
+  [
+    "5.4",
+    29,
+    "An annual assessment passed, but a later configuration change disables a required control. Which practice best detects the new gap?",
+    [
+      "Continuing compliance monitoring after changes",
+      "Relying permanently on the old assessment result",
+      "Removing the requirement from reports",
+      "Assuming passed audits prevent configuration drift"
+    ],
+    "Compliance is not a one-time state; monitoring detects changes after assessment."
+  ],
+  [
+    "5.5",
+    9,
+    "A consultant has no internal access but probes a public server's ports. Which conclusion is correct?",
+    [
+      "This is active reconnaissance because it directly probes the target",
+      "This must be passive because the consultant is outside",
+      "This proves successful exploitation",
+      "This removes the need for authorization"
+    ],
+    "Activity, not physical or network location alone, distinguishes active from passive reconnaissance."
+  ],
+  [
+    "5.5",
+    19,
+    "An authorized tester discovers an attractive target absent from the written scope. What is the best next action?",
+    [
+      "Seek clarification and approval before testing that target",
+      "Assume reachability grants permission",
+      "Attack it first and document the expansion afterward",
+      "Disable its logging to avoid operational concern"
+    ],
+    "Rules of engagement define authorization; a discovered system does not automatically become in scope."
+  ],
+  [
+    "5.5",
+    29,
+    "An external tester receives complete diagrams, source code, and credentials. Which distinction is accurate?",
+    [
+      "External describes the party; known environment describes supplied knowledge",
+      "External always means unknown environment",
+      "Complete knowledge removes testing authorization requirements",
+      "Supplying code changes the test into passive reconnaissance only"
+    ],
+    "Tester affiliation and information disclosure are separate classification axes."
+  ],
+  [
+    "5.6",
+    9,
+    "An employee clicked a suspicious message and now fears punishment. What response best supports early containment?",
+    [
+      "Encourage prompt reporting through the approved channel and provide clear next steps",
+      "Tell employees to hide mistakes unless compromise is confirmed",
+      "Use public blame as the first response to every report",
+      "Require users to investigate the attacker themselves before reporting"
+    ],
+    "Early honest reporting gives responders useful time; concealment and untrained investigation can increase damage."
+  ],
+  [
+    "5.6",
+    19,
+    "Training completion is 100 percent, but nobody reports suspicious requests. What should improve the assessment?",
+    [
+      "Measure practical recognition, reporting rate, and time to report",
+      "Treat attendance as conclusive mastery",
+      "Remove reporting exercises because everyone attended",
+      "Compare scores without considering scenario difficulty"
+    ],
+    "Behavioral outcomes reveal applied skill that attendance alone cannot demonstrate."
+  ],
+  [
+    "5.6",
+    29,
+    "Finance and field technicians face different risky requests. Which training design best builds useful judgment?",
+    [
+      "Practice realistic role-specific scenarios with feedback on alternatives",
+      "Use only identical definition memorization for all roles",
+      "Provide no explanation after incorrect decisions",
+      "Make questions intentionally ambiguous and punish disagreement"
+    ],
+    "Role-relevant practice and reasoning feedback build decision skills beyond vocabulary recognition."
+  ],
+  [
+    "1.4",
+    13,
+    "Several suppliers need a shared tamper-evident history of component transfers without one party silently rewriting accepted records. Which design is most relevant?",
+    [
+      "A governed distributed ledger with linked records and consensus",
+      "A hash of one local file with no shared history",
+      "Encryption of one supplier’s disk as the entire shared tracking system",
+      "A hidden message in an image as the audit history"
+    ],
+    "A blockchain can support shared ledger traceability; trustworthy event input and governance are still needed."
+  ]
+]

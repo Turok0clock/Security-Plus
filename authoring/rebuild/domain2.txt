@@ -1,0 +1,229 @@
+@2.1
+P|An actor is who is acting; a motivation is why; a vector is how access is attempted. Do not use one clue to answer all three. A highly capable group may steal money or conduct espionage. A contractor may be an insider because of legitimate access even though another company pays them. Attribution is uncertain: technical indicators alone rarely prove a government sponsor.
+P|Separate intent from privilege and resources. An employee can cause an incident accidentally, while an outsider may use stolen employee credentials. Shadow IT is unapproved technology, not necessarily malicious intent. Evaluate evidence about objectives, access, funding, skills, and persistence before selecting an actor category. A realistic scenario should supply a distinguishing fact; nationality or a foreign address alone is insufficient.
+F|Identify observed behavior|Separate access from identity|Find the stated objective|Assess capability and resources|Avoid unsupported attribution
+T|Nation-state actor|A government-sponsored operation may pursue strategic intelligence, influence, or disruption with substantial resources. Sponsorship evidence matters; technical sophistication alone does not establish a nation-state actor.
+T|Organized crime|A coordinated criminal group commonly pursues financial benefit through extortion, fraud, or stolen-data markets. Professional infrastructure and monetization support this interpretation.
+T|Hacktivist|An actor pursues ideological or political goals through unauthorized activity. Public messaging and cause-driven targeting distinguish this motive from ordinary profit seeking.
+T|Insider threat|A person with legitimate organizational access creates risk deliberately or accidentally. Employees, contractors, and partners may qualify; insider status is about trusted access, not payroll alone.
+T|Unskilled attacker|Relies heavily on others' tools or instructions with limited ability to develop attacks. Tool usage by itself does not prove low skill, because sophisticated actors also reuse software.
+T|Shadow IT|Technology deployed or used without the responsible organization's approval or oversight. It creates unmanaged exposure even when users intend to improve productivity.
+T|Financial gain|The objective is money through theft, extortion, fraud, resale, or resource abuse. This is a motive, not a unique actor identity.
+T|Espionage|The objective is secret information for strategic or competitive advantage. Long-term covert collection can support this interpretation when evidence identifies the target data.
+T|Disruption|The objective is to interrupt services or operations. This describes an intended outcome and may be pursued by several actor categories.
+T|External actor|A person or group originates outside the organization's trusted relationship. They may subsequently obtain internal credentials; the origin of the actor and the location of the connection differ.
+E|A vendor technician copies restricted designs using legitimate maintenance access. That is an insider access relationship. If evidence shows resale to a competitor, espionage or financial motives may be relevant depending on the question. The copying mechanism is neither the actor nor the motive; keep these dimensions separate.
+Q|3,9,1,5|A maintenance contractor abuses an assigned administrator account to copy restricted designs. Which access-based actor category fits?|Legitimate entrusted access makes this an insider threat.
+Q|6,7,8,5|A group demands payment to restore files and threatens to sell stolen records. Which motivation is most directly supported?|The demand explicitly seeks financial benefit.
+Q|2,1,0,4|Attackers deface a company's website with demands supporting a political cause. Which actor category best fits the stated purpose?|The ideological public message supports hacktivism.
+Q|5,3,9,4|Employees move customer files into an unapproved cloud workspace to simplify collaboration. What risk category is introduced?|Unapproved technology use is shadow IT, even with helpful intent.
+Q|7,6,8,5|An operation quietly collects military research for strategic intelligence over several years. Which motivation fits?|Covert collection for strategic advantage indicates espionage.
+Q|4,1,0,2|A novice follows a copied exploit tutorial and cannot adapt it when the target version differs. Which skill category fits?|Dependence on a fixed recipe supports limited skill.
+Q|1,2,0,3|Investigators identify a coordinated group selling stolen payment-card data through criminal brokers. Which actor fits best?|Organized monetization through criminal markets supports organized crime.
+Q|8,6,7,5|The attacker's stated goal is to stop a transit service from operating, with no demand for payment. Which motive fits?|The stated aim is service disruption.
+Q|0,1,2,4|Evidence links a funded intrusion unit directly to a government's strategic collection program. Which actor category fits?|Documented government sponsorship supports nation-state attribution.
+Q|9,3,5,1|An unaffiliated person with no authorized relationship exploits a public portal. Which access-origin category applies?|The actor originates outside an entrusted relationship.
+Q|3,5,9,1|An employee accidentally emails sensitive records to the wrong recipient. Which threat relationship applies despite no malicious intent?|Insider risk can be accidental as well as intentional.
+Q|5,3,1,9|A department installs its own wireless gateway without IT approval. Which issue exists before any attack occurs?|An unmanaged unapproved system constitutes shadow IT.
+Q|7,6,8,2|A competitor pays for unreleased engineering plans rather than payment-card records. Which information-focused motive is evident?|Competitive secret collection is espionage.
+Q|1,2,4,0|A group operates affiliates, negotiators, and money-laundering channels for ransomware. Which actor model best fits?|The structured profit-seeking operation resembles organized crime.
+Q|2,0,1,4|A protest collective leaks files to embarrass a company over its environmental policies. Which actor category is most supported?|The cause-driven objective is characteristic of hacktivism.
+Q|6,8,7,5|Attackers use stolen cloud resources to mine assets for sale. Which motive best explains the resource abuse?|The resources are being monetized for financial gain.
+Q|3,9,5,4|A departing employee uses still-valid access to sabotage configurations. Which relationship is the key risk?|The person abuses trusted organizational access.
+Q|8,7,6,5|An attacker destroys backups solely to prevent a public service from recovering. Which objective is described?|Preventing operations and recovery is disruption.
+Q|0,2,1,4|A security report confirms a military intelligence service directed the intrusion. Which actor category is justified?|Confirmed government direction supports nation-state classification.
+Q|4,1,3,0|A person downloads a ready-made attack kit and runs default settings without understanding its operation. Which capability description fits?|The evidence supports dependence on prebuilt tools and low understanding.
+Q|9,3,5,0|An unknown outsider steals an employee password and logs in remotely. Classify the actor's original relationship.|Stolen credentials do not turn an outsider into a legitimate insider.
+Q|5,3,9,1|An engineering team buys an unreviewed hosted code service on a personal card. What governance exposure arises?|Technology bypasses organizational oversight and approval.
+Q|7,6,8,2|An intruder avoids disruption while copying diplomatic correspondence for intelligence use. Which motive is supported?|The objective is covert strategic information collection.
+Q|6,7,8,5|A fraud ring changes bank details on invoices to divert payments. What is its immediate motivation?|Payment diversion seeks money.
+Q|3,9,4,2|A partner's analyst uses authorized portal access to download data beyond the agreed purpose. Which relationship explains the risk?|The partner has entrusted access and misuses it.
+Q|2,1,0,4|A group times website outages to a political campaign and publishes ideological demands. Which actor category best fits?|The campaign-linked demands support hacktivist intent.
+Q|8,6,7,5|An attacker overwhelms emergency dispatch with the announced goal of making it unavailable. Which motive fits?|The objective is to interrupt the service.
+Q|1,0,2,4|A coordinated criminal organization sells access to victims to other criminals. Which actor category fits?|Commercial criminal coordination supports organized crime.
+Q|4,0,1,3|A novice abandons an attack when a graphical tool produces an unfamiliar error. Which capability assessment is best supported?|Inability to adapt supports a low-skill assessment.
+Q|0,1,2,3|A court record identifies direct state sponsorship of a long-running strategic intrusion. Which actor is supported by this additional evidence?|State sponsorship, rather than mere sophistication, identifies the actor class.
+@2.2
+P|A vector is the route used to reach a target: email, text, voice, a vulnerable service, removable media, or a supplier. Social engineering manipulates a person's decision through urgency, authority, fear, familiarity, or a fabricated story. The same fraudulent invoice can arrive by email or voice; its delivery route and its psychological technique are different dimensions.
+P|A host-based firewall can restrict application connections, including unwanted messaging traffic, but it does not determine whether a phone call is deceptive. An email sender display name does not establish identity. Verify sensitive requests using a known independent channel, not a number or link supplied in the suspicious message. A trusted supplier can become the vector if an attacker compromises that supplier's software or access.
+F|Find the delivery channel|Find the claimed identity|Identify the requested action|Verify through an independent path
+T|Phishing|Deceptive electronic messaging attempts to obtain information or induce an unsafe action. Generic email campaigns may target many recipients; inspect context, links, attachments, and the requested behavior.
+T|Smishing|Phishing delivered through SMS or similar text messaging. A delivery fee or account warning may lure a user to a fraudulent page; the short message channel is the differentiator.
+T|Vishing|Voice-based social engineering through calls or voice messages. Caller ID can be spoofed; identity verification should use a trusted callback path.
+T|Spear phishing|A targeted phishing attempt tailored to a particular person or group using relevant details. Personalization supports the classification, not simply having an email address.
+T|Business email compromise|Abuse or impersonation of business email identities to induce transfers, purchases, or disclosure. A genuine compromised mailbox can make the message appear credible without any malicious attachment.
+T|Watering hole|Compromises a site frequented by a target group so normal browsing brings victims to the attacker. The trusted destination, rather than a direct message, is the route.
+T|Typosquatting|Uses a lookalike or mistyped domain to capture users who enter or follow the wrong address. Character similarity does not make the site legitimate.
+T|Removable media|A USB drive or other portable storage carries malicious content or removes sensitive data. Endpoint device control addresses the connection locally; an internet gateway may never see an offline copy.
+T|Supply chain compromise|A supplier's software, hardware, service, or access becomes the path into another organization. The trust relationship allows exposure to propagate downstream.
+T|Pretexting|Uses an invented situation or role to justify a request. It can occur by phone, email, or in person; classify the story separately from the delivery channel.
+T|Host-based firewall|Filters traffic to and from an individual endpoint according to local rules. It can restrict applications and services, but it does not block offline USB copying or detect the truth of spoken claims.
+T|Device control policy|Restricts peripherals such as removable storage through operating-system or endpoint management policy. It addresses the local device path rather than internet-bound traffic.
+E|A caller claims to be the badge vendor and asks for a remote administrator login to fix an urgent outage. The channel is vishing; the invented repair story is pretexting. Calling the vendor using the contract's known number checks the claim independently. A firewall may restrict remote access, but it cannot authenticate the caller's story for you.
+Q|2,0,1,3|A caller impersonates support and asks a technician to reveal a one-time login code. Which delivery-based attack is this?|The deceptive request is delivered by voice.
+Q|1,0,2,3|A text message claims a parcel is held and links to a payment form. Which attack channel is used?|The text-message channel makes this smishing.
+Q|3,0,4,5|An email references a specific project and named coworkers to convince its engineer to open a file. Which feature makes it targeted phishing?|Tailored project context distinguishes spear phishing from a generic campaign.
+Q|4,3,0,9|A compromised executive mailbox sends a convincing bank-detail change to finance with no attachment. Which attack fits best?|Business email identity is abused to redirect a payment.
+Q|5,6,0,8|An attacker compromises an industry forum frequently visited by one company's engineers. Which vector targets their routine browsing?|The frequented site becomes a watering hole.
+Q|6,5,0,3|A fraudulent login page uses a domain differing from the vendor's name by one missing letter. Which technique is evident?|The deceptive domain relies on a typing or visual similarity error.
+Q|7,8,5,0|A found USB drive runs malicious content when connected to a workstation. Which vector delivered the content?|Portable storage is the delivery route.
+Q|8,7,5,4|A signed update from a compromised software provider installs unwanted code at customer sites. Which vector is involved?|The supplier's update channel carries the compromise downstream.
+Q|9,2,3,4|A visitor invents a refrigeration emergency to justify entering a restricted room. Which social engineering technique describes the story?|The fabricated emergency is a pretext independent of delivery channel.
+Q|11,10,7,8|A company must prevent offline copying to USB drives on laptops. Which control directly addresses that path?|Endpoint device policy can block removable storage without network traffic.
+Q|0,3,4,1|Thousands of users receive the same generic email requesting password verification. Which broad attack category best fits?|A mass deceptive email request is generic phishing.
+Q|10,11,2,9|A company wants to deny an unauthorized chat application's outbound connections on each laptop. Which control fits?|A host firewall can enforce application traffic restrictions.
+Q|2,1,4,9|An automated voice message threatens account closure unless the recipient calls and discloses credentials. Which channel defines the attack?|Voice communication defines vishing.
+Q|5,6,8,3|No messages are sent to victims; their usual professional association website serves the malicious content. Which technique fits?|Compromising a habitual destination is a watering-hole attack.
+Q|8,4,5,7|An attacker uses a breached managed-service provider's remote tools to reach its clients. Which vector connects the organizations?|The trusted service provider is the supply-chain path.
+Q|6,0,5,3|Users reach a fake portal after omitting a character while typing its domain. Which technique exploits this behavior?|Typosquatting captures navigation mistakes.
+Q|9,2,3,4|An email claims an audit requires immediate disclosure of passwords, but no audit exists. What describes the fabricated justification?|The invented audit is a pretext.
+Q|7,8,0,5|A technician transfers infected files between isolated systems on an external drive. Which vector bypasses network isolation?|Removable media physically bridges isolated systems.
+Q|3,0,4,1|A message targets only purchasing staff and references their current supplier negotiation. Which type of phishing fits?|Role-specific contextual tailoring makes it spear phishing.
+Q|11,10,8,7|A laptop must allow keyboards but prohibit external storage devices. Which policy mechanism is most direct?|Device control can distinguish peripheral classes locally.
+Q|4,0,3,9|An attacker uses a genuine vendor mailbox to request payment to a new account. Which business threat is most relevant?|Compromised business email redirects a legitimate payment workflow.
+Q|1,2,0,3|A phone receives an SMS directing the user to a fake multifactor reset page. Which category describes the delivery?|SMS-delivered deception is smishing.
+Q|10,11,2,7|An endpoint needs to reject inbound connections to an unnecessary service while still using the network. Which control fits?|Local firewall rules restrict network connections without disconnecting the endpoint.
+Q|8,5,7,4|A hardware shipment arrives with altered firmware before installation at the customer. Which vector is most supported?|Compromise entered through the supplier and distribution path.
+Q|5,3,6,0|Attackers study where target researchers browse and compromise that site instead of contacting them. Which strategy fits?|The site is chosen because the target group routinely visits it.
+Q|9,2,4,3|A person claims to be a new manager who needs a temporary badge for an imaginary inspection. Which technique describes the invented role?|A false identity and scenario form a pretext.
+Q|0,4,3,1|A broad email campaign asks users to log in through a deceptive link without any individualized context. Which term fits best?|The evidence supports general email phishing rather than targeted personalization.
+Q|6,5,8,3|A fake support site is registered under a visually similar misspelling of a real company's domain. Which technique fits?|The attack uses a confusing domain variation.
+Q|11,10,7,8|A gateway sees no traffic while an employee copies records to portable storage. Which control should address this blind spot?|The copying occurs on the endpoint and requires device control.
+Q|2,1,0,4|An attacker calls a receptionist, impersonating the help desk, to obtain an internal extension list. Which channel classification applies?|The attacker gathers information through a deceptive voice call.
+@2.3
+P|A vulnerability is a weakness; an exploit uses it; an indicator is evidence of activity. Separate the source of the weakness from the result. Missing input validation may let a database interpret input as query syntax or a browser execute attacker-controlled script. These are different execution contexts even though both involve untrusted input.
+P|Version numbers and error messages are clues, not complete proof. Confirm affected versions, configuration, reachability, and mitigations. Unsupported systems remain risky even if no new alert appears because fixes may no longer exist. A zero-day describes a previously unknown or unaddressed vulnerability at the relevant time; a missed scan detection is a false negative, not automatically a zero-day. Layered mitigations can reduce exposure while a permanent fix is developed.
+F|Locate the weakness|Identify where input executes|Verify affected conditions|Reduce exposure|Fix and validate
+T|Buffer overflow|Input exceeds a memory buffer's bounds and may overwrite adjacent memory or control data. Memory-safe design and bounds checks address the cause; not every crash proves exploitation.
+T|Race condition|A security result depends on timing between operations. A resource can change between a permission check and its use; atomic operations or proper locking reduce the gap.
+T|SQL injection|Untrusted input alters a database query's meaning. Parameterized queries separate values from query structure. Web encryption does not fix unsafe query construction.
+T|Cross-site scripting|Attacker-controlled script executes in another user's browser in the application's context. Context-aware output encoding and safe rendering prevent data from becoming executable markup.
+T|Unpatched software|A fix exists but has not been applied. Validate compatibility, prioritize exposure, deploy through change control, and confirm remediation rather than equating installation attempts with success.
+T|End-of-life system|Vendor support or security fixes have ended. Continued operation needs a documented risk treatment and replacement plan; repeatedly scanning does not create missing vendor patches.
+T|Default credentials|Factory or broadly known authentication values remain in use. Replace them during provisioning and disable unnecessary accounts; network location alone is not a sufficient safeguard.
+T|Cloud misconfiguration|Permissions or service settings expose resources beyond intended scope. A public bucket may leak data without any software exploit because the configuration permits access.
+T|VM escape|Code crosses the boundary from a guest virtual machine into the host or other guests through a vulnerability. Guest compromise alone does not prove that the isolation boundary failed.
+T|Zero-day vulnerability|A newly discovered weakness lacks prior awareness or a usable fix in the relevant context. It is not simply any unpatched system or any scanner miss.
+E|A search field is concatenated into a database query. A crafted input changes which records the database returns: SQL injection. A comment stored in the database later executes script in a visitor's browser: cross-site scripting. Both are input-related, but the execution destination determines the distinction.
+Q|2,3,0,1|A search value changes a database statement so it returns every customer's record. Which vulnerability is exploited?|Input changes database query structure, indicating SQL injection.
+Q|3,2,0,1|A stored review causes other visitors' browsers to execute an unexpected script. Which vulnerability fits?|Execution occurs in visitors' browsers, indicating cross-site scripting.
+Q|0,1,2,8|An oversized message overwrites adjacent memory in a native service. Which weakness is described?|Writing beyond a bounded memory region is a buffer overflow.
+Q|1,0,8,7|A file's ownership changes after an access check but before the application opens it. Which weakness enables the mismatch?|The check and use are separated by a timing window.
+Q|4,5,9,7|A vendor released a fix last month, but an internet-facing server still runs the affected build. Which condition is present?|A known available fix has not been applied.
+Q|5,4,9,7|The vendor no longer provides security fixes for an essential appliance. Which lifecycle risk is this?|The device has reached end of life for support.
+Q|6,7,4,5|A newly installed controller still accepts the vendor's published factory password. Which weakness is most direct?|Known default credentials remain enabled.
+Q|7,6,4,9|A storage bucket permits anonymous reads because of its access policy. No software bug is required. What is the weakness?|The service configuration grants unintended public access.
+Q|8,0,1,7|Code in one guest exploits the hypervisor and executes on the host. Which boundary failure occurred?|Execution escaped the virtual machine into the host.
+Q|9,4,5,7|A previously unknown flaw is actively exploited before a vendor fix is available. Which category best fits?|The newly unknown-and-unfixed flaw fits a zero-day context.
+Q|2,3,7,6|A login form builds queries by concatenating text. An attacker alters query logic instead of supplying a normal username. Which weakness fits?|Unsafe query construction enables SQL injection.
+Q|3,2,0,9|A page reflects a URL parameter directly into executable HTML. Which vulnerability can result?|Untrusted content may execute as browser script.
+Q|1,0,8,4|Two simultaneous requests both pass a balance check before either debit is committed. Which weakness is illustrated?|Concurrent operations exploit a gap between checking and updating state.
+Q|0,1,8,2|A network service trusts a supplied length and writes past its allocated array. Which vulnerability should be investigated?|Unchecked bounds permit memory overwrite.
+Q|7,6,5,4|A cloud role accidentally grants every employee administrator permissions. Which issue is present?|Excess privilege results from configuration rather than a code exploit.
+Q|4,9,5,6|The inventory shows affected software, and a tested supported update is awaiting deployment. Which condition remains?|The software is still unpatched despite an available remedy.
+Q|6,7,4,9|Every appliance uses the same documented setup account and password after commissioning. What should the review identify?|Default authentication was never replaced.
+Q|5,4,9,8|A system passes today's scans but will receive no further security updates. Which risk remains independently of scan results?|End-of-life status leaves future vulnerabilities without vendor fixes.
+Q|8,7,0,1|A compromised guest reaches another tenant through a flaw in the shared virtualization layer. Which isolation failure is described?|The attack crosses the guest isolation boundary.
+Q|9,4,7,5|Researchers report a new exploitable flaw that defenders had no prior opportunity to patch. Which label is most appropriate?|The description concerns a previously unknown vulnerability.
+Q|2,3,1,0|An attacker injects database syntax into a reporting filter and bypasses record restrictions. Which flaw best explains this?|Database query meaning is changed by input.
+Q|3,2,7,6|A help-desk ticket includes markup that runs under the support portal's origin when opened. Which vulnerability fits?|The payload executes in the viewer's browser context.
+Q|1,0,8,9|An attacker swaps a symbolic link after validation but before a privileged write. Which weakness is targeted?|The attacker exploits time between validation and resource use.
+Q|0,2,3,1|A malformed image causes a parser to overwrite return-address memory. Which vulnerability class fits?|Corruption beyond the intended buffer can affect control data.
+Q|7,6,4,5|An infrastructure template accidentally exposes a management service to all internet addresses. Which issue fits best?|The exposure is introduced by an unsafe configuration.
+Q|6,7,9,4|A scanner logs in using manufacturer-supplied credentials without any exploit. Which finding should be reported?|The device still trusts known default credentials.
+Q|4,5,9,7|A security bulletin identifies a fixed version, but three servers remain one release behind. Which weakness applies?|An available security update has not reached those servers.
+Q|5,4,7,9|A company cannot obtain any supported patches for a retired operating system. Which strategic issue requires replacement planning?|Vendor support has ended, creating a lifecycle vulnerability.
+Q|8,0,7,1|A guest compromise is confirmed to have altered hypervisor settings. Which additional failure is now supported?|Host-level alteration demonstrates escape beyond the guest.
+Q|9,4,5,6|An attacker uses a newly discovered vulnerability before defenders receive a vendor advisory. Which classification fits the timing?|Exploitation precedes public defensive knowledge in a zero-day situation.
+@2.4
+P|Interpret evidence before naming an attack. Start with time, system, account, source, destination, action, and result. Many failures against one account suggest password guessing; one common password tried across many accounts suggests spraying. Known leaked username/password pairs suggest credential stuffing. A few failures alone may be ordinary typing mistakes. A successful event after failures deserves correlation, not an automatic claim of compromise.
+P|Malware categories describe behavior and may overlap. A Trojan disguises malicious functionality as something desirable; a worm propagates itself; ransomware denies access or extorts; a rootkit hides presence. Intermittent outbound traffic alone cannot prove a keylogger: periodic updates and monitoring agents also communicate. Corroborate with process activity, captured keystrokes, destinations, and endpoint findings. Certificate errors may support on-path investigation but can also be ordinary configuration failures.
+F|Read the fields|Find the pattern|Consider normal explanations|Correlate independent evidence|Name only what the evidence supports
+T|Ransomware|Encrypts or otherwise denies access and commonly demands payment; some operations also steal data for extortion. Recovery requires containment, trustworthy backups, and removal of the cause.
+T|Worm|Self-propagating malware spreads between systems without requiring each victim to manually run the original file. Distinguish propagation behavior from the initial delivery vector.
+T|Trojan|Malicious functionality is concealed within apparently useful software. A Trojan need not replicate; the disguise and user expectation are the key features.
+T|Rootkit|Uses stealth mechanisms to hide malicious activity or maintain privileged presence. It may alter system views, making trusted offline examination important.
+T|Logic bomb|Malicious action is triggered by a condition such as a date or account removal. The delayed trigger distinguishes it from immediate execution.
+T|Password spraying|Tries one or a few common passwords across many accounts, often slowly to avoid per-account lockout. Look at account diversity, not only the total number of failures.
+T|Credential stuffing|Reuses known breached username/password pairs against another service. It exploits password reuse rather than systematically generating guesses for one account.
+T|On-path attack|Interposes between communicating parties to observe or alter traffic. Strong certificate validation and authenticated encryption help; a warning alone does not identify the attacker.
+T|Session hijacking|Uses a stolen or manipulated valid session token to impersonate an authenticated session. Reusing a session differs from stealing a password for a fresh login.
+T|DDoS|Distributed Denial of Service: many sources exhaust a target's capacity or resources. Multiple origins distinguish a distributed attack from one-source denial of service.
+T|Brute force|Attempts many candidate secrets, commonly against a particular account or key. Patterns, rate, and account distribution help distinguish it from spraying and legitimate failures.
+T|Keylogger|Captures keystrokes through software or hardware. Staged keyboard records and corresponding process behavior support the finding; outbound traffic alone is insufficient proof.
+E|Read 'user=admin result=failed src=192.0.2.40 count=800' as repeated failures against a named account from a source, not eight hundred confirmed compromises. If a separate record shows many passwords against that single account, brute force is plausible. If fifty accounts each receive the same candidate once, spraying fits better. Evidence should support the specific pattern you select.
+Q|10,5,6,9|Logs show 900 different password candidates attempted against one administrator account. Which attack pattern fits best?|Many guesses against one account indicate brute force.
+Q|5,10,6,8|An alert shows the same password tried once against 200 different usernames. Which pattern fits?|One password across many accounts is password spraying.
+Q|6,5,10,8|Attackers test username/password pairs taken from a leaked retailer database against a company portal. Which attack fits?|Reuse of breached credential pairs is credential stuffing.
+Q|8,7,6,10|A stolen authenticated browser cookie is used from another device without a new password check. Which attack fits?|The attacker reuses an established session token.
+Q|7,8,9,3|A rogue gateway relays and alters traffic between a user and a real server. Which attack is described?|The attacker interposes in the communication path.
+Q|0,2,1,4|Files become unreadable and a payment demand offers a decryption key. Which malware behavior is evident?|Encryption combined with extortion supports ransomware.
+Q|1,2,0,3|A malicious program exploits neighboring systems and repeats the propagation without user launches. Which type fits?|Self-propagation is characteristic of a worm.
+Q|2,1,3,4|A fake utility performs its advertised task while secretly installing remote access. Which classification fits the disguise?|Apparently useful software hides malicious functionality.
+Q|3,2,1,4|Malware changes system tools so its files and processes are omitted from normal listings. Which behavior fits?|Manipulating system visibility to conceal presence is rootkit behavior.
+Q|4,0,2,1|A malicious script deletes records only when a named employee's account is disabled. Which type fits?|A specific future condition triggers the destructive action.
+Q|9,10,7,1|Thousands of compromised hosts simultaneously exhaust a web service's connection capacity. Which attack fits?|Many coordinated sources cause distributed denial of service.
+Q|11,2,3,8|Investigators find a file containing typed passwords and a process that captures keyboard events. Which finding is supported?|Captured keystrokes directly support a keylogger finding.
+Q|5,10,6,9|Each employee account receives one login attempt with 'Winter2027!', avoiding repeated attempts on a single user. Which attack fits?|The password is spread across accounts to reduce lockout risk.
+Q|10,5,6,8|A single account receives thousands of sequential password guesses within minutes. Which method is most supported?|The evidence shows concentrated candidate guessing.
+Q|6,10,5,7|Credentials stolen from a forum successfully authenticate users who reused them at work. Which attack fits?|Credential reuse across services enables stuffing.
+Q|8,7,6,3|An attacker copies a bearer session token and uses it to make authorized-looking requests. Which attack fits?|Possession of the existing session token enables hijacking.
+Q|7,8,9,10|A user connects through a rogue access point that impersonates a destination and forwards traffic. Which attack position is established?|The rogue access point places the attacker between endpoints.
+Q|2,1,0,4|An installer advertised as a driver adds a hidden backdoor. Which category describes its deceptive packaging?|A Trojan masquerades as legitimate software.
+Q|1,2,0,4|An infected host automatically scans for peers and copies its executable to vulnerable machines. Which behavior fits?|Autonomous spreading identifies worm behavior.
+Q|3,2,4,0|A trusted offline scan detects malware that the running operating system consistently conceals. Which class is suspected?|Concealment from normal system inspection is characteristic of rootkits.
+Q|4,0,2,1|A time-triggered payload remains dormant until the end of the financial year, then corrupts reports. Which type fits?|A defined time condition activates a logic bomb.
+Q|0,2,3,1|Attackers encrypt production files and demand payment even though backups survive. Which attack class remains applicable?|Extortion through encryption is ransomware regardless of backup availability.
+Q|9,10,7,8|Traffic from many unrelated infected networks overwhelms a service at the same time. Which attack is most likely?|Distributed request sources exhaust service resources.
+Q|11,3,2,8|A small hardware device between keyboard and computer stores typed characters. Which function does it perform?|Capturing input at the keyboard identifies a keylogger.
+Q|5,6,10,8|The same three common passwords are tested across an entire directory over several days. Which attack fits?|Low-rate common-password attempts across many accounts indicate spraying.
+Q|6,5,10,9|A bot imports a purchased list of matching usernames and passwords instead of generating candidates. Which method fits?|It tests preexisting stolen pairs, which is credential stuffing.
+Q|10,5,6,8|A password-protected archive is tested against millions of generated candidate passwords offline. Which attack technique is used?|Exhaustive candidate testing is brute force even without login logs.
+Q|8,7,6,3|Password rotation does not stop an attacker whose stolen active session remains valid. Which mechanism explains continued access?|A hijacked session may survive until its token is invalidated.
+Q|7,9,8,10|An attacker transparently forwards messages but replaces payment details in transit. Which attack fits?|Relaying and changing communication is an on-path attack.
+Q|11,2,3,4|Endpoint evidence links keyboard-hook activity to uploaded files containing typed text. Which malware capability is best supported?|Keyboard capture plus staged text supports keylogging rather than traffic alone.
+@2.5
+P|A mitigation must interrupt the actual attack path. Identify whether the exposure is network reachability, excessive permission, untrusted software execution, vulnerable code, or unsafe configuration. Encryption protects content but does not repair the application processing it. Segmentation limits where traffic can travel; least privilege limits what identities can do. These can be combined without being interchangeable.
+P|Configuration enforcement is a cycle: define the approved state, assess the device, restrict noncompliant access where necessary, remediate, and reassess. A laptop placed in a restricted network for updates is undergoing posture-based remediation, not sideloading. Isolation is an urgent containment action for a suspected compromised system. Decommissioning retires a system through controlled removal, account cleanup, data treatment, and inventory updates.
+F|Identify the exposure|Choose a control on that path|Define the allowed state|Apply and verify|Track residual risk
+T|Segmentation|Separates network zones and controls traffic between them. It reduces lateral reachability when enforcement rules are correct; simply naming two VLANs does not prove filtering exists.
+T|Least privilege|Gives identities only the actions and resources needed for their current duties. It applies to humans and service accounts and should be reviewed as roles change.
+T|Application allowlisting|Permits only approved applications or code to execute. It addresses execution control rather than merely checking whether an application is already known to be malicious.
+T|Patching|Installs fixes for software weaknesses. Test and validate deployment; a reboot-required update or failed installation may leave the vulnerability present.
+T|Isolation|Separates a suspect or compromised system from normal communication to limit damage. Preserve needed investigation access and follow the response plan.
+T|Configuration enforcement|Checks and restores approved settings or device posture. Noncompliant endpoints may receive restricted connectivity until remediation and revalidation succeed.
+T|Decommissioning|Safely retires an asset, removes its access and dependencies, treats its data, and updates records. Merely unplugging it leaves accounts and sensitive storage unmanaged.
+T|Encryption|Protects data confidentiality when appropriately implemented and keys are protected. It does not remove malware, fix excessive access, or ensure safe application input.
+T|ACL|Access Control List: a rule set permits or denies access based on specified criteria. Network ACLs use addresses, protocols, ports, and direction; order and defaults matter.
+T|Disable unnecessary services|Removes unused listening services or features to reduce attack surface. It differs from leaving a service active but hiding it behind a rule.
+E|A field laptop returns with missing patches. The access system detects the failed posture check, places it in a remediation segment, installs approved updates, and reassesses before restoring access. Segmentation is the network tool; configuration enforcement describes bringing the device into the required state. The goal and the component are different levels of the same process.
+Q|5,1,4,6|A laptop is placed in a restricted network until required updates install and its posture check passes. Which process is described?|The device is being brought into and verified against approved configuration.
+Q|0,8,1,4|A design separates office computers from controllers and filters traffic between the zones. Which broad mitigation is used?|Controlled network separation reduces lateral access.
+Q|1,0,2,8|A service account loses administrator rights and keeps only permission to write its application log. Which principle is applied?|Permissions are reduced to the task's minimum needs.
+Q|2,3,5,9|Only signed applications explicitly approved by the company may run on workstations. Which control fits?|Execution is restricted to an approved application set.
+Q|3,5,6,9|An affected supported library is updated to the vendor's corrected release. Which mitigation fixes the known code flaw?|Applying the released fix is patching.
+Q|4,0,3,6|A suspected infected workstation is disconnected from normal traffic while investigators preserve it. Which immediate action is this?|The specific suspect endpoint is isolated for containment.
+Q|6,4,9,5|A retired server's accounts are removed, data treated, and inventory closed. Which lifecycle process is underway?|The asset is being formally decommissioned.
+Q|7,1,2,3|Sensitive files must remain unreadable if a storage drive is stolen. Which mitigation addresses this requirement?|Encryption protects confidentiality when keys are not available to the thief.
+Q|8,0,1,9|A router must permit one management subnet to reach TCP port 22 and deny others. Which rule mechanism fits?|An ACL evaluates the specified network criteria.
+Q|9,8,3,4|A server never uses its bundled file-transfer daemon. Which change most directly removes that exposure?|Disabling the unused service removes its listening attack surface.
+Q|5,3,1,0|A compliance agent restores a disabled screen lock to the required timeout automatically. Which process fits?|The agent enforces the approved device configuration.
+Q|0,4,1,8|Backup infrastructure is placed in a separate zone with narrowly controlled access from production. Which mitigation is emphasized?|Network segmentation limits reachable paths into backups.
+Q|2,3,9,7|Unknown executables are blocked even when no malware signature exists. Which control can provide this behavior?|Allowlisting denies software that is not explicitly approved.
+Q|1,5,8,0|Temporary contractor rights are limited to one project and expire after the work ends. Which principle best explains the scope?|Least privilege limits resources and duration to the need.
+Q|4,3,6,0|An endpoint is communicating with a confirmed command server. Which immediate mitigation limits its further communication pending investigation?|Isolation contains the active suspected compromise.
+Q|3,5,9,6|A vulnerability remains after a failed update attempt. Which mitigation must be successfully completed and verified?|The code fix must actually be installed through patching.
+Q|8,0,1,4|A firewall denies traffic from a specified source to a defined destination and port. Which mechanism expresses the decision?|The action is implemented through an access control rule list.
+Q|9,3,8,6|A base image includes a remote administration service that no team uses. Which hardening action removes the service entirely?|Disabling unnecessary services reduces the exposed components.
+Q|6,4,7,5|An old appliance is permanently replaced. Which process includes access removal and storage disposal records?|Those tasks belong to controlled decommissioning.
+Q|7,3,2,1|A backup must be protected from disclosure during transport on portable media. Which mitigation fits?|Encryption protects the contents if media is intercepted.
+Q|5,0,4,3|A connecting device is checked for required settings and corrected before normal access. Which overarching process is this?|Assessing and restoring required posture is configuration enforcement.
+Q|1,8,0,2|An analyst needs read-only access to alerts, not permission to delete them. Which principle selects the narrower role?|Only needed operations should be granted.
+Q|0,4,9,8|A company limits communication among production, guest, and management networks. Which architecture mitigation fits?|The networks are segmented with controlled inter-zone access.
+Q|2,3,5,7|An organization permits a tested tool version but blocks every other executable by default. Which mechanism fits?|Approved-code execution defines application allowlisting.
+Q|3,9,4,6|A security defect in an actively used service has a tested vendor fix. Which action addresses the defect itself?|Patching corrects the vulnerable implementation.
+Q|4,6,0,3|A machine must remain available for forensic examination but stop contacting peers. Which action fits first?|Isolation limits communication without prematurely destroying evidence.
+Q|9,8,3,5|Removing an unused web administration interface is preferred over leaving it reachable. Which mitigation is applied?|An unnecessary service is disabled to reduce attack surface.
+Q|8,0,1,7|A network rule must distinguish inbound HTTPS from outbound SSH using addresses and ports. Which mechanism provides that filtering?|ACL entries express directional traffic permissions.
+Q|7,1,3,2|A lost tablet must not disclose locally stored customer records when powered off. Which mitigation directly protects stored content?|Encryption protects data at rest when the decryption key remains protected.
+Q|6,4,9,5|A disposal checklist removes a device from monitoring, revokes credentials, and records sanitized media. Which process fits?|The coordinated retirement workflow is decommissioning.

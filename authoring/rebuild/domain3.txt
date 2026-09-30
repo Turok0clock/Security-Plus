@@ -1,0 +1,191 @@
+@3.1
+P|Architecture allocates responsibilities and failure boundaries. With Infrastructure as a Service, a provider supplies infrastructure while the customer normally manages guest operating systems and applications. Platform as a Service reduces runtime management; Software as a Service provides the application. In every model the customer still has responsibilities such as identity, permissions, data decisions, and configuration. Exact contractual boundaries override slogans.
+P|Hybrid cloud connects private and public environments and can create inconsistent identity, network, logging, and data policies. A responsibility matrix assigns duties; it does not enforce them. Containers share a host kernel, while virtual machines have separate guest operating systems. Microservices divide an application into interacting services; serverless delegates server operations but still requires secure code and permissions. Industrial systems prioritize safe reliable processes, so patching and scanning must account for operational constraints.
+F|Locate the workload|Assign responsibilities|Identify isolation boundaries|Trace dependencies|Plan security and failure behavior
+T|IaaS|Infrastructure as a Service provides compute, network, and storage resources. Customers commonly patch guest operating systems and secure their applications; providers protect underlying physical infrastructure.
+T|PaaS|Platform as a Service supplies a managed runtime or application platform. Customers focus on application code, data, and configuration while the provider manages more of the operating environment.
+T|SaaS|Software as a Service delivers a managed application. Customers still manage users, access, data sharing, and tenant settings rather than assuming the provider handles every security decision.
+T|Shared responsibility matrix|Assigns security duties between provider, customer, and other parties for the specific service. It clarifies ownership and should be checked against contracts and service documentation.
+T|Infrastructure as code|Uses machine-readable definitions to provision infrastructure repeatably. Review, versioning, testing, and secret handling are essential because mistakes can be replicated widely.
+T|Microservices|Divides application capabilities into separately deployable services communicating through interfaces. It can improve independent scaling but adds service identity, network, and dependency complexity.
+T|Containerization|Packages an application and dependencies in isolated processes that generally share a host kernel. Images, runtime privileges, and host security remain important; containers are not separate physical machines.
+T|Serverless|Runs functions or managed workloads while a provider handles server provisioning. Customers still secure code, invocation permissions, dependencies, and data access.
+T|Air gap|Physical separation removes direct network connectivity between environments. Removable media, maintenance devices, and people can still bridge the gap, so process controls remain necessary.
+T|ICS / SCADA|Industrial Control Systems and Supervisory Control and Data Acquisition monitor or control physical processes. Safety, availability, long device lifetimes, and controlled maintenance constrain conventional IT changes.
+T|Hybrid cloud|Combines distinct private and public cloud environments. Connectivity alone does not harmonize controls; mismatched access, logging, and network policies must be reconciled.
+T|Embedded / RTOS|Embedded systems perform specific functions; a Real-Time Operating System emphasizes predictable response deadlines. Timing and safety constraints may matter more than desktop-style feature flexibility.
+E|A company moves its application to IaaS but leaves its guest operating system unpatched because the provider owns the building. Physical hosting responsibility does not transfer guest patching. If a second application uses SaaS, the customer may not patch its servers but still must remove departed employees and control shared documents. Identify the service boundary before assigning responsibility.
+Q|0,1,2,7|A customer controls virtual machines and must patch their guest operating systems. Which service model fits?|Customer-managed guest systems indicate IaaS.
+Q|1,0,2,7|Developers deploy code to a managed application runtime without maintaining its operating system. Which model fits?|A provider-managed development runtime indicates PaaS.
+Q|2,1,0,7|Staff use a provider-operated CRM through a browser and configure only tenant options. Which model fits?|A delivered managed application is SaaS.
+Q|3,4,10,2|Two teams disagree about who patches a hosted database service. Which document best resolves assigned duties?|A service-specific responsibility matrix allocates the task.
+Q|4,6,5,7|A reviewed template creates identical subnets and server policies in each environment. Which approach is used?|Machine-readable repeatable infrastructure definitions are infrastructure as code.
+Q|5,6,7,1|Checkout and billing are independently deployed services connected by authenticated APIs. Which architecture fits?|Separately deployed application capabilities indicate microservices.
+Q|6,5,0,7|Applications are packaged into isolated processes sharing one host kernel. Which deployment model fits?|Shared-kernel application packaging describes containers.
+Q|7,1,6,5|An upload event invokes short-lived code while the provider allocates execution resources automatically. Which architecture fits?|Event-driven execution without customer server provisioning fits serverless.
+Q|8,10,9,0|A sensitive network has no direct physical network connection to other environments. Which separation is described?|No direct network connectivity establishes an air gap.
+Q|9,11,8,6|A control network monitors pumps and issues commands affecting a water-treatment process. Which environment is this?|Monitoring and control of physical processes describes ICS/SCADA.
+Q|10,0,1,3|Private-cloud workloads connect to a public cloud, but identical users receive inconsistent permissions. Which model creates this integration concern?|Hybrid environments require consistent controls across distinct platforms.
+Q|11,9,6,7|A controller must respond within strict timing deadlines rather than maximize general-purpose throughput. Which platform fits?|Predictable response deadlines are a real-time operating-system concern.
+Q|3,0,2,4|A SaaS provider secures servers while the customer assigns user roles. What formalizes this division?|The shared responsibility matrix defines distinct security duties.
+Q|0,1,2,6|A provider supplies virtual storage and networking while the customer installs its own server image. Which model fits?|Customer-installed guest systems identify IaaS.
+Q|6,5,7,0|A team must patch the common host kernel beneath many application images. Which deployment approach explains this shared dependency?|Containers depend on the host kernel they share.
+Q|4,3,6,5|One insecure template exposes management ports across every newly built environment. Which practice amplified the error?|Infrastructure as code replicates configuration consistently, including mistakes.
+Q|5,6,1,7|A failure in an inventory service breaks checkout through an API dependency. Which architecture most directly introduces these service boundaries?|Microservices rely on communication among separate capabilities.
+Q|7,1,0,2|A function's overprivileged identity can read all customer data even though no servers are managed by the team. Which architecture is involved?|Serverless removes server operations but not application permission responsibility.
+Q|8,10,9,11|A disconnected lab receives updates by USB, creating its remaining transfer risk. Which architecture does that process support?|Air-gapped networks still need controlled physical transfer paths.
+Q|9,11,8,0|A security scan may interrupt a legacy production controller and create safety consequences. Which environment needs special caution?|Industrial control systems couple digital operations to physical processes.
+Q|10,3,0,2|A firm must harmonize firewall policy between private and public clouds. Which deployment model is described?|The two distinct cloud environments form a hybrid model.
+Q|1,0,2,7|A team chooses a managed database platform to avoid operating-system maintenance while controlling schema and data. Which service model is closest?|Managed application platforms shift operating-system work to the provider.
+Q|2,1,0,7|A business subscribes to hosted email and remains responsible for disabling departed users. Which model applies?|Hosted finished applications are SaaS despite remaining tenant responsibilities.
+Q|3,4,10,1|An incident exposes a gap because both provider and customer assumed the other reviewed access. What artifact should explicitly assign that task?|A responsibility matrix prevents unowned duties.
+Q|4,6,5,7|An engineer reviews a network-policy change as a code diff before automated provisioning. Which practice is shown?|Infrastructure configuration is managed as versioned code.
+Q|6,0,5,1|A vulnerable base image is inherited by dozens of packaged applications. Which technology makes image lineage important?|Container images commonly share base layers and dependencies.
+Q|5,7,6,1|One application component scales independently of others, but every service needs authenticated interservice calls. Which design fits?|Independent service scaling with interface communication describes microservices.
+Q|11,9,8,6|A dedicated controller's operating system guarantees scheduled responses to sensor events. Which property points to an RTOS?|Deterministic timing, rather than generic computing, defines the requirement.
+Q|8,10,0,9|Engineers physically disconnect a research network and prohibit routed connections. Which isolation model fits?|Physical lack of direct connectivity is an air gap.
+Q|9,11,10,0|Remote telemetry is collected at a central station that supervises industrial equipment. Which environment is most specific?|Supervisory monitoring and control corresponds to SCADA within ICS.
+@3.2
+P|Choose controls by placement and traffic path. An Intrusion Detection System observes and alerts; an Intrusion Prevention System in the traffic path can block. A Web Application Firewall interprets web requests, while a conventional packet filter may only evaluate addresses and ports. A forward proxy represents clients; a reverse proxy represents servers. A jump server mediates administration rather than ordinary browsing.
+P|Network Access Control checks who or what can connect and may use 802.1X port-based authentication. Enterprise wireless can use 802.1X with centralized authentication; WPA3 describes wireless protection capabilities and does not alone specify corporate username authentication. Secure Access Service Edge combines distributed connectivity and cloud-delivered security for users and sites. Zero trust is an access model, not a substitute name for that delivered network service.
+F|Trace source to destination|Find the required decision point|Choose inspection depth|Choose block or alert|Plan failure behavior
+T|WAF|Web Application Firewall inspects application-layer web traffic and can block malicious requests. It complements secure coding and cannot repair every business-logic flaw.
+T|IPS|Intrusion Prevention System inspects traffic inline and can discard or reject matched attacks. Placement and visibility determine what it can prevent; encrypted payloads may require supported inspection.
+T|IDS|Intrusion Detection System observes suspicious traffic and alerts without itself being the inline blocking point. Detection can initiate a separate response workflow.
+T|NAC|Network Access Control applies admission policy based on identity and device posture. It may restrict noncompliant endpoints to remediation access rather than immediately giving full network access.
+T|Jump server|A controlled intermediary for administrative connections into protected systems. It centralizes access paths and logging but must itself be strongly secured.
+T|Screened subnet|A separated zone for exposed services between trusted and untrusted networks. Rules limit access from the zone to internal resources; placement alone is not enough.
+T|Forward proxy|Makes requests on behalf of clients, enabling outbound filtering, logging, or caching. It represents the user side of the connection.
+T|Reverse proxy|Receives client requests on behalf of backend servers and can terminate connections or distribute requests. It represents the service side, unlike a forward proxy for users.
+T|Fail-closed|Denies access when a security component fails. It favors blocking unauthorized access but can harm availability, so safety and business requirements must be considered.
+T|Fail-open|Allows access or traffic when a component fails. It favors continuity but can remove a security barrier during the failure.
+T|802.1X|Port-based network access control uses a supplicant, authenticator, and authentication server. EAP means Extensible Authentication Protocol and carries authentication methods; enterprise Wi-Fi often uses this framework with RADIUS.
+T|SASE|Secure Access Service Edge combines wide-area connectivity with cloud-delivered security capabilities for users and sites. It can place consistent access controls near mobile users and cloud applications.
+E|A field technician accesses a cloud service from changing locations. SASE can provide distributed connectivity and security; zero trust determines how access is evaluated. At headquarters, 802.1X admits a laptop to the network after authentication. A WAF separately protects the application's requests. These components act at different points; match the requested task to its point in the path.
+Q|0,1,2,7|A web application needs request-body inspection to block injection attempts before they reach the backend. Which dedicated control fits?|A WAF specializes in application-layer web inspection.
+Q|1,2,0,6|A sensor must discard malicious packets while traffic passes through it. Which role is required?|Inline blocking requires prevention rather than detection alone.
+Q|2,1,0,7|A mirrored-traffic sensor generates alerts but cannot stop packets. Which technology is described?|An out-of-band observing sensor functions as an IDS.
+Q|3,10,4,6|A device missing required patches receives only remediation access when it connects. Which admission system fits?|NAC combines device posture with admission policy.
+Q|4,5,6,7|Administrators must connect through one audited host before reaching internal management interfaces. Which component fits?|A jump server mediates administrative access.
+Q|5,4,6,7|Public web servers are placed in a separated zone with tightly limited access to internal databases. What zone is described?|A screened subnet separates exposed services from the trusted interior.
+Q|6,7,0,4|Employee browser requests pass through a service that filters destinations and caches downloads. Which proxy role fits?|The proxy acts on behalf of outbound clients.
+Q|7,6,0,4|Internet clients connect to a gateway that forwards requests to hidden backend web servers. Which proxy role fits?|The gateway represents the server side to clients.
+Q|8,9,3,1|A failed authentication gateway must deny all new sessions until repaired. Which failure behavior is required?|Denial during failure is fail-closed.
+Q|9,8,1,3|A business approves continued traffic if an inline filter loses power. Which failure mode is chosen?|Allowing traffic during failure is fail-open.
+Q|10,3,11,4|Wireless users must authenticate individually using corporate credentials through a centralized server. Which framework should access points support?|802.1X provides per-user enterprise network authentication.
+Q|11,10,6,4|Mobile technicians need consistent cloud-delivered security and connectivity from many locations. Which architecture best fits?|SASE combines distributed access connectivity with security services.
+Q|0,1,2,7|A company wants a specialized control to inspect HTTP parameters before its application processes them. Which fits best?|A WAF inspects web application requests.
+Q|2,1,0,3|The requirement is passive network observation with alerts, avoiding an inline dependency. Which device fits?|An IDS can observe copied traffic without becoming the blocking path.
+Q|1,2,6,0|An attack signature matches and the appliance drops the frame before delivery. Which operation is shown?|Dropping matched traffic is an IPS prevention action.
+Q|4,6,7,5|Privileged support sessions must originate from a hardened intermediary with recorded access. Which component fits?|A jump host concentrates controlled administrative sessions.
+Q|3,10,8,11|An access platform checks endpoint antivirus health in addition to identity. Which broader capability is needed?|NAC evaluates device posture for access admission.
+Q|6,7,4,0|A company wants one controlled outbound path for employee web browsing. Which intermediary role fits?|A forward proxy represents browsing clients.
+Q|7,6,4,5|An organization hides its internal web-server addresses behind a public-facing request gateway. Which role fits?|A reverse proxy exposes the service while mediating backend access.
+Q|5,4,0,3|A mail relay must be reachable externally without residing on the employee network. Which zone is appropriate?|A screened subnet supports exposed services with limited internal reachability.
+Q|8,9,3,1|A sensitive service must never bypass authentication when its policy component is unreachable. Which setting fits?|Fail-closed preserves denial when authorization cannot be established.
+Q|9,8,3,1|A safety process requires continued communication even when inspection is unavailable, with risk explicitly accepted. Which mode fits?|Fail-open prioritizes communication continuity during security-device failure.
+Q|10,3,11,4|A switch keeps a port restricted until its connected supplicant authenticates through EAP. Which framework is used?|Supplicant/authenticator/server port control is 802.1X.
+Q|11,6,4,10|A provider combines WAN connectivity, web security, and access services for distributed branches and roaming staff. Which architecture fits?|The combined networking and cloud security offering is SASE.
+Q|0,2,1,7|An application-specific rule rejects a malicious query parameter before backend processing. Which specialized defense fits?|Application-aware web request filtering is a WAF function.
+Q|1,2,3,6|The organization needs traffic inspection and immediate blocking rather than alerts requiring later intervention. Which device fits?|An inline IPS can enforce the immediate block.
+Q|3,10,4,5|Unknown endpoints are placed in a guest zone while compliant managed devices receive internal access. Which policy capability fits?|NAC determines admission level from identity and posture.
+Q|4,6,7,10|A vendor is prohibited from direct server administration and must use an audited bastion. Which technology is the bastion?|A hardened jump server provides the administrative intermediary.
+Q|6,7,0,5|A cache fetches internet objects for employees and applies user browsing policy. Which direction of proxying is described?|The proxy acts for clients reaching external services.
+Q|7,6,4,0|A gateway accepts requests to the company's service and distributes them among internal application nodes. Which role fits?|The gateway proxies inbound requests for backend servers.
+@3.3
+P|Data state describes what is happening to the bytes: stored is at rest, moving across a connection is in transit, and actively processed is in use. A database can contain encrypted data at rest but decrypt selected values in memory for calculations. The word database does not determine state; follow the specific action. TLS protects a connection, not necessarily the stored file or the memory of an endpoint.
+P|Data classification expresses sensitivity and handling requirements. Regulated data is subject to applicable obligations; public data is intended for open disclosure. Obfuscation makes interpretation harder but does not define a legal classification. Tokenization replaces values with references and protects the mapping separately. Masking changes what is displayed. Encryption transforms content under a key. A hash supports integrity comparison, not confidentiality or a clean-malware guarantee.
+F|Identify the data and owner|Determine classification and obligations|Determine its current state|Choose protection for that state|Verify access and retention
+T|Data at rest|Data stored on media such as disks, backups, or cloud storage. Protect it with appropriate access controls, encryption, key management, and disposal procedures.
+T|Data in transit|Data moving between systems over a communication path. Authenticated encrypted protocols protect against interception and modification while crossing that path.
+T|Data in use|Data actively processed in memory or by an application. Disk encryption alone does not protect plaintext after a legitimate process decrypts it for use.
+T|Tokenization|Replaces sensitive data with a substitute token whose mapping is held separately. A token is not necessarily a mathematical encryption of the original value.
+T|Masking|Conceals portions of displayed or copied data, such as showing only the last four digits. Verify that underlying storage and privileged access are also protected.
+T|DLP|Data Loss Prevention inspects or controls sensitive-data movement according to policy. It may alert or block at endpoints, networks, or services and needs tuning to avoid disruptive false matches.
+T|Data minimization|Collects and retains only data needed for a defined purpose. Less unnecessary data reduces exposure and handling burden without relying solely on stronger access controls.
+T|Classification|Assigns sensitivity or handling labels based on impact and obligations. Owners and policy guide labels; the presence of encryption alone does not determine the classification.
+T|Data sovereignty|Recognizes that data may be subject to laws associated with where it is stored or processed. Location and jurisdiction requirements should be checked for the actual service arrangement.
+T|Geographic restriction|Limits access or processing based on allowed locations. It enforces a location-related policy; a geolocation signal alone does not establish a person's identity.
+T|Regulated data|Data whose handling is constrained by applicable legal or regulatory requirements. Determine the obligation rather than assuming all government-related documents are automatically secret.
+T|Integrity verification|Compares content against trustworthy reference evidence such as a digest or signature. Matching bytes can still contain malware; verification does not assess all security properties.
+E|A payment service stores a token instead of a card number. The mapping vault holds the real number. The support screen masks what staff see, while TLS protects traffic to the service. These are tokenization, masking, and transit protection respectively. The correct choice depends on which step the question asks you to change.
+Q|2,0,1,3|An application decrypts a stored value into memory and calculates a result. What is the value's current state?|Active processing in memory is data in use.
+Q|1,0,2,9|A backup stream travels between two sites over an authenticated encrypted connection. What state is being protected?|The bytes are moving between systems, so they are in transit.
+Q|0,1,2,4|Archived records remain on disconnected storage awaiting retrieval. Which data state applies?|Stored records are at rest.
+Q|3,4,5,6|A checkout system replaces card numbers with references resolved only by a protected vault. Which technique fits?|A separately maintained mapping identifies tokenization.
+Q|4,3,6,7|A support screen shows only the last four digits while the full value remains in a protected database. Which technique is visible?|The presentation is masked rather than the stored value being replaced.
+Q|5,6,9,7|An endpoint blocks copying a document because its contents match a sensitive-data policy. Which capability fits?|Content-aware movement control is DLP.
+Q|6,5,7,4|A form stops collecting birth dates because the service never uses them. Which principle is applied?|Unnecessary collection is removed through data minimization.
+Q|7,10,8,9|An owner labels documents according to sensitivity and required handling. Which process is this?|Sensitivity labeling is data classification.
+Q|8,9,10,7|A service's storage country determines which jurisdictional requirements may apply. Which concept is involved?|Location-related legal authority concerns data sovereignty.
+Q|9,8,5,7|An application permits record access only from approved countries. Which control is described?|The policy enforces a geographic access restriction.
+Q|10,7,8,0|A record type must be retained and protected under a named industry regulation. Which data category is most specific?|An explicit regulatory obligation makes it regulated data.
+Q|11,5,4,3|A downloaded file is compared with a trusted digest to detect changed bytes. Which purpose is served?|Digest comparison verifies integrity, not malware absence.
+Q|0,2,1,3|An encrypted database file is sitting on a server's disk between queries. Which state applies to that file?|The stored file is data at rest.
+Q|2,0,1,4|A program holds decrypted customer records while generating a report. Which state requires protection beyond disk encryption?|The plaintext is actively used in memory.
+Q|1,0,2,8|A user uploads a confidential document to a remote service. Which state does transport encryption protect?|The upload is data in transit.
+Q|3,4,6,5|A merchant stores a substitute account identifier that has no useful meaning without a separate lookup. Which technique fits?|The reference value relies on a token mapping.
+Q|4,3,5,6|A test report replaces the middle digits of personal identifiers with asterisks. Which technique fits?|The visible representation is masked.
+Q|6,5,7,10|A team deletes fields that are not needed for its approved analytics purpose. Which principle guides this?|Minimization reduces unnecessary retained data.
+Q|5,9,6,7|A mail gateway quarantines attachments containing restricted identifiers according to policy. Which capability fits?|DLP identifies sensitive content and controls its movement.
+Q|8,9,7,10|A company reviews which country's laws govern data processed in a foreign region. Which concept is central?|The issue is jurisdiction over data based on location.
+Q|7,10,4,6|A new 'private' label is introduced so personal information receives distinct handling. Which governance process changed?|The organization expanded its classification scheme.
+Q|10,7,8,9|Specific reporting records are subject to a statutory retention and protection requirement. Which type of data fits?|The requirement explicitly regulates their handling.
+Q|11,5,3,4|A trusted signed digest matches a downloaded executable that later behaves maliciously. What did the matching digest establish?|It established content consistency, not that the code was safe.
+Q|9,8,5,7|A tenant setting blocks access outside an approved geographic region. Which enforcement mechanism fits?|The setting restricts access by location.
+Q|0,1,2,8|Backup tapes are locked in storage after transport finishes. What is their current data state?|Once stored, the backup data is at rest.
+Q|2,1,0,4|An authentication service computes a password hash from supplied input in memory. Which state describes that processing?|Computation on data is data in use.
+Q|3,4,6,5|A breach of a sales database reveals only substitute payment references, while the mapping vault is separate. Which design limited exposure?|Tokenization separates identifiers from the original sensitive values.
+Q|4,3,5,7|A customer service display obscures most of a phone number but does not alter the stored record. Which control is shown?|Masking changes visibility rather than underlying storage.
+Q|6,5,8,10|A service reduces retention from indefinite to the period needed for its purpose, subject to obligations. Which principle fits?|Keeping only necessary data supports minimization.
+Q|11,5,7,0|A team needs evidence that a configuration file matches an approved trusted version. Which verification goal fits?|The requirement is detecting unauthorized content changes.
+@3.4
+P|Resilience keeps useful operations going; recovery restores them after disruption. Recovery Time Objective sets the target maximum restoration time. Recovery Point Objective sets acceptable data loss measured backward in time. Neither is the average repair time: Mean Time to Repair measures observed repair duration, while Mean Time Between Failures measures operating intervals between failures. Targets and measured performance are different kinds of information.
+P|Backup, replication, and journaling solve different problems. A backup supplies a separate recovery copy; replication maintains another live copy but may replicate corruption or deletion. Journaling records intended changes so recovery can reconcile incomplete operations after interruption. Hot, warm, and cold sites differ in readiness. A tabletop discusses the plan; a failover test actually exercises switching. Successful backup jobs do not prove successful restoration.
+F|Define critical service|Set time and data targets|Choose recovery resources|Test restoration and failover|Measure and improve
+T|RTO|Recovery Time Objective: the target maximum time to restore a service. It guides recovery capacity and procedures, not how much data may be lost.
+T|RPO|Recovery Point Objective: acceptable data loss measured in time. A 15-minute RPO requires recoverable data sufficiently recent to meet that target.
+T|Hot site|A recovery environment maintained ready for rapid use with required resources and current-enough data. Readiness costs more and must be tested rather than assumed.
+T|Warm site|A partially prepared recovery location with some resources available but additional installation, configuration, or data restoration required.
+T|Cold site|A facility with basic space and utilities but limited operational equipment or current data. It typically requires more preparation before service restoration.
+T|Immutable backup|A backup protected from modification or deletion during its defined retention period. It helps resist destructive changes but still needs restoration testing and protected administration.
+T|Tabletop exercise|A discussion-based walkthrough of a hypothetical incident or recovery situation. It tests understanding and coordination without proving actual technical failover performance.
+T|Failover test|An exercise that actually switches processing to alternate resources and validates service behavior. It provides evidence beyond discussion of the plan.
+T|Load balancing|Distributes work among resources to manage capacity and potentially improve availability. Health checks and redundancy are still needed; distribution alone is not a backup.
+T|Diverse power|Independent power paths reduce common failure exposure. Two devices fed by the same upstream source may still share a single point of failure.
+T|Journaling|Records transaction intent or changes so a system can reconcile interrupted writes and recover a consistent state. It reduces corruption risk from incomplete operations rather than supplying an off-site copy.
+T|Replication|Maintains copies of data on other systems to support availability or recovery. It may also reproduce mistakes, deletions, or corruption; it does not replace every backup requirement.
+T|MTBF|Mean Time Between Failures measures average operating time between repairable-system failures. It is a reliability measure, not a restoration deadline.
+T|MTTR|Mean Time to Repair measures average time to repair or restore a failed component or service in the stated context. It is observed performance rather than the business's target RTO.
+T|Continuity of operations|Arranges continued delivery of essential business functions during disruption, including alternate procedures and resources. It can include manual work while technology is restored.
+E|Order processing must resume within two hours and lose no more than ten minutes of transactions. Those are RTO and RPO respectively. A journal helps reconcile an interrupted write; a recent backup provides a recovery copy; replication may reduce outage duration. A manual order form supports continuity while technical recovery is underway. Choose the mechanism matching the precise failure and requirement.
+Q|0,1,12,13|Management requires checkout service restored within 90 minutes of an outage. Which target is specified?|The requirement sets restoration time, which is RTO.
+Q|1,0,12,13|The business accepts losing no more than five minutes of transactions. Which target governs this?|The acceptable data-loss window is RPO.
+Q|10,11,5,8|A database must reconcile writes interrupted by sudden power loss. Which mechanism directly supports consistency recovery?|Journaling records changes for recovery from interrupted transactions.
+Q|11,5,10,8|Data is continuously copied to a second system so another instance can serve it. Which mechanism is described?|Maintaining a live second copy is replication.
+Q|5,11,10,2|Administrators must be unable to alter retained recovery copies during the lock period. Which feature is required?|Immutability protects backups against modification during retention.
+Q|2,3,4,8|An alternate facility already runs required systems and maintains current recovery data for rapid takeover. Which site fits?|A ready operational environment is a hot site.
+Q|3,2,4,5|A recovery location has installed hardware but still needs application setup and data restoration. Which site fits?|Partial readiness describes a warm site.
+Q|4,3,2,9|A recovery contract provides floor space, power, and connectivity but no installed production systems. Which site fits?|Basic facilities without operational systems describe a cold site.
+Q|6,7,8,14|Managers discuss their response to a simulated outage without moving workloads. Which exercise is this?|Discussion without technical switching is a tabletop exercise.
+Q|7,6,8,11|A team deliberately switches a service to alternate infrastructure and validates customer transactions. Which test is performed?|Actual switching and validation constitute a failover test.
+Q|12,13,0,1|A contract needs the average operating interval between repairable hardware failures. Which measure fits?|MTBF measures operating time between failures.
+Q|13,12,0,1|Operations calculates the average time spent repairing failed units last quarter. Which metric is this?|Measured repair duration is MTTR.
+Q|14,6,7,4|Staff use an approved manual order process while the primary internet connection is unavailable. Which plan objective is served?|Essential work continues through alternate procedures.
+Q|9,8,2,11|Two power supplies connect to separate independent electrical feeds. Which resilience measure is applied?|Independent feeds provide power diversity.
+Q|8,11,7,2|Incoming sessions are spread among several healthy application nodes. Which mechanism fits?|Load balancing distributes work across resources.
+Q|1,0,13,12|Backups every hour cannot meet a requirement to lose at most ten minutes of data. Which target is missed?|The recovery copy is too old for the RPO.
+Q|0,1,13,12|A recovery site needs eight hours to start, but the business requires service in two. Which target is threatened?|Preparation time exceeds the required RTO.
+Q|10,11,5,14|After a crash, a database uses recorded transaction changes to restore a consistent state. Which mechanism enables this?|The journal supports recovery from incomplete operations.
+Q|5,11,10,2|Ransomware deletes live data, but locked retained backups resist the same deletion request. Which protection helped?|Immutable retention blocks modification of the recovery copies.
+Q|11,5,10,8|A mistaken deletion appears almost immediately on the standby database as well. Which mechanism propagated it?|Replication can reproduce logical mistakes alongside legitimate changes.
+Q|6,7,14,8|Participants identify missing contact numbers during a simulated disaster discussion. Which exercise exposed the gap?|A tabletop validates coordination through discussion.
+Q|7,6,11,8|A recovery exercise measures how real users behave after workloads switch sites. Which test supplies this evidence?|An actual failover tests operational switching and user impact.
+Q|2,3,4,9|A regulated service needs a nearly ready alternate environment and accepts its higher operating cost. Which site type fits?|Hot-site readiness supports rapid activation at higher cost.
+Q|4,3,2,5|A firm rents emergency office space but would need to acquire and install servers after a disaster. Which site is it?|A cold site lacks operational recovery systems.
+Q|3,4,2,8|A standby location has equipment and connectivity but lacks current application data. Which classification is closest?|A warm site is partially prepared and requires restoration work.
+Q|9,8,2,14|Two redundant devices fail together because both depend on one upstream power source. Which design improvement addresses this common cause?|Diverse independent power removes the shared electrical dependency.
+Q|13,0,1,12|The observed mean repair duration is four hours, while management's restoration target is two. Which metric is four hours?|The measured repair average is MTTR, not the RTO target.
+Q|12,13,0,1|Engineers compare equipment reliability using average uptime between failures. Which measure should they use?|MTBF measures the interval between failures.
+Q|14,7,6,11|An organization routes essential calls to an alternate team during a facility outage. Which objective is met?|The alternate workflow sustains continuity of operations.
+Q|8,11,5,10|A dispatcher sends new requests only to healthy members of a server pool. Which mechanism is operating?|Health-aware load balancing distributes requests among available nodes.
