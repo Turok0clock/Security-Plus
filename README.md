@@ -108,3 +108,12 @@ The pre-video lessons now add a worked decision and a distinction section for ev
 The default theme is dark with violet and cyan accents. A Light theme button saves its setting on the device. Progress uses a separate storage key and remains intact when the theme changes. The version 9 service worker includes the new lessons and theme files for offline study; external videos still require internet.
 
 To regenerate lesson content, run `python authoring/build-deep-lessons.py`. To regenerate the question bank, run `python authoring/generate.py`.
+
+
+## Targeted Lab (v12)
+
+Eight focused segments cover certificates/hardware keys, access-control roles, data protection, email authentication, incident response/evidence, governance/risk, reconnaissance/assets, and scenario interpretation. Each includes an interactive visual, an original worked example, nearby-choice comparisons, and ten original questions (seven core plus three explicitly taught transfer questions). Answers and explanations appear only after a response and confidence rating, or an intentional skip.
+
+The lab ranks mapped Exam B mistakes and uncertainty from locally saved Messer history. PBQ field/group comparisons identify relevant concepts without changing original exam scores; segment counts can overlap. Imported backups and typed notes stay in browser storage, never in this repository. Missing confidence remains unknown. New targeted results update priorities while leaving original exams and course completion intact. Targeted notes, attempts, and unfinished sessions are included in the normal export and merge/restore workflow.
+
+Authoring source: `authoring/targeted/build.py`; run it from the project root to regenerate `js/targeted-data.js`. Primary reference links are included in each lesson. The optional browser test `tests/targeted.cjs` uses Playwright; set `CHROMIUM_EXECUTABLE` if needed and optionally pass a private Exam B export path. It checks visual interactions, import preservation, no early answer reveal, skips/confidence, notes across reload, scoring, merge, responsive layout and offline loading. No private export is checked in.

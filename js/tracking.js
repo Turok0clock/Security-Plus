@@ -45,6 +45,14 @@ window.SCHOOL = (() => {
     const out=JSON.parse(JSON.stringify(local));
     for(const k of ['objectives','videos','labs','intros','guided']){out[k]??={};for(const [id,v] of Object.entries(incoming[k]||{})){if(out[k][id]===undefined)out[k][id]=v;else if(k==='objectives')out[k][id]={...v,...out[k][id]};}}
     const ids=new Set(out.history.map(h=>String(h.id)));for(const h of incoming.history||[])if(!ids.has(String(h.id))){out.history.push(h);ids.add(String(h.id));}out.history.sort((a,b)=>b.at-a.at);
+    if(incoming.targeted){
+      if(!out.targeted)out.targeted=JSON.parse(JSON.stringify(incoming.targeted));
+      else {
+        out.targeted.lessons??={};for(const [id,v] of Object.entries(incoming.targeted.lessons||{}))if(out.targeted.lessons[id]===undefined)out.targeted.lessons[id]=v;
+        out.targeted.attempts??=[];const seen=new Set(out.targeted.attempts.map(a=>a.id));for(const a of incoming.targeted.attempts||[])if(!seen.has(a.id)){out.targeted.attempts.push(a);seen.add(a.id)}
+        if(!out.targeted.active&&incoming.targeted.active)out.targeted.active=incoming.targeted.active;
+      }
+    }
     if(!out.active&&incoming.active)out.active=incoming.active;
     return migrate(out,videos);
   }
