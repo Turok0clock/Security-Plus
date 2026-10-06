@@ -117,3 +117,58 @@ Eight focused segments cover certificates/hardware keys, access-control roles, d
 The lab ranks mapped Exam B mistakes and uncertainty from locally saved Messer history. PBQ field/group comparisons identify relevant concepts without changing original exam scores; segment counts can overlap. Imported backups and typed notes stay in browser storage, never in this repository. Missing confidence remains unknown. New targeted results update priorities while leaving original exams and course completion intact. Targeted notes, attempts, and unfinished sessions are included in the normal export and merge/restore workflow.
 
 Authoring source: `authoring/targeted/build.py`; run it from the project root to regenerate `js/targeted-data.js`. Primary reference links are included in each lesson. The optional browser test `tests/targeted.cjs` uses Playwright; set `CHROMIUM_EXECUTABLE` if needed and optionally pass a private Exam B export path. It checks visual interactions, import preservation, no early answer reveal, skips/confidence, notes across reload, scoring, merge, responsive layout and offline loading. No private export is checked in.
+
+## Challenge Exams (v13)
+
+Open **Challenge Exams** from the dashboard, sidebar, Practice & Exams, or `/#challenge`.
+Two original, non-overlapping 100-question single-answer MCQ forms each contain
+12 General Security Concepts, 22 Threats/Vulnerabilities/Mitigations, 18 Security
+Architecture, 28 Security Operations, and 20 Security Program Management/Oversight
+questions. Every form covers all 28 objectives. There are no PBQs in these forms;
+Messer A/B/C and the existing custom exams are unchanged.
+
+Difficulty targets 8–10/10 through competing controls, explicit constraints,
+interpretation, and best-action reasoning. This is an editorial target, not a
+psychometrically calibrated difficulty or passing-score prediction. All 200
+questions are newly authored rather than copied from Messer. Exact-stem checks
+cover 2,361 unique existing app/Messer prompts; similarity review led to replacement
+of repeated setups. Full quiz widgets from the separate chat were not retrievable,
+so global novelty against every prior chat question cannot be guaranteed.
+
+Default timing is 90 minutes (pressure practice), with 100-minute and untimed
+options before starting. Questions and answer positions shuffle at start; resume
+preserves order, answers, notes, confidence, flags, and cross-outs. No objective
+labels or answer explanations appear during an exam. Submission produces raw
+accuracy, domain breakdowns, correct-but-uncertain counts, confident misses, and
+unknown-confidence counts. Unanswered items earn zero. First-use/repeat counts are
+based on submitted question IDs present on the device. Timed attempts continue
+while closed and submit saved answers when expiration is next observed.
+
+State remains in the existing v4 storage and export/import workflow. No private
+exports, notes, or user performance are included in these published files. Version
+13's service worker includes both banks for offline use. Existing course completion,
+Messer history, and unfinished attempts are preserved. The shared submit dialog now
+preserves underlying quiz button bindings when the user chooses Keep working.
+
+### Authoring and verification
+
+`python authoring/challenge/build.py` compiles the source forms and reviewed
+choice refinements into `js/challenge-data.js`. The generator checks 100 questions
+per form, exact domain counts, all 28 objectives, four distinct choices and
+explanations, 200 unique stems, and balanced stored answer keys. Display order is
+shuffled independently. Question wording and explanations are archived in attempts.
+
+Run `node tests/challenge.cjs` with Playwright available; set
+`CHROMIUM_EXECUTABLE` if needed. Tests cover weighting, disjoint forms, existing-bank
+duplicate checks, no early feedback, scoring, domain/confidence calculations,
+notes/cross-outs, intentional skipping, replacement cancellation, submit-dialog
+return, backup round-trips, timer expiry, offline loading, and 390/768/1024px layout.
+Actual iPadOS Safari remains a device-specific check; the automated checks use
+Chromium viewport emulation.
+
+Blueprint and technical references checked during authoring:
+- [CompTIA SY0-701 objectives](https://comptiacdn.azureedge.net/webcontent/docs/default-source/exam-objectives/comptia-security-sy0-701-exam-objectives-(6-0).pdf?sfvrsn=204179cc_6)
+- [IETF DMARC alignment, RFC 9989](https://www.rfc-editor.org/info/rfc9989/)
+- [IETF indirect email flows, RFC 7960](https://www.rfc-editor.org/info/rfc7960/)
+- [IETF TLS service identity, RFC 9525](https://www.rfc-editor.org/info/rfc9525/)
+- [NIST media sanitization, SP 800-88 Rev. 2](https://csrc.nist.gov/pubs/sp/800/88/r2/final)
