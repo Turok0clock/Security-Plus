@@ -10,11 +10,11 @@ function save(){try{localStorage.setItem(KEY,SCHOOL.serialize(state))}catch{toas
 function toast(s){$('#toast').textContent=s;$('#toast').classList.add('show');setTimeout(()=>$('#toast').classList.remove('show'),3000)}
 function shuffle(a,r=Math.random){a=[...a];for(let i=a.length-1;i>0;i--){let j=Math.floor(r()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
 function seeded(seed){let x=seed;return()=>{x=(Math.imul(1664525,x)+1013904223)>>>0;return x/4294967296}}
-const routes=[['dashboard','Dashboard','⌂'],['learn','Professor Desk','◫'],['targeted','Targeted Lab','◎'],['practice','Practice & Exams','✓'],['challenge','Challenge Exams','100'],['messer','Messer Exams','M'],['pbq','PBQ Lab','⌘'],['acronyms','Acronyms','Aa'],['ports','Ports & Protocols','↔'],['history','Review & Progress','◷'],['backup','Backup & Install','↓']];
+const routes=[['dashboard','Dashboard','⌂'],['morning','Morning Review','☀'],['learn','Professor Desk','◫'],['targeted','Targeted Lab','◎'],['practice','Practice & Exams','✓'],['challenge','Challenge Exams','100'],['messer','Messer Exams','M'],['pbq','PBQ Lab','⌘'],['acronyms','Acronyms','Aa'],['ports','Ports & Protocols','↔'],['history','Review & Progress','◷'],['backup','Backup & Install','↓']];
 const qmap=Object.fromEntries(C.questions.map(q=>[q.id,q]));
 function title(t,s){$('#pageTitle').textContent=t;$('#pageSubtitle').textContent=s}
 function go(p){if(p==='messer'){location.href='messer.html';return}page=p;$('#content').classList.remove('target-root');render();$('#sidebar').classList.remove('open');window.scrollTo(0,0)}
-function render(){ $('#nav').innerHTML=routes.map(([id,t,i])=>`<button data-route="${id}" class="${id===page?'active':''}"><span>${i}</span>${t}</button>`).join('');document.querySelectorAll('[data-route]').forEach(b=>b.onclick=()=>go(b.dataset.route));$('#studyPulse').textContent=`${SCHOOL.overview(state,C,MESSER_VIDEOS).completed}/28 studied`;({dashboard,learn,practice,pbq,acronyms,ports,history,backup,quiz,challenge:challengeUI.home,targeted:targetedUI.home,completion:schoolUI.completion})[page]();}
+function render(){ $('#nav').innerHTML=routes.map(([id,t,i])=>`<button data-route="${id}" class="${id===page?'active':''}"><span>${i}</span>${t}</button>`).join('');document.querySelectorAll('[data-route]').forEach(b=>b.onclick=()=>go(b.dataset.route));$('#studyPulse').textContent=`${SCHOOL.overview(state,C,MESSER_VIDEOS).completed}/28 studied`;({dashboard,learn,practice,pbq,acronyms,ports,history,backup,quiz,morning:morningUI.home,challenge:challengeUI.home,targeted:targetedUI.home,completion:schoolUI.completion})[page]();}
 function card(t,body){return `<section class="card"><h2>${t}</h2>${body}</section>`}
 function button(label,act,cls='secondary'){return `<button class="btn ${cls}" data-action="${act}">${label}</button>`}
 function bind(actions){document.querySelectorAll('[data-action]').forEach(b=>{if(actions[b.dataset.action])b.onclick=()=>actions[b.dataset.action]()})}
@@ -120,6 +120,7 @@ function closeModal(){if(labResize){window.visualViewport?.removeEventListener('
 document.addEventListener('keydown',e=>{if($('#modalBackdrop').hidden)return;if(e.key==='Escape')closeModal();if(e.key==='Tab'){const els=[...$('#modal').querySelectorAll('button,input,select,textarea,a,summary')].filter(x=>!x.disabled&&x.offsetParent!==null);if(!els.length)return;if(e.shiftKey&&document.activeElement===els[0]){e.preventDefault();els.at(-1).focus()}else if(!e.shiftKey&&document.activeElement===els.at(-1)){e.preventDefault();els[0].focus()}}});$('#menuBtn').onclick=()=>$('#sidebar').classList.toggle('open');
 let hadController=!!navigator.serviceWorker?.controller;if('serviceWorker'in navigator){navigator.serviceWorker.addEventListener('controllerchange',()=>{if(hadController&&!sessionStorage.getItem('security-plus-reloading')){sessionStorage.setItem('security-plus-reloading','1');location.reload()}hadController=true});window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').then(r=>{r.update();sessionStorage.removeItem('security-plus-reloading')}).catch(()=>toast('Offline cache could not be installed. Open over HTTPS.')));document.addEventListener('visibilitychange',()=>{if(!document.hidden)navigator.serviceWorker.getRegistration().then(r=>r?.update())})}
 window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();const b=$('#installBtn');b.hidden=false;b.onclick=()=>e.prompt()});
+const morningUI=createMorningUI({getState:()=>state,startQuiz,go,title,esc,openReview:(...args)=>openReview(...args)});
 const challengeUI=CHALLENGE.createUI({getState:()=>state,startQuiz,go,title,openReview:(...args)=>openReview(...args)});
 const targetedUI=createTargetedUI({getState:()=>state,save,esc,title,toast});
 const schoolUI=createSchoolUI({getState:()=>state,save,esc,showModal,closeModal,startQuiz,go,videoList,bindVideos,openReview:(...args)=>openReview(...args),toast,title,page:()=>page});
@@ -136,5 +137,5 @@ openReview=(h,missed=false)=>{
  $('#reviewClass').onclick=()=>schoolUI.objective(id,pre?'watch':'practice');
 };
 
-window.SECPLUS_TEST={gradeLab,startExam,startQuiz,go,openObjective,finishQuiz,state:()=>state,school:()=>SCHOOL.overview(state,C,MESSER_VIDEOS),targeted:targetedUI,challenge:challengeUI,openReview};save();render();if(location.hash==='#challenge')go('challenge');updateTimer();
+window.SECPLUS_TEST={gradeLab,startExam,startQuiz,go,openObjective,finishQuiz,state:()=>state,school:()=>SCHOOL.overview(state,C,MESSER_VIDEOS),targeted:targetedUI,morning:morningUI,challenge:challengeUI,openReview};save();render();if(['#challenge','#morning'].includes(location.hash))go(location.hash.slice(1));updateTimer();
 })();

@@ -172,3 +172,24 @@ Blueprint and technical references checked during authoring:
 - [IETF indirect email flows, RFC 7960](https://www.rfc-editor.org/info/rfc7960/)
 - [IETF TLS service identity, RFC 9525](https://www.rfc-editor.org/info/rfc9525/)
 - [NIST media sanitization, SP 800-88 Rev. 2](https://csrc.nist.gov/pubs/sp/800/88/r2/final)
+
+## Morning Review (v14)
+
+Open `/#morning`, the dashboard button, or Morning Review in the sidebar.
+Six concise lessons cover evidence/logs, password attacks and cryptography,
+identity/policy scope, operations, recovery, and governance. Each contains an
+expanded-acronym comparison, worked example, wording caveat and four original
+questions. An optional untimed mixed check combines all 24 questions.
+
+This is concept reinforcement, not a calibrated readiness exam. Ambiguous
+wording is distinguished from a concept gap without changing official scores.
+The existing notes, confidence, flag reasons (including wording/missing detail),
+cross-outs, skip confirmation, history and backup apply. No private exam results
+or vendor question text are published. Existing exams and progress are preserved.
+Primary references are linked within lessons. Offline assets use cache v14.
+
+Regenerate content with `python authoring/morning/build.py`. Run
+`node tests/morning.cjs` with Playwright and optionally CHROMIUM_EXECUTABLE.
+Checks cover notes/wording persistence, no early answer explanations, skip guards,
+all answer keys, backup serialization, dashboard routing, responsive layouts and
+offline use. Chromium viewport checks do not replace testing on actual iPadOS.
