@@ -193,3 +193,14 @@ Regenerate content with `python authoring/morning/build.py`. Run
 Checks cover notes/wording persistence, no early answer explanations, skip guards,
 all answer keys, backup serialization, dashboard routing, responsive layouts and
 offline use. Chromium viewport checks do not replace testing on actual iPadOS.
+
+### Review teaching revision (v15)
+
+Morning Review now uses short term explanations, explicit exam-safe distinctions,
+and direct contrasts instead of definition tables. Each of the six sections has
+an original teaching scenario with a collapsed answer/rationale, separate from
+scored questions. Crypto separates AES, RSA, SHA and HMAC before introducing
+password attacks; other sections follow the same concise teaching structure.
+Authoring text is in `authoring/morning/teaching.json`. The 24 scored questions keep
+their existing IDs and revision so prior attempts remain comparable. Cache v15
+refreshes the teaching without clearing local study history.

@@ -182,5 +182,7 @@ q('5.6','An employee begins exporting unrelated department files to a personal c
  'Conclude the employee is malicious solely from the upload~The indicators do not establish intent on their own.',
  'Wait until data loss is independently confirmed~Waiting can prevent timely investigation of a meaningful indicator.',
  'Access the employee’s private account without authorization~An anomaly does not authorize an informal investigation outside approved powers.'])
+teaching=json.loads(Path('authoring/morning/teaching.json').read_text())
+for l in lessons:l['teaching']=teaching[l['id']]
 Path('js/morning-data.js').write_text('/* Original focused review. Regenerate: python authoring/morning/build.py */\nwindow.MORNING_LESSONS='+json.dumps(lessons,ensure_ascii=False,indent=2)+';\n')
 assert len(lessons)==6 and sum(len(l['questions']) for l in lessons)==24
