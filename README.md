@@ -204,3 +204,19 @@ password attacks; other sections follow the same concise teaching structure.
 Authoring text is in `authoring/morning/teaching.json`. The 24 scored questions keep
 their existing IDs and revision so prior attempts remain comparable. Cache v15
 refreshes the teaching without clearing local study history.
+
+## Messer review (v16)
+
+Submitted Messer attempts now open in a dedicated, page-scrolling review rather
+than the timed exam's nested scrolling workspace. The default missed-answer list
+excludes PBQs; filters support missed, flagged/uncertain, their union and all
+answers. Previous/Next follow the filtered list and show the position within it.
+MCQ review shows the original extracted stem, the full submitted answer text,
+and full keyed answer text. Original choices, recorded reasoning and the source
+PDF remain available. PBQs show submitted/keyed responses for each field.
+Original questions, answer keys, scores and stored attempts are unchanged.
+Results also state the multiple-choice percentage separately.
+
+`tests/messer-review.cjs` accepts an optional private app backup path (never
+committed), or creates a local fixture. It verifies filtered navigation, PBQ
+inclusion, original PDF rendering, readable viewport layout and unchanged history.
