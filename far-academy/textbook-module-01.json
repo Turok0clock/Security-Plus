@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "chapters": [
+    {
+      "id": 1,
+      "title": "Federal acquisition and authority",
+      "sections": [
+        {
+          "heading": "What the FAR does",
+          "body": "The Federal Acquisition Regulation is the government-wide acquisition framework. It chiefly directs federal buying procedures. The awarded contract, incorporated clauses and modifications establish the specific performance obligations."
+        },
+        {
+          "heading": "Authority",
+          "body": "A Contracting Officer (CO) binds the government within delegated authority. A Contracting Officer's Representative (COR) carries out specified duties delegated in writing, and cannot independently change contract price or scope."
+        },
+        {
+          "heading": "PACS example",
+          "body": "A security manager requests four new controlled openings. Compare awarded SOW and drawings, record hardware, labor, licenses and schedule effects, and use the authorized change process before treating additional work as approved."
+        }
+      ],
+      "quiz": [
+        {
+          "question": "A COR requests four doors not shown in the award. What comes first?",
+          "options": [
+            "Check awarded scope and confirm authorized contractual direction",
+            "Install immediately and invoice later",
+            "Have a technician choose"
+          ],
+          "correct": 0,
+          "explanation": "Technical urgency alone does not grant contractual authority. Clarify scope and follow the changes procedure."
+        }
+      ]
+    }
+  ]
+}
