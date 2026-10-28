@@ -58,7 +58,7 @@ render=function(){
 };nav("lifecycle");
 </script>
 <style>
-.board-scroll{overflow-x:auto;padding:6px 0 15px;overscroll-behavior-x:contain}.journey-board{position:relative;display:grid;grid-template-columns:repeat(8,228px);gap:12px;min-width:1908px;min-height:300px}
+main{grid-template-columns:minmax(0,1fr)}main>*{min-width:0}.board-scroll{width:100%;max-width:100%;overflow-x:auto;padding:6px 0 15px;overscroll-behavior-x:contain}.journey-board{position:relative;display:grid;grid-template-columns:repeat(8,228px);gap:12px;min-width:1908px;min-height:300px}
 .board-column{background:#0c1729;border:1px solid #354963;border-radius:13px;padding:12px;min-height:290px}.board-column button{width:100%;min-height:59px;text-align:left;font-weight:650}.board-column.current{border-color:#6ba8ff;background:#122b48}.board-column small{display:block;margin-top:174px;font-size:12px}.project-token{position:absolute;top:86px;left:10px;width:208px;min-height:145px;padding:16px;background:linear-gradient(135deg,#3472bf,#17406b);box-shadow:0 9px 22px #0006;border:1px solid #a6d9ff;border-radius:12px;z-index:2;pointer-events:none}.project-token strong{display:block;margin:8px 0;font-size:18px}.project-token small{font-size:12px;color:#d9eaff}.reading-step{padding:15px;border-left:3px solid #91b9f4;background:#0e1c30;margin:12px 0}.packet{min-height:260px;font-size:14px}.saved-status{color:#a9e9cb}input[type=date]{color-scheme:dark}.board-help{font-size:14px;color:#bfd2ee}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
 </style>
 <script>
