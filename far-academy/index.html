@@ -56,4 +56,128 @@ render=function(){
  practicePanel(check,"lesson-"+id,L[id][3]+" Explain your next action, evidence and uncertainty.",L[id][5][L[id][6]]+". "+L[id][2]);
  }
 };nav("lifecycle");
+</script>
+<style>
+.board-scroll{overflow-x:auto;padding:6px 0 15px;overscroll-behavior-x:contain}.journey-board{position:relative;display:grid;grid-template-columns:repeat(8,228px);gap:12px;min-width:1908px;min-height:300px}
+.board-column{background:#0c1729;border:1px solid #354963;border-radius:13px;padding:12px;min-height:290px}.board-column button{width:100%;min-height:59px;text-align:left;font-weight:650}.board-column.current{border-color:#6ba8ff;background:#122b48}.board-column small{display:block;margin-top:174px;font-size:12px}.project-token{position:absolute;top:86px;left:10px;width:208px;min-height:145px;padding:16px;background:linear-gradient(135deg,#3472bf,#17406b);box-shadow:0 9px 22px #0006;border:1px solid #a6d9ff;border-radius:12px;z-index:2;pointer-events:none}.project-token strong{display:block;margin:8px 0;font-size:18px}.project-token small{font-size:12px;color:#d9eaff}.reading-step{padding:15px;border-left:3px solid #91b9f4;background:#0e1c30;margin:12px 0}.packet{min-height:260px;font-size:14px}.saved-status{color:#a9e9cb}input[type=date]{color-scheme:dark}.board-help{font-size:14px;color:#bfd2ee}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+</style>
+<script>
+const BOOK_START={
+ title:"Chapter 1 — Introduction",
+ source:"Federal Acquisition Regulations Made Easy, Edward Wilgus; user-provided screenshots IMG_0043, IMG_0046 and IMG_0047 (displayed pages 6–8). IMG_0044–0045 are the table of contents, not intervening introduction pages.",
+ goal:"Explain the broad purchasing journey and why a contractor needs to understand the government's process.",
+ prompt:"Without looking back, explain why a government purchase involves more than posting a job and picking a company. Use an example from physical-security work. Include what you are unsure about.",
+ points:["The need is the problem or outcome; a product is a possible solution.","Planning and market research inform what is feasible and how to buy it; they can overlap.","The FAR is organized by subject. Reading order is not a chronological project schedule."]
+};
+const kickoffButton=b("Reading kickoff",()=>nav("kickoff"));document.querySelector("nav").prepend(kickoffButton);
+let boardMoving=false;
+function moveProject(k){
+ if(boardMoving||k===S.stage||k<0||k>7)return;
+ const marker=document.querySelector(".project-token"),scroll=document.querySelector(".board-scroll"),from=S.stage;
+ const reduced=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+ const finish=()=>{boardMoving=false;S.stage=k;save();render()};
+ if(!marker||reduced){finish();return}
+ boardMoving=true;
+ scroll.scrollTo({left:Math.max(0,k*240-30),behavior:"smooth"});
+ const motion=marker.animate([{transform:"translateX("+(from*240)+"px)"},{transform:"translateX("+(k*240)+"px)"}],{duration:650,easing:"cubic-bezier(.22,.8,.25,1)",fill:"forwards"});
+ motion.onfinish=finish;motion.oncancel=finish;
+}
+function mountBoard(){
+ const old=document.querySelector(".path");if(!old)return;const k=S.stage;
+ const labels=["Need identified","Market inquiry","Acquisition plan","Solicitation issued","Contract awarded","Work in progress","Acceptance checks","Closeout actions"];
+ const wrap=document.createElement("div");wrap.innerHTML='<p class="board-help">One example project moves across these columns. Tap a stage or use the arrows. The early card represents a need/opportunity; an awarded contract appears later. This teaching board is not a live government record.</p><div class="board-scroll" tabindex="0" aria-label="Scrollable acquisition project board"><div class="journey-board"></div></div><p role="status" class="board-status">Current stage: '+esc(STAGES[k][0])+'</p>';
+ old.replaceWith(wrap);const board=wrap.querySelector(".journey-board");
+ STAGES.forEach((t,i)=>{const col=document.createElement("div");col.className="board-column"+(i===k?" current":"");const btn=b((i+1)+". "+t[0],()=>moveProject(i));btn.setAttribute("aria-current",i===k?"step":"false");col.append(btn);const hint=document.createElement("small");hint.textContent=i===k?"Project is here":i<k?"Earlier in this walkthrough":"Later in this walkthrough";col.append(hint);board.append(col)});
+ const marker=document.createElement("div");marker.className="project-token";marker.style.transform="translateX("+(k*240)+"px)";marker.innerHTML='<small>EXAMPLE PROJECT · 24 OPENINGS</small><strong>Federal facility access upgrade</strong><span>'+esc(labels[k])+'</span>';board.append(marker);
+ wrap.querySelector(".board-scroll").scrollLeft=Math.max(0,k*240-30);
+ const controls=document.querySelector(".steps");controls.replaceChildren();const prev=b("← Move card back",()=>moveProject(k-1));prev.disabled=k===0;const next=b("Move card forward →",()=>moveProject(k+1),"primary");next.disabled=k===7;controls.append(prev,next);
+}
+function topicFor(key){
+ if(key==="reading-1")return{title:BOOK_START.title,prompt:BOOK_START.prompt,context:BOOK_START.source+"\nGoal: "+BOOK_START.goal+"\nOrientation: "+BOOK_START.points.join(" ")};
+ const n=Number(key.split("-")[1]);
+ if(key.startsWith("stage-")){const t=STAGES[n];return{title:t[0],prompt:t[12],context:"Lifecycle stage "+(n+1)+"/8. "+t[1]+"\nExample: "+t[2]+"\nDocument: "+t[9]+" — "+t[10]}}
+ const l=L[n];return{title:l[0],prompt:l[3]+" Explain your next action, evidence and uncertainty.",context:"Existing app lesson, not the handbook chapter number. "+l[2]};
+}
+function reviewPacket(key){
+ const p=S.practice[key]||{},t=topicFor(key);
+ return [
+ "FAR ACADEMY — CONTINUE MY LEARNING REVIEW",
+ "Course: https://turok0clock.github.io/Security-Plus/far-academy/",
+ "My goal: understand the federal acquisition lifecycle from government and contractor perspectives and apply it in physical-security work. This is practical learning, not an exam or a test of FAR section numbers.",
+ "Teaching preferences: short plain-English explanations; expand acronyms; one concept and one question at a time; teach unfamiliar material before demanding mastery. Evaluate reasoning, uncertainty and evidence. Give corrective feedback after my attempt. Briefly repair weaknesses, then use a genuinely new situation. If drilling increases confusion, change the explanation or revisit later.",
+ "Review instructions: start with the answer below; do not repeat the question as if I have not answered. Explain what is correct, what needs adjustment and why. Distinguish knowledge gaps, concept confusion, misreading and guessing. Ask one follow-up and wait. Do not infer mastery from one response. End the session with a concise checkpoint I can paste into the app: strengths, unresolved gaps, next practice and suggested review timing.",
+ "Continuity: this packet supplies context, not the complete prior chat or handbook. Ask for missing source material only if it changes the assessment. Training mockups are fictional. Verify current FAR rules when needed.",
+ "TOPIC: "+t.title,
+ "CONTEXT: "+t.context,
+ "QUESTION: "+t.prompt,
+ "MY ANSWER: "+(p.answer||"(not entered)"),
+ "MY CONFIDENCE: "+(p.confidence||"not recorded"),
+ "PREVIOUS TUTOR CHECKPOINT: "+(p.tutorNotes||"None recorded"),
+ "MY NEXT REVIEW DATE: "+(p.nextReview||"Not set"),
+ "PRIOR ATTEMPTS: "+JSON.stringify((p.history||[]).slice(-3)),
+ "Please review this attempt now, then continue one question at a time."
+ ].join("\n\n");
+}
+function showPacket(host,key){
+ host.innerHTML='<h3>Bring this to our chat</h3><p>Copy the packet and paste it into this conversation or a new one. It includes the question, your answer and the context needed to continue. Nothing is sent automatically.</p><textarea class="packet" readonly aria-label="Chat review packet"></textarea><div class="actions packet-actions"></div><p class="packet-status" role="status"></p>';
+ const box=host.querySelector(".packet");box.value=reviewPacket(key);
+ host.querySelector(".packet-actions").append(b("Copy review packet",async()=>{
+ try{await navigator.clipboard.writeText(box.value);host.querySelector(".packet-status").textContent="Copied. Paste it into ChatGPT."}
+ catch(e){box.focus();box.select();host.querySelector(".packet-status").textContent="Select and copy the text above using your iPad's text menu."}
+ },"primary"));
+ host.querySelector(".packet-actions").append(b("Select packet text",()=>{box.focus();box.select()}));
+}
+practicePanel=function(host,key,prompt,model){
+ S.practice??={};let saved=S.practice[key]||{};
+ host.innerHTML='<h2>Your turn → tutor review</h2><p>'+esc(prompt)+'</p><label>Your answer and reasoning<textarea class="response" placeholder="Explain in your own words. Include the evidence, any guess, and what you are unsure about."></textarea></label><label>Confidence <select class="confidence"><option>Unsure / guessing</option><option>Partly sure</option><option>Confident</option></select></label><p class="evidence">No automated grade. Save your attempt, then bring it to our chat for discussion. Saved drafts remain on this browser; use Field Kit to export a backup.</p><div class="actions practice-actions"></div><p class="attempt-status" role="status"></p><div class="handoff"></div><details class="tutor-checkpoint"><summary>After our conversation: save the tutor checkpoint</summary><p>Paste the summary from our chat. Recording it does not certify mastery; it preserves what we found and what to practice next.</p><label>Tutor feedback and next steps<textarea class="tutor-notes"></textarea></label><label>Suggested review date<input class="review-date" type="date"></label><div class="checkpoint-actions"></div><p class="checkpoint-status" role="status"></p></details>';
+ const area=host.querySelector(".response"),conf=host.querySelector(".confidence");area.value=saved.answer||"";conf.value=saved.confidence||"Unsure / guessing";
+ const keep=()=>{saved={...saved,answer:area.value,confidence:conf.value};persistAttempt(key,saved)};area.oninput=keep;conf.onchange=keep;
+ host.querySelector(".practice-actions").append(b("Save answer & prepare chat review",()=>{
+ if(!area.value.trim()){host.querySelector(".attempt-status").textContent="Try an answer first. An uncertain answer is useful.";return}
+ keep();const snapshot={date:Date.now(),answer:area.value,confidence:conf.value};
+ if(!(saved.history||[]).length||saved.history.at(-1).answer!==snapshot.answer||saved.history.at(-1).confidence!==snapshot.confidence)saved.history=[...(saved.history||[]),snapshot];
+ saved.attempted=Date.now();saved.reviewStatus="Awaiting tutor discussion";persistAttempt(key,saved);
+ host.querySelector(".attempt-status").textContent="Saved. No grade assigned.";showPacket(host.querySelector(".handoff"),key);
+ },"primary"));
+ host.querySelector(".practice-actions").append(b("Start a fresh recall attempt",()=>{
+ if(area.value.trim()&&!confirm("Save this answer in your attempt history and clear the answer box for a new attempt?"))return;
+ if(area.value.trim())saved.history=[...(saved.history||[]),{date:Date.now(),answer:area.value,confidence:conf.value}];
+ area.value="";conf.value="Unsure / guessing";keep();host.querySelector(".handoff").replaceChildren();host.querySelector(".attempt-status").textContent="Fresh attempt. Look away from the lesson and explain from memory.";
+ }));
+ const notes=host.querySelector(".tutor-notes"),date=host.querySelector(".review-date");notes.value=saved.tutorNotes||"";date.value=saved.nextReview||"";
+ host.querySelector(".checkpoint-actions").append(b("Save tutor checkpoint",()=>{
+ keep();saved.tutorNotes=notes.value;saved.nextReview=date.value;saved.reviewStatus=notes.value.trim()?"Tutor checkpoint recorded":"Awaiting tutor discussion";saved.due=date.value?new Date(date.value+"T12:00:00").getTime():null;
+ persistAttempt(key,saved);host.querySelector(".checkpoint-status").textContent="Checkpoint saved. You can update it after the next conversation.";
+ }));
+};
+function kickoff(){
+ S.reading??={};
+ V.innerHTML='<section class="hero"><small>READ → EXPLAIN → DISCUSS → APPLY → REVISIT</small><h1>Start from the beginning, with a purpose</h1><p>One short reading at a time. The app holds your place and answers; our conversation provides the reasoning-specific feedback.</p><div class="actions kickoff-links"></div></section><section class="card"><h2>'+esc(BOOK_START.title)+'</h2><p><strong>Where it fits:</strong> An overview of the whole lifecycle. This chapter is not itself the first contract stage.</p><p><strong>Prerequisites:</strong> None beyond your experience seeing work requested, planned and performed.</p><p><strong>Goal:</strong> '+esc(BOOK_START.goal)+'</p><div class="reading-step"><h3>Before you read</h3><p>Federal Acquisition Regulation (FAR) is the government purchasing framework. Think of the book as an organized guide to the subjects people must navigate. A need, a purchase plan, market information, a solicitation and an awarded contract are related, but they are not the same thing.</p><p>For a security-system upgrade, first distinguish the outcome the facility needs from a particular piece of equipment. Then notice the decisions needed to turn that need into something the government can buy and a contractor can deliver.</p></div><div class="reading-step"><h3>Your reading assignment</h3><p>Read Chapter 1, Introduction, in your copy of the handbook. In your uploaded material it appears in IMG_0043, IMG_0046 and IMG_0047 (displayed pages 6–8). Stop before Chapter 2. The intervening screenshot numbers are contents pages.</p><p>Read for these three ideas:</p><ul>'+BOOK_START.points.map(x=>'<li>'+esc(x)+'</li>').join("")+'</ul><p>You do not need to memorize the FAR part numbers or the author’s biography. The purchasing analogy is an orientation aid, not a substitute for the actual acquisition rules.</p></div><label><input id="read-intro" style="width:auto" type="checkbox"> I have finished this reading (not a mastery claim)</label><p class="muted">Later handbook chapters will receive their own source-based kickoffs. The existing 14 app lessons are a separate collection.</p></section><section class="card" id="reading-attempt"></section>';
+ document.querySelector(".kickoff-links").append(b("Explore the moving project board",()=>nav("lifecycle")));
+ const done=document.getElementById("read-intro");done.checked=!!S.reading.intro;done.onchange=()=>{S.reading.intro=done.checked;save();drawReadingAttempt()};
+ drawReadingAttempt();
+}
+function drawReadingAttempt(){
+ const host=document.getElementById("reading-attempt");
+ if(!S.reading.intro){host.innerHTML='<h2>After reading</h2><p>Come back and mark the reading finished. Then answer one question from memory. We will discuss your reasoning before moving to a new application.</p>';return}
+ practicePanel(host,"reading-1",BOOK_START.prompt,"");
+}
+const previousLearningRender=render;
+render=function(){
+ S.practice??={};
+ kickoffButton.classList.toggle("active",page==="kickoff");
+ if(page==="kickoff"){lifecycleButton.classList.remove("active");reviewButton.classList.remove("active");kickoff();return}
+ if(page==="review"){
+ lifecycleButton.classList.remove("active");reviewButton.classList.add("active");
+ V.innerHTML='<section class="hero"><h1>Conversations & revisits</h1><p>Answers are reviewed with your tutor in chat. This list records attempts, conversation checkpoints and review dates—not automatic grades. Copy a packet to continue in a new conversation.</p></section><section class="grid" id="review-list"></section>';
+ const list=document.getElementById("review-list"),keys=Object.keys(S.practice);
+ if(!keys.length)list.textContent="Start a reading or lifecycle attempt to build your review history.";
+ keys.sort((a,b)=>(S.practice[a].due||Infinity)-(S.practice[b].due||Infinity)).forEach(key=>{
+ const p=S.practice[key],t=topicFor(key),card=document.createElement("article");card.className="card";card.innerHTML='<h3>'+esc(t.title)+'</h3><p>'+esc(p.reviewStatus||"Draft / earlier self-review")+'</p><p>'+esc(p.nextReview?"Review: "+p.nextReview:"No tutor review date set")+'</p><p>'+esc(p.tutorNotes||"No tutor checkpoint recorded yet.")+'</p><div class="actions"></div><div class="handoff"></div>';
+ card.querySelector(".actions").append(b("Copy context for chat",()=>showPacket(card.querySelector(".handoff"),key)),b("Open topic",()=>{if(key==="reading-1")nav("kickoff");else if(key.startsWith("stage-")){S.stage=+key.split("-")[1];save();nav("lifecycle")}else open(+key.split("-")[1])}));list.append(card);
+ });return}
+ previousLearningRender();
+ if(page==="lifecycle")mountBoard();
+};
+nav("kickoff");
 </script></body></html>
